@@ -1,0 +1,106 @@
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  width: 3840px;
+  height: 1080px;
+  margin: 0px;
+  font-size: 24px;
+  background: url("img/bg.png");
+  background-size: 100% 100%;
+}
+
+.max-line-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none
+}
+
+.page {
+  padding: 0px 40px 40px 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.header {
+  height: 114px;
+  position: relative;
+  display: flex;
+}
+
+.header-right {
+  height: 36px;
+  position: absolute;
+  top: 40px;
+  display: flex;
+  right: 0px;
+  align-items: center;
+  font-size: 24px;
+}
+
+.header-menus {
+  height: 36px;
+  position: absolute;
+  top: 58px;
+  height: 58px;;
+  display: flex;
+  left: 1867px;
+  align-items: center;
+  font-size: 30px;
+}
+
+.header-menu-item {
+  height: 35px;
+  width: 177px;
+  text-align: center;
+  background-size: 100% 100%;
+
+}
+
+.header-menu-item.selected {
+  background: url("img/nav_act.png");
+  background-size: 100% 100%;
+}
+
+.header-menu-item-text {
+  font-size: 27px;
+  line-height: 27px;
+}
+
+.content {
+  flex: 1;
+  position: relative;
+}
+
+.template {
+  display: none;
+}
+
+.map {
+  height: 100%;
+}
+
+.list-item{
+  height: 38px;
+  font-size: 22px;
+}
+
+.list-item:nth-child(odd) {
+  background: url("img/list_item_bg1.png");
+  background-size: 100% 100%;
+}
+
+.list-item:nth-child(even) {
+  background: url("img/list_item_bg2.png");
+  background-size: 100% 100%;
+}

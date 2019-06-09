@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+  <link rel="stylesheet" href="common.css"/>
+  <link rel="stylesheet" href="znyw.css"/>
+  <title>地图显示</title>
+</head>
+<body>
+
+<div class="page" style="">
+  <div class="header">
+    <img style="height: 84px;margin-top: 11px" src="img/logo.png">
+    <div style="width: 746px;height: 1px;background: rgba(0, 255, 255, 0.7);margin-top: 59px;margin-left: -40px"></div>
+    <div
+      style="background: url('img/title_big.png');width: 820px;height:70px;line-height: 70px;margin-top: 24px;text-align: center;color: #5ddcda;font-size: 44px">泛在电力物联网综合示范展示平台</div>
+    <div
+      style="width: 1700px;height: 1px;background: linear-gradient(to right, rgba(0, 255, 255, 0.7), rgba(0, 255, 255, 0));margin-top: 57px"></div>
+    <div class="header-right">
+      <img style="width: 35px;height: 35px" src="img/user.png">
+      <img style="width: 30px;height: 30px;margin-left: 20px" src="img/cloud.png">
+      <div style="margin-left: 10px">多云</div>
+      <div style="margin-left: 10px">27度</div>
+      <div style="margin-left: 10px">微风三级</div>
+    </div>
+    <div class="header-menus">
+      <div class="header-menu-item">
+        <div class="header-menu-item-text">全网态势</div>
+      </div>
+      <div class="header-menu-item">
+        <div class="header-menu-item-text">重大活动</div>
+      </div>
+      <div class="header-menu-item selected">
+        <div class="header-menu-item-text">智能运维</div>
+      </div>
+      <div class="header-menu-item">
+        <div class="header-menu-item-text">应急指挥</div>
+      </div>
+      <div class="header-menu-item">
+        <div class="header-menu-item-text">供电服务</div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="map" id="map"></div>
+    <div class="content-left">
+      <div id="leftMenu1" class="content-left-menu">
+        <img class="content-left-menu-img" src="img/1.png">
+        <div>输电</div>
+      </div>
+      <div id="leftMenu2" class="content-left-menu">
+        <img class="content-left-menu-img" src="img/2.png">
+        <div>电缆</div>
+      </div>
+      <div id="leftMenu3" class="content-left-menu">
+        <img class="content-left-menu-img" src="img/3.png">
+        <div>变电</div>
+      </div>
+      <div id="leftMenu4" class="content-left-menu">
+        <img class="content-left-menu-img" src="img/4.png">
+        <div>配电</div>
+      </div>
+      <div id="submenu-1" class="content-left-submenu ">
+        <div class="content-left-submenu-item submenu-1-item">无人机</div>
+        <div class="content-left-submenu-item submenu-1-item">卡片机</div>
+        <div class="content-left-submenu-item submenu-1-item">视频监控</div>
+      </div>
+
+      <div id="submenu-2" class="content-left-submenu ">
+        <div class="content-left-submenu-item submenu-2-item">隧道主站</div>
+        <div class="content-left-submenu-item submenu-2-item">实验结果</div>
+      </div>
+
+      <div id="submenu-3" class="content-left-submenu">
+        <div class="content-left-submenu-item submenu-3-item">机器人</div>
+        <div class="content-left-submenu-item submenu-3-item">实验结果</div>
+      </div>
+
+      <div id="submenu-4" class="content-left-submenu">
+        <div class="content-left-submenu-item submenu-4-item">环境监测</div>
+      </div>
+
+    </div>
+    <div class="content-right">
+      <div style="flex: 1;">
+        <div style="display: flex;align-items: center">
+          <img style="width: 24px;height: 24px" src="img/title_small.png">
+          <span style="margin-left: 15px">队伍</span>
+        </div>
+        <div>队伍内容</div>
+      </div>
+      <div style="flex: 1;">
+        <div style="display: flex;align-items: center">
+          <img style="width: 24px;height: 24px" src="img/title_small.png">
+          <span style="margin-left: 15px">物资信息</span>
+        </div>
+        <div style="display: flex;margin-top: 36px">
+          <div style="flex: 1;">
+            <div id="goodsInfoList" class="hide-scrollbar">
+              <div class="template goods-info-item list-item">
+                <div style="display: flex">
+                  <div class="goods-info-item-stockName max-line-1" style="flex: 1;">仓库1</div>
+                  <div class="goods-info-item-goodsName max-line-1" style="flex: 1;">物资1</div>
+                  <div class="goods-info-item-goodsCount max-line-1" style="flex: 1;">10000件</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="flex: 1;display: flex;align-items: center;justify-content: center">
+            <div id="chart" style="width: 400px;height:260px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-bottom">
+    </div>
+  </div>
+</div>
+
+<!-- 加载地图JSAPI脚本 -->
+<!--<script src="https://webapi.amap.com/maps?v=1.4.14&key=af2caff8cf0eaa33ca30b22d896feb3b"></script>-->
+<script src="plugin/bdmap/map_load.js"></script>
+<script src="plugin/jquery-1.8.0.min.js"></script>
+<script src="plugin/echarts.min.js"></script>
+<script src="common.js"></script>
+<script src="znyw.js"></script>
+</body>
+</html>
