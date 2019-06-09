@@ -1,0 +1,78 @@
+.content-left {
+  position: absolute;
+  left: 70px;
+  bottom: 218px;
+  width: 1063px;
+  height: 126px;
+  font-size: 22px;
+  background: url("img/nav_bg.png");
+  background-size: 100% 100%;
+}
+
+.content-right {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  bottom: 26px;
+  background: url("img/left-bg.png");
+  background-size: 100% 100%;
+  width: 990px;
+  padding: 40px 20px 20px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-bottom {
+  position: absolute;
+  left: 72px;
+  bottom: 0px;
+  background: url("img/bottom_menu_bg.png");
+  background-size: 100% 100%;
+  width: 2556px;
+  height: 200px;
+}
+
+.template {
+  display: none;
+}
+
+#faultInfoList{
+  height: 210px;
+  overflow-y: scroll;
+}
+
+.fault-info-item {
+  text-align: center;
+  font-size: 20px;
+  height: 30px;
+}
+
+#eventInfoList{
+  height: 280px;
+  overflow-y: scroll;
+}
+
+.event-info-item {
+  text-align: center;
+  height: 40px;
+}
+
+.number {
+  background: url('img/nunber_bg.png');
+  width: 37px;
+  height: 53px;
+  line-height: 53px;
+  text-align: center;
+  font-size: 30px;
+  margin-left: 4px;
+}
+
+.content-bottom {
+  position: absolute;
+  left: 72px;
+  bottom: 0px;
+  background: url("img/bottom_menu_bg.png");
+  background-size: 100% 100%;
+  width: 2556px;
+  height: 200px;
+}

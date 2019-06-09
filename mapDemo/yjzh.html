@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="common.css"/>
+    <link rel="stylesheet" href="yjzh.css"/>
+    <title>地图显示</title>
+</head>
+<body>
+
+<div class="page" style="">
+    <div class="header">
+        <img style="height: 84px;margin-top: 11px" src="img/logo.png">
+        <div style="width: 746px;height: 1px;background: rgba(0, 255, 255, 0.7);margin-top: 59px;margin-left: -40px"></div>
+        <div
+                style="background: url('img/title_big.png');width: 820px;height:70px;line-height: 70px;margin-top: 24px;text-align: center;color: #5ddcda;font-size: 44px">大连供电公司供电服务指挥平台</div>
+        <div
+                style="width: 1700px;height: 1px;background: linear-gradient(to right, rgba(0, 255, 255, 0.7), rgba(0, 255, 255, 0));margin-top: 57px"></div>
+        <div class="header-right">
+            <img style="width: 35px;height: 35px" src="img/user.png">
+            <img style="width: 30px;height: 30px;margin-left: 20px" src="img/cloud.png">
+            <div style="margin-left: 10px">多云</div>
+            <div style="margin-left: 10px">27度</div>
+            <div style="margin-left: 10px">微风三级</div>
+        </div>
+        <div class="header-menus">
+            <div class="header-menu-item">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="yjzh.html">全网态势</a></div>
+            </div>
+            <div class="header-menu-item">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="zdhd.html">重大活动</a></div>
+            </div>
+            <div class="header-menu-item">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="znyw.html">智能运维</a></div>
+            </div>
+            <div class="header-menu-item selected" >
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="yjzh.html">应急指挥</a></div>
+            </div>
+            <div class="header-menu-item">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="gdfu.html">供电服务</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="map" id="map"></div>
+        <div class="content-left">
+            <div style="display: flex;padding: 0px 40px;">
+                <div style="flex: 1;">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/hd.png">
+                    </div>
+                    <div style="text-align: center">活动</div>
+                </div>
+                <div style="flex: 1;">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/cs.png">
+                    </div>
+                    <div style="text-align: center">保电场所</div>
+                </div>
+                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/xl.png">
+                    </div>
+                    <div style="text-align: center">线路</div>
+                </div>
+                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/zs.png">
+                    </div>
+                    <div style="text-align: center">站所</div>
+                </div>
+                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/dw.png">
+                    </div>
+                    <div style="text-align: center">队伍</div>
+                </div>
+                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/ry.png">
+                    </div>
+                    <div style="text-align: center">人员</div>
+                </div>
+                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/cl.png">
+                    </div>
+                    <div style="text-align: center">车辆</div>
+                </div>
+                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/wz.png">
+                    </div>
+                    <div style="text-align: center">物资</div>
+                </div>
+                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/sb.png">
+                    </div>
+                    <div style="text-align: center">设备</div>
+                </div>
+            </div>
+        </div>
+        <div class="content-right">
+            <div style="display: flex">
+                <div style="flex: 2;min-width: 0;">
+                    <div style="display: flex;align-items: center">
+                        <img style="width: 24px;height: 24px" src="img/title_small.png">
+                        <span style="margin-left: 10px">重要事件</span>
+                    </div>
+                    <div id="eventInfoList" class="hide-scrollbar" style="margin-top: 30px;margin-left: 20px;">
+                        <div class="template event-info-item list-item">
+                            <div style="display: flex;align-items: center;height: 100%;">
+                                <img src="img/dot.png" style="width: 18px;height: 18px;margin-left: 10px"/>
+                                <div class="event-info-item-date max-line-1" style="flex: 1;margin-left: 24px"></div>
+                                <div class="event-info-item-content max-line-1" style="flex: 2;"></div>
+                                <div class="event-info-item-status max-line-1" style="flex: 1;color: #00ff66"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 1;min-width: 0;">
+                    <div style="display: flex;align-items: center">
+                        <img style="width: 24px;height: 24px" src="img/title_small.png">
+                        <span style="margin-left: 10px">队伍</span>
+                    </div>
+                    <div>
+                        <div style="margin-top: 58px;margin-left: 84px"><img src="img/zhzx.png" style="width: 230px">
+                        </div>
+                        <div style="margin-top: 56px;margin-left: 84px"><img src="img/yjdd.png" style="width: 230px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex;margin-top: 70px">
+                <div style="flex: 1;">
+                    <div style="display: flex;align-items: center">
+                        <img style="width: 24px;height: 24px" src="img/title_small.png">
+                        <span style="margin-left: 10px">无人机视频监控</span>
+                    </div>
+                    <div style="margin-top: 30px;margin-left: 20px">
+                        <img src="img/video.jpg"/>
+                    </div>
+                </div>
+                <div style="flex: 1;">
+                    <div style="display: flex;align-items: center">
+                        <img style="width: 24px;height: 24px" src="img/title_small.png">
+                        <span style="margin-left: 10px">现场动态</span>
+                    </div>
+                    <div style="margin-left: 20px;margin-top: 30px;font-size: 20px">
+                        <div style="margin-top: 15px"><span>现场地址：</span><span>大连市西岗区会议中心</span></div>
+                        <div style="margin-top: 15px"><span>保电人员：</span><span>10人</span></div>
+                        <div style="margin-top: 15px"><span>保电等级：</span><span>三级</span></div>
+                        <div style="margin-top: 15px"><span>保电风险：</span><span>三级</span></div>
+                        <div style="margin-top: 15px"><span>保电车辆：</span><span>2辆</span></div>
+                        <div style="margin-top: 15px"><span>保电面积：</span><span>100平方米</span></div>
+                        <div style="margin-top: 15px"><span>保电详情：</span><span>还是范德萨发的说法回到家撒可恢复到地方还是感觉好多第三方的发货……</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="content-bottom">
+        </div>
+    </div>
+</div>
+
+<!-- 加载地图JSAPI脚本 -->
+<!--<script src="https://webapi.amap.com/maps?v=1.4.14&key=af2caff8cf0eaa33ca30b22d896feb3b"></script>-->
+<script src="plugin/bdmap/map_load.js"></script>
+<script src="plugin/jquery-1.8.0.min.js"></script>
+<script src="plugin/echarts.min.js"></script>
+<script src="common.js"></script>
+<script src="yjzh.js"></script>
+</body>
+</html>

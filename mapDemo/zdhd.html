@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="common.css"/>
+    <link rel="stylesheet" href="zdhd.css"/>
+    <title>地图显示</title>
+</head>
+<body>
+
+<div class="page" style="">
+    <div class="header">
+        <img style="height: 84px;margin-top: 11px" src="img/logo.png">
+        <div style="width: 746px;height: 1px;background: rgba(0, 255, 255, 0.7);margin-top: 59px;margin-left: -40px"></div>
+        <div
+                style="background: url('img/title_big.png');width: 820px;height:70px;line-height: 70px;margin-top: 24px;text-align: center;color: #5ddcda;font-size: 44px">泛在电力物联网综合示范展示平台</div>
+        <div
+                style="width: 1700px;height: 1px;background: linear-gradient(to right, rgba(0, 255, 255, 0.7), rgba(0, 255, 255, 0));margin-top: 57px"></div>
+        <div class="header-right">
+            <img style="width: 35px;height: 35px" src="img/user.png">
+            <img style="width: 30px;height: 30px;margin-left: 20px" src="img/cloud.png">
+            <div style="margin-left: 10px">多云</div>
+            <div style="margin-left: 10px">27度</div>
+            <div style="margin-left: 10px">微风三级</div>
+        </div>
+        <div class="header-menus">
+            <div class="header-menu-item">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="qwts.html">全网态势</a></div>
+            </div>
+            <div class="header-menu-item selected">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="zdhd.html">重大活动</a></div>
+            </div>
+            <div class="header-menu-item">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="zdhd.html">智能运维</a></div>
+            </div>
+            <div class="header-menu-item">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="yjzh.html">应急指挥</a></div>
+            </div>
+            <div class="header-menu-item">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="gdfu.html">供电服务</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="map" id="map"></div>
+
+        <div class="content-left-top">
+            <div style="display: flex;padding: 0px 40px;">
+                <div style="flex: 1;">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/hd.png">
+                    </div>
+                    <div style="text-align: center">活动</div>
+                </div>
+                <div style="flex: 1;">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/cs.png">
+                    </div>
+                    <div style="text-align: center">保电场所</div>
+                </div>
+                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/xl.png">
+                    </div>
+                    <div style="text-align: center">线路</div>
+                </div>
+                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/zs.png">
+                    </div>
+                    <div style="text-align: center">站所</div>
+                </div>
+                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/dw.png">
+                    </div>
+                    <div style="text-align: center">队伍</div>
+                </div>
+                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/ry.png">
+                    </div>
+                    <div style="text-align: center">人员</div>
+                </div>
+                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/cl.png">
+                    </div>
+                    <div style="text-align: center">车辆</div>
+                </div>
+                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/wz.png">
+                    </div>
+                    <div style="text-align: center">物资</div>
+                </div>
+                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
+                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
+                        <img src="img/sb.png">
+                    </div>
+                    <div style="text-align: center">设备</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-left">
+            <div id="leftMenu1" class="content-left-menu">
+                <img class="content-left-menu-img" src="img/1.png">
+                <div>输电</div>
+            </div>
+            <div id="leftMenu2" class="content-left-menu">
+                <img class="content-left-menu-img" src="img/2.png">
+                <div>电缆</div>
+            </div>
+            <div id="leftMenu3" class="content-left-menu">
+                <img class="content-left-menu-img" src="img/3.png">
+                <div>变电</div>
+            </div>
+            <div id="leftMenu4" class="content-left-menu">
+                <img class="content-left-menu-img" src="img/4.png">
+                <div>配电</div>
+            </div>
+            <div id="submenu-1" class="content-left-submenu ">
+                <div class="content-left-submenu-item submenu-1-item">无人机</div>
+                <div class="content-left-submenu-item submenu-1-item">卡片机</div>
+                <div class="content-left-submenu-item submenu-1-item">视频监控</div>
+            </div>
+
+            <div id="submenu-2" class="content-left-submenu ">
+                <div class="content-left-submenu-item submenu-2-item">隧道主站</div>
+                <div class="content-left-submenu-item submenu-2-item">实验结果</div>
+            </div>
+
+            <div id="submenu-3" class="content-left-submenu">
+                <div class="content-left-submenu-item submenu-3-item">机器人</div>
+                <div class="content-left-submenu-item submenu-3-item">实验结果</div>
+            </div>
+
+            <div id="submenu-4" class="content-left-submenu">
+                <div class="content-left-submenu-item submenu-4-item">环境监测</div>
+            </div>
+
+        </div>
+        <div class="content-right">
+            <div style="display: flex">
+                <div style="flex: 1;min-width: 0;">
+                    <div style="display: flex;align-items: center">
+                        <img style="width: 24px;height: 24px" src="img/title_small.png">
+                        <span style="margin-left: 10px">保电流程</span>
+                    </div>
+                    <div id="processList" class="hide-scrollbar" style="margin-top: 24px;margin-left: 20px;">
+                        <div class="template process-item">
+                            <div style="display: flex;align-items: center;height: 100%;">
+                                <div class="process-item-date max-line-1" style="flex: 1;margin-left: 10px"></div>
+                                <div style="width: 10px;height: 100%;position: relative">
+                                    <div class="process-item-line-1"></div>
+                                    <div class="process-item-line-2"></div>
+                                    <div class="process-item-dot"></div>
+                                </div>
+                                <div class="process-item-desc max-line-1" style="flex: 1;margin-left: 20px"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 1;min-width: 0;">
+                    <div style="display: flex;align-items: center">
+                        <img style="width: 24px;height: 24px" src="img/title_small.png">
+                        <span style="margin-left: 10px">领导班子</span>
+                    </div>
+                    <div style="display: flex;flex-direction: column;align-items: center;width: 482px;margin-top: 30px">
+                        <div class="ldbz" style="width: 284px;height: 48px;"></div>
+                        <div style="width: 1px;height: 28px;background: #00ffff"></div>
+                        <div style="width: 410px;height: 1px;background: #00ffff"></div>
+                        <div style="display: flex;width: 410px">
+                            <div style="flex: 1;height: 28px;border-left: 1px #00ffff solid"></div>
+                            <div style="flex: 1;height: 28px;border-left: 1px #00ffff solid"></div>
+                            <div style="flex: 1;height: 28px;border-left: 1px #00ffff solid;border-right: 1px #00ffff solid"></div>
+                        </div>
+                        <div style="display: flex;width: 100%">
+                            <div class="ldbz" style="width: 72px;height: 236px"></div>
+                            <div class="ldbz" style="width: 72px;height: 236px;margin-left: 65px"></div>
+                            <div class="ldbz" style="width: 72px;height: 236px;margin-left: 65px"></div>
+                            <div class="ldbz" style="width: 72px;height: 236px;margin-left: 65px"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex;margin-top: 30px">
+                <div style="flex: 1;">
+                    <div style="display: flex;align-items: center">
+                        <img style="width: 24px;height: 24px" src="img/title_small.png">
+                        <span style="margin-left: 10px">无人机视频监控</span>
+                    </div>
+                    <div style="margin-top: 30px;margin-left: 20px">
+                        <img src="img/video.jpg"/>
+                    </div>
+                </div>
+                <div style="flex: 1;">
+                    <div style="display: flex;align-items: center">
+                        <img style="width: 24px;height: 24px" src="img/title_small.png">
+                        <span style="margin-left: 10px">视频监控</span>
+                    </div>
+                    <div style="margin-top: 30px;margin-left: 20px">
+                        <img src="img/video.jpg"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-bottom">
+        </div>
+    </div>
+</div>
+
+<!-- 加载地图JSAPI脚本 -->
+<!--<script src="https://webapi.amap.com/maps?v=1.4.14&key=af2caff8cf0eaa33ca30b22d896feb3b"></script>-->
+<script src="plugin/bdmap/map_load.js"></script>
+<script src="plugin/jquery-1.8.0.min.js"></script>
+<script src="plugin/echarts.min.js"></script>
+<script src="common.js"></script>
+<script src="zdhd.js"></script>
+</body>
+</html>
