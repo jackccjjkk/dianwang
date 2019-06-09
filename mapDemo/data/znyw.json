@@ -1,0 +1,58 @@
+{
+  "resultCode": "00",
+  "chartData": [
+    {
+      "value": 335,
+      "name": "固定"
+    },
+    {
+      "value": 310,
+      "name": "一般"
+    },
+    {
+      "value": 274,
+      "name": "其他"
+    },
+    {
+      "value": 235,
+      "name": "特殊"
+    }
+  ],
+  "goodsInfoList": [
+    {
+      "stockName": "仓库1",
+      "goodsName": "物资1",
+      "goodsCount": 10000
+    },
+    {
+      "stockName": "仓库2",
+      "goodsName": "物资2",
+      "goodsCount": 10000
+    },
+    {
+      "stockName": "仓库3",
+      "goodsName": "物资3",
+      "goodsCount": 10000
+    },
+    {
+      "stockName": "仓库4",
+      "goodsName": "物资4",
+      "goodsCount": 10000
+    },
+    {
+      "stockName": "仓库5",
+      "goodsName": "物资5",
+      "goodsCount": 10000
+    },
+    {
+      "stockName": "仓库6",
+      "goodsName": "物资6",
+      "goodsCount": 10000
+    },
+    {
+      "stockName": "仓库7",
+      "goodsName": "物资7",
+      "goodsCount": 10000
+    }
+  ]
+}
