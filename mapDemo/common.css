@@ -39,6 +39,7 @@ body {
 
 .header-right {
   height: 36px;
+  margin-right: 40px;
   position: absolute;
   top: 40px;
   display: flex;

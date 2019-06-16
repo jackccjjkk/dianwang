@@ -51,11 +51,7 @@
           <img style="width: 24px;height: 24px" src="img/title_small.png">
           <span style="margin-left: 10px;font-size: 24px">简介</span>
         </div>
-        <div style="padding: 20px;font-size: 18px;line-height: 20px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为达到国网公司“工作零违规、业务零中断、数据零泄
-        漏、安全零事故、服务零投诉的“五个零”最高保障目标，辽
-        宁公司、大连公司此为契机深入开展泛在电力物联网的试点应
-        用建设，亟需依托大数据、云计算、物联网、移动互联等新一
-        代信息通信技术和智能装备，打破业务系统间信息壁垒.</div>
+        <div style="padding: 20px;font-size: 18px;line-height: 20px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="introduction"></span></div>
       </div>
 
       <div>
@@ -65,19 +61,25 @@
         </div>
         <div style="display: flex;margin-left: 20px;align-items: center">
           <div style="width: 22px;line-height: 22px">
-            变电器
+            变电站
           </div>
           <div style="width: 1px;height: 40px;background: #00c8fe;margin-left: 16px"></div>
-          <div style="margin-left: 24px">
-            <div class="circle" class="circle">38</div>
+          <div style="margin-left: 24px;position:relative;">
+            <div class="circleChart" id="chartCircle1">
+            </div>
+            <div id="circleValue1" class="circle"></div>
             <div style="text-align: center;font-size: 16px">220kva</div>
           </div>
-          <div style="margin-left: 48px">
-            <div class="circle">224</div>
+          <div style="margin-left: 48px;position:relative;">
+            <div class="circleChart" id="chartCircle2">
+            </div>
+            <div id="circleValue2"  class="circle"></div>
             <div style="text-align: center;font-size: 16px">66kva</div>
           </div>
-          <div style="margin-left: 48px">
-            <div class="circle">16770</div>
+          <div style="margin-left: 48px;position:relative;">
+            <div class="circleChart" id="chartCircle3">
+            </div>
+            <div id="circleValue3"  class="circle"></div>
             <div style="text-align: center;font-size: 16px">10kva</div>
           </div>
         </div>
@@ -86,21 +88,33 @@
             变压器
           </div>
           <div style="width: 1px;height: 40px;background: #00c8fe;margin-left: 16px"></div>
-          <div style="margin-left: 24px">
-            <div class="circle">30293</div>
+          <div style="margin-left: 24px;position:relative;">
+            <div class="circleChart" id="chartCircle4">
+            </div>
+            <div id="circleValue4"  class="circle"></div>
             <div style="text-align: center;font-size: 16px">专变</div>
           </div>
-          <div style="margin-left: 48px">
-            <div class="circle">43100</div>
+          <div style="margin-left: 48px;position:relative;">
+            <div class="circleChart" id="chartCircle5">
+            </div>
+            <div id="circleValue5"  class="circle"></div>
             <div style="text-align: center;font-size: 16px">公变</div>
           </div>
           <div style="width: 22px;line-height: 22px;margin-left: 48px">
             用户
           </div>
           <div style="width: 1px;height: 40px;background: #00c8fe;margin-left: 16px"></div>
-          <div style="margin-left: 24px">
-            <div class="circle">39596</div>
+          <div style="margin-left: 24px;position:relative;">
+            <div class="circleChart" id="chartCircle6">
+            </div>
+            <div id="circleValue6"  class="circle"></div>
             <div style="text-align: center;font-size: 16px">专变</div>
+          </div>
+          <div style="margin-left: 48px;position:relative;">
+            <div class="circleChart" id="chartCircle7">
+            </div>
+            <div id="circleValue7"  class="circle"></div>
+            <div style="text-align: center;font-size: 16px">公变</div>
           </div>
         </div>
         <div style="display: flex;margin-left: 20px;margin-top: 22px;align-items: center">
@@ -108,20 +122,26 @@
             线路
           </div>
           <div style="width: 1px;height: 40px;background: #00c8fe;margin-left: 16px"></div>
-          <div style="margin-left: 24px">
-            <div class="circle">736</div>
+          <div style="margin-left: 24px;position:relative;">
+            <div class="circleChart" id="chartCircle8">
+            </div>
+            <div id="circleValue8"  class="circle"></div>
             <div style="text-align: center;font-size: 16px">配电</div>
           </div>
-          <div style="margin-left: 48px">
-            <div class="circle">2773</div>
+          <div style="margin-left: 48px;position:relative;">
+            <div class="circleChart" id="chartCircle9">
+            </div>
+            <div id="circleValue9"  class="circle"></div>
             <div style="text-align: center;font-size: 16px">输电</div>
           </div>
           <div style="width: 22px;line-height: 22px;margin-left: 48px">
             台区
           </div>
           <div style="width: 1px;height: 40px;background: #00c8fe;margin-left: 16px"></div>
-          <div style="margin-left: 24px">
-            <div class="circle">17760</div>
+          <div style="margin-left: 24px;position:relative;">
+            <div class="circleChart" id="chartCircle10">
+            </div>
+            <div id="circleValue10"  class="circle"></div>
             <div style="text-align: center;font-size: 16px">总数</div>
           </div>
         </div>
