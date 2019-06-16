@@ -197,7 +197,7 @@ function initChartPie(charData) {
         },
         series: [
             {
-                name: '物资信息',
+                name: '故障信息',
                 type: 'pie',
                 radius: '40%',
                 center: ['50%', '50%'],
