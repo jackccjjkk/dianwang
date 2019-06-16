@@ -1,228 +1,529 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-  <link rel="stylesheet" href="common.css"/>
-  <link rel="stylesheet" href="qwts.css"/>
-  <title>地图显示</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="common.css"/>
+    <link rel="stylesheet" href="qwts.css"/>
+    <link rel="stylesheet" href="plugin/swiper-4.5.0/dist/css/swiper.min.css"/>
+    <title>地图显示</title>
 </head>
 <body>
 
 <div class="page" style="">
-  <div class="header">
-    <img style="height: 84px;margin-top: 11px" src="img/logo.png">
-    <div style="width: 746px;height: 1px;background: rgba(0, 255, 255, 0.7);margin-top: 59px;margin-left: -40px"></div>
-    <div
-      style="background: url('img/title_big.png');width: 820px;height:70px;line-height: 70px;margin-top: 24px;text-align: center;color: #5ddcda;font-size: 44px">大连供电公司供电服务指挥平台</div>
-    <div
-      style="width: 1700px;height: 1px;background: linear-gradient(to right, rgba(0, 255, 255, 0.7), rgba(0, 255, 255, 0));margin-top: 57px"></div>
-    <div class="header-right">
-      <img style="width: 35px;height: 35px" src="img/user.png">
-      <img style="width: 30px;height: 30px;margin-left: 20px" src="img/cloud.png">
-      <div style="margin-left: 10px">多云</div>
-      <div style="margin-left: 10px">27度</div>
-      <div style="margin-left: 10px">微风三级</div>
+    <div class="header">
+        <img style="height: 84px;margin-top: 11px" src="img/logo.png">
+        <div style="width: 746px;height: 1px;background: rgba(0, 255, 255, 0.7);margin-top: 59px;margin-left: -40px"></div>
+        <div
+                style="background: url('img/title_big.png');width: 820px;height:70px;line-height: 70px;margin-top: 24px;text-align: center;color: #5ddcda;font-size: 44px">大连供电公司供电服务指挥平台</div>
+        <div
+                style="width: 1700px;height: 1px;background: linear-gradient(to right, rgba(0, 255, 255, 0.7), rgba(0, 255, 255, 0));margin-top: 57px"></div>
+        <div class="header-right">
+            <img style="width: 35px;height: 35px" src="img/user.png">
+            <img style="width: 30px;height: 30px;margin-left: 20px" src="img/cloud.png">
+            <div style="margin-left: 10px">多云</div>
+            <div style="margin-left: 10px">27度</div>
+            <div style="margin-left: 10px">微风三级</div>
+        </div>
+        <div class="header-menus">
+            <div class="header-menu-item selected">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="qwts.html">全网态势</a></div>
+            </div>
+            <div class="header-menu-item">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="zdhd.html">重大活动</a></div>
+            </div>
+            <div class="header-menu-item">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="znyw.html">智能运维</a></div>
+            </div>
+            <div class="header-menu-item">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="yjzh.html">应急指挥</a></div>
+            </div>
+            <div class="header-menu-item">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="gdfu.html">供电服务</a></div>
+            </div>
+        </div>
     </div>
-    <div class="header-menus">
-      <div class="header-menu-item selected">
-        <div class="header-menu-item-text"><a style="color: white;text-decoration: none" href="qwts.html">全网态势</a></div>
-      </div>
-      <div class="header-menu-item">
-        <div class="header-menu-item-text"><a style="color: white;text-decoration: none" href="zdhd.html">重大活动</a></div>
-      </div>
-      <div class="header-menu-item">
-        <div class="header-menu-item-text"><a style="color: white;text-decoration: none" href="znyw.html">智能运维</a></div>
-      </div>
-      <div class="header-menu-item">
-        <div class="header-menu-item-text"><a style="color: white;text-decoration: none" href="yjzh.html">应急指挥</a></div>
-      </div>
-      <div class="header-menu-item">
-        <div class="header-menu-item-text"><a style="color: white;text-decoration: none" href="gdfu.html">供电服务</a></div>
-      </div>
-    </div>
-  </div>
-  <div class="content">
-    <div class="map" id="map"></div>
-    <div class="content-left">
-      <div>
-        <div style="display: flex;align-items: center">
-          <img style="width: 24px;height: 24px" src="img/title_small.png">
-          <span style="margin-left: 10px;font-size: 24px">简介</span>
-        </div>
-        <div style="padding: 20px;font-size: 18px;line-height: 20px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="introduction"></span></div>
-      </div>
-
-      <div>
-        <div style="display: flex;align-items: center">
-          <img style="width: 24px;height: 24px" src="img/title_small.png">
-          <span style="margin-left: 10px;font-size: 24px">网源网核监测</span>
-        </div>
-        <div style="display: flex;margin-left: 20px;align-items: center">
-          <div style="width: 22px;line-height: 22px">
-            变电站
-          </div>
-          <div style="width: 1px;height: 40px;background: #00c8fe;margin-left: 16px"></div>
-          <div style="margin-left: 24px;position:relative;">
-            <div class="circleChart" id="chartCircle1">
-            </div>
-            <div id="circleValue1" class="circle"></div>
-            <div style="text-align: center;font-size: 16px">220kva</div>
-          </div>
-          <div style="margin-left: 48px;position:relative;">
-            <div class="circleChart" id="chartCircle2">
-            </div>
-            <div id="circleValue2"  class="circle"></div>
-            <div style="text-align: center;font-size: 16px">66kva</div>
-          </div>
-          <div style="margin-left: 48px;position:relative;">
-            <div class="circleChart" id="chartCircle3">
-            </div>
-            <div id="circleValue3"  class="circle"></div>
-            <div style="text-align: center;font-size: 16px">10kva</div>
-          </div>
-        </div>
-        <div style="display: flex;margin-left: 20px;margin-top: 22px;align-items: center">
-          <div style="width: 22px;line-height: 22px">
-            变压器
-          </div>
-          <div style="width: 1px;height: 40px;background: #00c8fe;margin-left: 16px"></div>
-          <div style="margin-left: 24px;position:relative;">
-            <div class="circleChart" id="chartCircle4">
-            </div>
-            <div id="circleValue4"  class="circle"></div>
-            <div style="text-align: center;font-size: 16px">专变</div>
-          </div>
-          <div style="margin-left: 48px;position:relative;">
-            <div class="circleChart" id="chartCircle5">
-            </div>
-            <div id="circleValue5"  class="circle"></div>
-            <div style="text-align: center;font-size: 16px">公变</div>
-          </div>
-          <div style="width: 22px;line-height: 22px;margin-left: 48px">
-            用户
-          </div>
-          <div style="width: 1px;height: 40px;background: #00c8fe;margin-left: 16px"></div>
-          <div style="margin-left: 24px;position:relative;">
-            <div class="circleChart" id="chartCircle6">
-            </div>
-            <div id="circleValue6"  class="circle"></div>
-            <div style="text-align: center;font-size: 16px">专变</div>
-          </div>
-          <div style="margin-left: 48px;position:relative;">
-            <div class="circleChart" id="chartCircle7">
-            </div>
-            <div id="circleValue7"  class="circle"></div>
-            <div style="text-align: center;font-size: 16px">公变</div>
-          </div>
-        </div>
-        <div style="display: flex;margin-left: 20px;margin-top: 22px;align-items: center">
-          <div style="width: 22px;line-height: 22px">
-            线路
-          </div>
-          <div style="width: 1px;height: 40px;background: #00c8fe;margin-left: 16px"></div>
-          <div style="margin-left: 24px;position:relative;">
-            <div class="circleChart" id="chartCircle8">
-            </div>
-            <div id="circleValue8"  class="circle"></div>
-            <div style="text-align: center;font-size: 16px">配电</div>
-          </div>
-          <div style="margin-left: 48px;position:relative;">
-            <div class="circleChart" id="chartCircle9">
-            </div>
-            <div id="circleValue9"  class="circle"></div>
-            <div style="text-align: center;font-size: 16px">输电</div>
-          </div>
-          <div style="width: 22px;line-height: 22px;margin-left: 48px">
-            台区
-          </div>
-          <div style="width: 1px;height: 40px;background: #00c8fe;margin-left: 16px"></div>
-          <div style="margin-left: 24px;position:relative;">
-            <div class="circleChart" id="chartCircle10">
-            </div>
-            <div id="circleValue10"  class="circle"></div>
-            <div style="text-align: center;font-size: 16px">总数</div>
-          </div>
-        </div>
-      </div>
-
-
-      <div style="margin-top: 20px">
-        <div style="display: flex;align-items: center">
-          <img style="width: 24px;height: 24px" src="img/title_small.png">
-          <span style="margin-left: 10px;font-size: 24px">故障信息</span>
-        </div>
-        <div style="display: flex;margin-top: 20px">
-          <div style="flex: 1;">
-            <div id="faultInfoList" class="hide-scrollbar">
-              <div class="template fault-info-item list-item">
-                <div style="display: flex;align-items: center;height: 100%">
-                  <div class="fault-info-item-title max-line-1" style="flex: 4;"></div>
-                  <div class="fault-info-item-name max-line-1" style="flex: 2;">物资1</div>
-                  <div class="fault-info-item-count max-line-1" style="flex: 1;">10000件</div>
+    <div class="content">
+        <div class="map" id="map"></div>
+        <div class="content-left">
+            <div>
+                <div style="display: flex;align-items: center">
+                    <img style="width: 24px;height: 24px" src="img/title_small.png">
+                    <span style="margin-left: 10px;font-size: 24px">简介</span>
                 </div>
-              </div>
+                <div style="padding: 20px;font-size: 18px;line-height: 20px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        id="introduction"></span></div>
             </div>
-          </div>
-          <div style="flex: 1;display: flex;align-items: center;justify-content: center">
-            <div id="chartPie" style="width: 100%;height:260px;"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="content-right">
-      <div>
-        <div style="display: flex;align-items: center">
-          <img style="width: 24px;height: 24px" src="img/title_small.png">
-          <span style="margin-left: 10px">重要事件</span>
-        </div>
-        <div id="eventInfoList" class="hide-scrollbar" style="margin-top: 30px;margin-left: 20px">
-          <div class="template event-info-item list-item">
-            <div style="display: flex;align-items: center;height: 100%">
-              <img src="img/dot.png" style="width: 18px;height: 18px;margin-left: 10px"/>
-              <div class="event-info-item-date max-line-1" style="flex: 1;margin-left: 24px"></div>
-              <div class="event-info-item-content max-line-1" style="flex: 2;"></div>
-              <div class="event-info-item-status max-line-1" style="flex: 1;color: #00ff66"></div>
+
+            <div>
+                <div style="display: flex;align-items: center">
+                    <img style="width: 24px;height: 24px" src="img/title_small.png">
+                    <span style="margin-left: 10px;font-size: 24px">网源网核监测</span>
+                </div>
+                <div style="display: flex;margin-left: 20px;align-items: center">
+                    <div style="width: 22px;line-height: 22px">
+                        变电站
+                    </div>
+                    <div style="width: 1px;height: 40px;background: #00c8fe;margin-left: 16px"></div>
+                    <div style="margin-left: 24px;position:relative;">
+                        <div class="circleChart" id="chartCircle1">
+                        </div>
+                        <div id="circleValue1" class="circle"></div>
+                        <div style="text-align: center;font-size: 16px">220kva</div>
+                    </div>
+                    <div style="margin-left: 48px;position:relative;">
+                        <div class="circleChart" id="chartCircle2">
+                        </div>
+                        <div id="circleValue2" class="circle"></div>
+                        <div style="text-align: center;font-size: 16px">66kva</div>
+                    </div>
+                    <div style="margin-left: 48px;position:relative;">
+                        <div class="circleChart" id="chartCircle3">
+                        </div>
+                        <div id="circleValue3" class="circle"></div>
+                        <div style="text-align: center;font-size: 16px">10kva</div>
+                    </div>
+                </div>
+                <div style="display: flex;margin-left: 20px;margin-top: 22px;align-items: center">
+                    <div style="width: 22px;line-height: 22px">
+                        变压器
+                    </div>
+                    <div style="width: 1px;height: 40px;background: #00c8fe;margin-left: 16px"></div>
+                    <div style="margin-left: 24px;position:relative;">
+                        <div class="circleChart" id="chartCircle4">
+                        </div>
+                        <div id="circleValue4" class="circle"></div>
+                        <div style="text-align: center;font-size: 16px">专变</div>
+                    </div>
+                    <div style="margin-left: 48px;position:relative;">
+                        <div class="circleChart" id="chartCircle5">
+                        </div>
+                        <div id="circleValue5" class="circle"></div>
+                        <div style="text-align: center;font-size: 16px">公变</div>
+                    </div>
+                    <div style="width: 22px;line-height: 22px;margin-left: 48px">
+                        用户
+                    </div>
+                    <div style="width: 1px;height: 40px;background: #00c8fe;margin-left: 16px"></div>
+                    <div style="margin-left: 24px;position:relative;">
+                        <div class="circleChart" id="chartCircle6">
+                        </div>
+                        <div id="circleValue6" class="circle"></div>
+                        <div style="text-align: center;font-size: 16px">专变</div>
+                    </div>
+                    <div style="margin-left: 48px;position:relative;">
+                        <div class="circleChart" id="chartCircle7">
+                        </div>
+                        <div id="circleValue7" class="circle"></div>
+                        <div style="text-align: center;font-size: 16px">公变</div>
+                    </div>
+                </div>
+                <div style="display: flex;margin-left: 20px;margin-top: 22px;align-items: center">
+                    <div style="width: 22px;line-height: 22px">
+                        线路
+                    </div>
+                    <div style="width: 1px;height: 40px;background: #00c8fe;margin-left: 16px"></div>
+                    <div style="margin-left: 24px;position:relative;">
+                        <div class="circleChart" id="chartCircle8">
+                        </div>
+                        <div id="circleValue8" class="circle"></div>
+                        <div style="text-align: center;font-size: 16px">配电</div>
+                    </div>
+                    <div style="margin-left: 48px;position:relative;">
+                        <div class="circleChart" id="chartCircle9">
+                        </div>
+                        <div id="circleValue9" class="circle"></div>
+                        <div style="text-align: center;font-size: 16px">输电</div>
+                    </div>
+                    <div style="width: 22px;line-height: 22px;margin-left: 48px">
+                        台区
+                    </div>
+                    <div style="width: 1px;height: 40px;background: #00c8fe;margin-left: 16px"></div>
+                    <div style="margin-left: 24px;position:relative;">
+                        <div class="circleChart" id="chartCircle10">
+                        </div>
+                        <div id="circleValue10" class="circle"></div>
+                        <div style="text-align: center;font-size: 16px">总数</div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div style="margin-top: 30px">
-        <div style="display: flex;align-items: center">
-          <img style="width: 24px;height: 24px" src="img/title_small.png">
-          <span style="margin-left: 10px">实时电量监控</span>
-        </div>
-        <div style="display: flex;padding: 30px 0px 30px 40px">
-          <div class="number">2</div>
-          <div class="number">0</div>
-          <div class="number">1</div>
-          <div class="number">9</div>
-          <div class="number">2</div>
-          <div class="number">0</div>
-          <div class="number">1</div>
-          <div class="number">9</div>
-          <div class="number">2</div>
-          <div class="number">0</div>
-          <div class="number">1</div>
-          <div class="number">9</div>
-          <div style="margin-top: 20px;margin-left: 20px">度</div>
-        </div>
-      </div>
 
-      <div>
-        <div style="display: flex;align-items: center">
-          <img style="width: 24px;height: 24px" src="img/title_small.png">
-          <span style="margin-left: 10px">实时负荷监控</span>
-        </div>
-        <div style="padding: 20px 0px 0px 20px">
-          <div id="chartLine" style="width: 100%;height:260px;"></div>
-        </div>
-      </div>
+            <div style="margin-top: 20px">
+                <div style="display: flex;align-items: center">
+                    <img style="width: 24px;height: 24px" src="img/title_small.png">
+                    <span style="margin-left: 10px;font-size: 24px">故障信息</span>
+                </div>
+                <div style="display: flex;margin-top: 20px">
+                    <div style="flex: 1;min-width: 0px;display: flex;flex-direction: column;align-items: center">
+                        <div class="swiper-container">
+                            <div id="faultSwiperList" class="swiper-wrapper">
 
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div style="flex: 1;min-width: 0px;display: flex;align-items: center;justify-content: center">
+                        <div id="chartPie" style="width: 100%;height:260px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-right">
+            <div>
+                <div style="display: flex;align-items: center">
+                    <img style="width: 24px;height: 24px" src="img/title_small.png">
+                    <span style="margin-left: 10px">重要事件</span>
+                </div>
+                <div id="eventInfoList" class="hide-scrollbar" style="margin-top: 30px;margin-left: 20px">
+                    <div class="template event-info-item list-item">
+                        <div style="display: flex;align-items: center;height: 100%">
+                            <img src="img/dot.png" style="width: 18px;height: 18px;margin-left: 10px"/>
+                            <div class="event-info-item-date max-line-1" style="margin-left: 24px;width: 160px"></div>
+                            <div class="event-info-item-content max-line-1" style="flex: 1;margin-left: 10px"></div>
+                            <div class="event-info-item-status max-line-1"
+                                 style="color: #00ff66;padding: 0px 10px"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px">
+                <div style="display: flex;align-items: center">
+                    <img style="width: 24px;height: 24px" src="img/title_small.png">
+                    <span style="margin-left: 10px">实时电量监控</span>
+                </div>
+                <div style="display: flex;padding: 30px 0px 30px 40px">
+                    <div id="dataNums">
+                        <ul class="dataNums inrow">
+                            <li class="dataOne">
+                                <div class="dataBoc">
+                                    <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dataOne ">
+                                <div class="dataBoc">
+                                    <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dataOne ">
+                                <div class="dataBoc">
+                                    <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;"><span
+                                            class="num0">0</span> <span class="num1">1</span> <span
+                                            class="num2">2</span> <span
+                                            class="num3">3</span> <span class="num4">4</span><span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span> <span class="num8">8</span> <span
+                                                class="num9">9</span><span
+                                                class="num0">0</span> <span class="num1">1</span> <span
+                                                class="num2">2</span> <span
+                                                class="num3">3</span> <span class="num4">4</span><span
+                                                class="num5">5</span> <span
+                                                class="num6">6</span> <span class="num7">7</span> <span
+                                                class="num8">8</span> <span
+                                                class="num9">9</span></div>
+                                </div>
+                            </li>
+                            <li class="dataOne ">
+                                <div class="dataBoc">
+                                    <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;"><span
+                                            class="num0">0</span> <span class="num1">1</span> <span
+                                            class="num2">2</span> <span
+                                            class="num3">3</span> <span class="num4">4</span><span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span> <span class="num8">8</span> <span
+                                                class="num9">9</span><span
+                                                class="num0">0</span> <span class="num1">1</span> <span
+                                                class="num2">2</span> <span
+                                                class="num3">3</span> <span class="num4">4</span><span
+                                                class="num5">5</span> <span
+                                                class="num6">6</span> <span class="num7">7</span> <span
+                                                class="num8">8</span> <span
+                                                class="num9">9</span></div>
+                                </div>
+                            </li>
+                            <li class="dataOne ">
+                                <div class="dataBoc">
+                                    <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;"><span
+                                            class="num0">0</span> <span class="num1">1</span> <span
+                                            class="num2">2</span> <span
+                                            class="num3">3</span> <span class="num4">4</span><span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span> <span class="num8">8</span> <span
+                                                class="num9">9</span><span
+                                                class="num0">0</span> <span class="num1">1</span> <span
+                                                class="num2">2</span> <span
+                                                class="num3">3</span> <span class="num4">4</span><span
+                                                class="num5">5</span> <span
+                                                class="num6">6</span> <span class="num7">7</span> <span
+                                                class="num8">8</span> <span
+                                                class="num9">9</span></div>
+                                </div>
+                            </li>
+                            <li class="dataOne ">
+                                <div class="dataBoc">
+                                    <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dataOne ">
+                                <div class="dataBoc">
+                                    <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dataOne ">
+                                <div class="dataBoc">
+                                    <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dataOne ">
+                                <div class="dataBoc">
+                                    <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dataOne ">
+                                <div class="dataBoc">
+                                    <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dataOne ">
+                                <div class="dataBoc">
+                                    <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dataOne ">
+                                <div class="dataBoc">
+                                    <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                        <span class="num0">0</span>
+                                        <span class="num1">1</span>
+                                        <span class="num2">2</span>
+                                        <span class="num3">3</span>
+                                        <span class="num4">4</span>
+                                        <span class="num5">5</span>
+                                        <span class="num6">6</span>
+                                        <span class="num7">7</span>
+                                        <span class="num8">8</span>
+                                        <span class="num9">9</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="margin-top: 20px;margin-left: 20px">度</div>
+                </div>
+            </div>
+
+            <div>
+                <div style="display: flex;align-items: center">
+                    <img style="width: 24px;height: 24px" src="img/title_small.png">
+                    <span style="margin-left: 10px">实时负荷监控</span>
+                </div>
+                <div style="padding: 20px 0px 0px 20px">
+                    <div id="chartLine" style="width: 100%;height:260px;"></div>
+                </div>
+            </div>
+
+        </div>
     </div>
-  </div>
+</div>
+
+<div id="templateArea" style="display: none">
+    <div class="template swiper-slide">
+        <div class="faultInfoList hide-scrollbar">
+        </div>
+    </div>
+
+    <div class="template fault-info-item list-item">
+        <div style="display: flex;align-items: center;height: 100%">
+            <div class="fault-info-item-title max-line-1" style="flex: 4;"></div>
+            <div class="fault-info-item-name max-line-1" style="flex: 2;">物资1</div>
+            <div class="fault-info-item-count max-line-1" style="flex: 1;">10000件</div>
+        </div>
+    </div>
 </div>
 
 <!-- 加载地图JSAPI脚本 -->
@@ -230,6 +531,8 @@
 <script src="plugin/bdmap/map_load.js"></script>
 <script src="plugin/jquery-1.8.0.min.js"></script>
 <script src="plugin/echarts.min.js"></script>
+<script src="plugin/swiper-4.5.0/dist/js/swiper.min.js"></script>
+<script src="plugin/number-scroll.js"></script>
 <script src="common.js"></script>
 <script src="qwts.js"></script>
 </body>

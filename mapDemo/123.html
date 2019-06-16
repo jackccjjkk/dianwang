@@ -1,142 +1,381 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="zh-CN">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <style>
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="Title">
 
-    div
+    <title>数字滚动</title>
+    <style type="text/css">
 
+        /*ul, ul li, ol li, li {*/
+            /*list-style: none*/
+        /*}*/
 
-    {
+        /*a, img, input, textarea {*/
+            /*border: 0*/
+        /*}*/
 
-      position:absolute;
+        /*a {*/
+            /*text-decoration: none*/
+        /*}*/
 
-      width:200px;
+        /*table {*/
+            /*border-collapse: collapse;*/
+            /*border-spacing: 0*/
+        /*}*/
 
-      height:200px;
+        /*.inrow {*/
+            /*font-size: 0;*/
+        /*[;*/
+            /*font-size: 12px;*/
+        /*];*/
+            /**font-size: 0;*/
+            /*font-family: arial;*/
+        /*[;*/
+            /*letter-spacing: -3px;*/
+        /*];*/
+            /**letter-spacing: normal;*/
+            /**word-spacing: -1px*/
+        /*}*/
 
-      border-radius:50%;
+        .inrow > li, .inrow span {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            font-size: 14px;
+            letter-spacing: normal;
+            word-spacing: normal
+        }
 
-    }
+        .dataNums {
+            padding: 0px;
+            margin: 0px;
+        }
 
-    /* 圆底 */
+        .dataNums .dataOne {
+            width: 37px;
+            height: 53px;
+            text-align: center;
+        }
 
-    #circle
+        .dataNums .dataBoc {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden
+        }
 
-    {
+        .dataNums .dataBoc .tt {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%
+        }
 
-      position:relative;
-
-      border:1px solid black;
-
-      background-color:yellow;
-
-    }
-
-    /* 上半部分 */
-
-    #t{
-
-      border:3px solid #F00;
-
-      background-color:white;
-
-      clip:rect(0px,auto,100px,auto);
-
-      transform:rotate(30deg);
-
-      background-color:#ccc;
-
-    }
-
-    /* 下半部分 */
-
-    #b{
-
-      border:3px solid #00F;
-
-      background-color:white;
-
-      clip:rect(100px,auto,auto,auto);
-
-      background-color:#ccc;
-
-    }
-
-    /* 中心白 */
-
-    #p{
-
-      width:150px;
-
-      height:150px;
-
-      line-height:150px;
-
-      left:25px;
-
-      top:25px;
-
-      text-align: center;
-
-      border-radius:50%;
-
-      background-color:#FFFFFF;
-
-    }
-
-  </style>
-
-  <script>
-
-    function setPercent(v){
-
-      if(v<0.5){
-
-        document.getElementById("t").style.backgroundColor="#ccc";
-
-        document.getElementById("t").style.transform="rotate("+(360*v)+"deg)";
-
-      }else{
-
-        document.getElementById("t").style.backgroundColor="yellow";
-
-        document.getElementById("t").style.transform="rotate("+(360*(v-0.5))+"deg)";
-
-      }
-
-      document.getElementById("p").innerHTML=(v*100)+"%";
-
-    }
-
-  </script>
-
+        .dataNums .tt span {
+            width: 100%;
+            height: 100%;
+            font: bold 37px/53px "Arial";
+            color: #ffffff;
+            background: url(img/nunber_bg.png) no-repeat
+        }
+    </style>
 </head>
-
-<body>
-
-
-
-<div id="circle">
-
-  <div id="b"></div>
-
-  <div id="t"></div>
-
-  <div id="p"></div>
-
+<body style="">
+<div id="dataNums">
+    <ul class="dataNums inrow">
+        <li class="dataOne">
+            <div class="dataBoc">
+                <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                </div>
+            </div>
+        </li>
+        <li class="dataOne ">
+            <div class="dataBoc">
+                <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                </div>
+            </div>
+        </li>
+        <li class="dataOne ">
+            <div class="dataBoc">
+                <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;"><span
+                        class="num0">0</span> <span class="num1">1</span> <span class="num2">2</span> <span
+                        class="num3">3</span> <span class="num4">4</span><span class="num5">5</span> <span class="num6">6</span>
+                    <span class="num7">7</span> <span class="num8">8</span> <span class="num9">9</span><span
+                            class="num0">0</span> <span class="num1">1</span> <span class="num2">2</span> <span
+                            class="num3">3</span> <span class="num4">4</span><span class="num5">5</span> <span
+                            class="num6">6</span> <span class="num7">7</span> <span class="num8">8</span> <span
+                            class="num9">9</span></div>
+            </div>
+        </li>
+        <li class="dataOne ">
+            <div class="dataBoc">
+                <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;"><span
+                        class="num0">0</span> <span class="num1">1</span> <span class="num2">2</span> <span
+                        class="num3">3</span> <span class="num4">4</span><span class="num5">5</span> <span class="num6">6</span>
+                    <span class="num7">7</span> <span class="num8">8</span> <span class="num9">9</span><span
+                            class="num0">0</span> <span class="num1">1</span> <span class="num2">2</span> <span
+                            class="num3">3</span> <span class="num4">4</span><span class="num5">5</span> <span
+                            class="num6">6</span> <span class="num7">7</span> <span class="num8">8</span> <span
+                            class="num9">9</span></div>
+            </div>
+        </li>
+        <li class="dataOne ">
+            <div class="dataBoc">
+                <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;"><span
+                        class="num0">0</span> <span class="num1">1</span> <span class="num2">2</span> <span
+                        class="num3">3</span> <span class="num4">4</span><span class="num5">5</span> <span class="num6">6</span>
+                    <span class="num7">7</span> <span class="num8">8</span> <span class="num9">9</span><span
+                            class="num0">0</span> <span class="num1">1</span> <span class="num2">2</span> <span
+                            class="num3">3</span> <span class="num4">4</span><span class="num5">5</span> <span
+                            class="num6">6</span> <span class="num7">7</span> <span class="num8">8</span> <span
+                            class="num9">9</span></div>
+            </div>
+        </li>
+        <li class="dataOne ">
+            <div class="dataBoc">
+                <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                </div>
+            </div>
+        </li>
+        <li class="dataOne ">
+            <div class="dataBoc">
+                <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                </div>
+            </div>
+        </li>
+        <li class="dataOne ">
+            <div class="dataBoc">
+                <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                </div>
+            </div>
+        </li>
+        <li class="dataOne ">
+            <div class="dataBoc">
+                <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                </div>
+            </div>
+        </li>
+        <li class="dataOne ">
+            <div class="dataBoc">
+                <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                </div>
+            </div>
+        </li>
+        <li class="dataOne ">
+            <div class="dataBoc">
+                <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                </div>
+            </div>
+        </li>
+        <li class="dataOne ">
+            <div class="dataBoc">
+                <div class="tt" t="38" style="transition: all 1s ease-in-out 0s; top: -530px;">
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                    <span class="num0">0</span>
+                    <span class="num1">1</span>
+                    <span class="num2">2</span>
+                    <span class="num3">3</span>
+                    <span class="num4">4</span>
+                    <span class="num5">5</span>
+                    <span class="num6">6</span>
+                    <span class="num7">7</span>
+                    <span class="num8">8</span>
+                    <span class="num9">9</span>
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>
+<!--<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>-->
+<!--<script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>-->
+<script src="plugin/jquery-1.8.0.min.js"></script>
+<script src="plugin/number-scroll.js"> </script>
+<script>
+    //电表读数
+    var num = 222;
+    setInterval(function () {
+        num += parseInt(Math.random() * 100);
+        console.log(num)
+        $("#dataNums").rollNum({
+            deVal: num
+        });
+    }, 1500);
 
-<p>
-
-  <input style="margin-left:50px;" type="button" value="30%" onclick="setPercent(0.3)"/>
-
-  <input type="button" value="70%" onclick="setPercent(0.7)"/>
-
-</p>
+</script>
 
 </body>
-
 </html>

@@ -4,6 +4,13 @@ $(document).ready(function () {
     setLinstener();
     getData();
 
+    var num = 222;
+    setInterval(function () {
+        num += parseInt(Math.random() * 100);
+        $("#dataNums").rollNum({
+            deVal: num
+        });
+    }, 1500);
 });
 
 function setLinstener() {
@@ -202,7 +209,7 @@ function initChartPie(charData) {
                 radius: '40%',
                 center: ['50%', '50%'],
                 data: charData,
-                roseType: 'radius',
+                // roseType: 'radius',
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -304,14 +311,40 @@ function initChartLine(lineData) {
 }
 
 function initFaultInfoList(faultInfoList) {
-    $("#faultInfoList").html($("#faultInfoList .template.fault-info-item"));
-    $.each(faultInfoList, function (index, item) {
-        var $item = $("#faultInfoList .template.fault-info-item").clone();
-        $(".fault-info-item-title", $item).text(item.title);
-        $(".fault-info-item-name", $item).text(item.name);
-        $(".fault-info-item-count", $item).text(item.count);
-        $item.removeClass("template").appendTo("#faultInfoList");
-    })
+    // 按照每页7个分页
+    var faultSwiperList = [];
+    var pageCount = Math.ceil(faultInfoList.length / 7);
+    for (var i = 0; i < pageCount; i++) {
+        if (faultInfoList.length > 7 * (i + 1)) {
+            faultSwiperList[i] = faultInfoList.slice(7 * i, 7 * (i + 1));
+        } else {
+            faultSwiperList[i] = faultInfoList.slice(7 * i, faultInfoList.length);
+        }
+    }
+
+    $("#faultSwiperList").empty()
+    $.each(faultSwiperList, function (index1, itemList) {
+        var $swiperItem = $("#templateArea .template.swiper-slide").clone();
+        var $faultInfoList = $(".faultInfoList", $swiperItem);
+        $.each(itemList, function (index2, item) {
+            var $item = $("#templateArea .template.fault-info-item").clone();
+            $(".fault-info-item-title", $item).text(item.title);
+            $(".fault-info-item-name", $item).text(item.name);
+            $(".fault-info-item-count", $item).text(item.count);
+            $item.removeClass("template").appendTo($faultInfoList)
+        });
+        $swiperItem.removeClass("template").appendTo("#faultSwiperList")
+    });
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
 }
 
 function initEventInfoList(eventInfoList) {
