@@ -96,11 +96,14 @@
 .content-bottom {
     position: absolute;
     left: 72px;
-    bottom: 0px;
+    bottom: -200px;
     background: url("img/bottom_menu_bg.png");
     background-size: 100% 100%;
     width: 2556px;
     height: 200px;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
 }
 
 #processList {
@@ -139,4 +142,46 @@
 .ldbz {
     border: 1px #00ffff solid;
     border-radius: 8px;
+}
+
+.kaiguanzhan-row .table-cell {
+    padding-top: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.kaiguanzhan-row .lable {
+    text-align: right;
+    color: #66ffff;
+    width: 120px;
+}
+
+.kaiguanzhan-row .value {
+    color: #ffffff;
+    width: 220px;
+}
+
+.monitor-data-row .table-cell {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.monitor-data-row .lable {
+    text-align: center;
+    color: #66ffff;
+    width: 120px;
+}
+
+.monitor-data-row .value {
+    text-align: center;
+    color: #ffffff;
+    border-bottom: 1px #8a9597 dashed;
+}
+
+.content-bottom-line {
+    width: 4px;
+    height: 180px;
+    background: url('img/content-bottom-line.png');
+    background-size: 100% 100%;
+    margin-top: 10px;
 }

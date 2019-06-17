@@ -41,5 +41,75 @@
       "date": "5月19日 AM9:00:33",
       "desc": "结束保电"
     }
+  ],
+  "kaiguanzhanList": [
+    {
+      "id":"1",
+      "bdzmc": "海之梦广场开关站",
+      "sbmc": "海之梦广场开关站",
+      "ssds": "国网大连供电公司",
+      "ywdw": "大连运维检修部(检修公司)",
+      "whbz": "配电运检一班",
+      "zcxz": "省（直辖市、自治区）公司",
+      "zcdw": "国网大连供电公司",
+      "dydj": "交流10kV",
+      "sbzt": "在运",
+      "tyrq": "2014-04-11 00:00:00.0",
+      "dzlx": "开关站",
+      "gdqy": "A+",
+      "sfznbdz": "否",
+      "sfsnz": "是",
+      "sfdw": "否",
+      "latitude":"38.933538",
+      "longitude":"121.677664",
+      "monitorDataList": [
+        {
+          "stationname": "海之梦广场站",
+          "monitordevice": "备用201柜",
+          "ambrtemp": "35.4",
+          "amp_pch": "55",
+          "freq_pch": "0",
+          "energy_pch": "0",
+          "cabcttmp_a": "26.7",
+          "cabctalarm_a": "0"
+        },
+        {
+          "stationname": "海之梦广场站",
+          "monitordevice": "春达线101柜",
+          "ambrtemp": "35.3",
+          "cabcttmp_a": "26.9",
+          "cabcttmp_b": "27.3",
+          "cabcttmp_c": "26.5",
+          "amp_pch": "34",
+          "freq_pch": "0",
+          "energy_pch": "0",
+          "cabctalarm_a": "0"
+        },
+        {
+          "stationname": "海之梦广场站",
+          "monitordevice": "备用102柜",
+          "ambrtemp": "35.3",
+          "cabcttmp_a": "0",
+          "cabcttmp_b": "0",
+          "cabcttmp_c": "0",
+          "amp_pch": "8",
+          "freq_pch": "0",
+          "energy_pch": "0",
+          "cabctalarm_a": "0"
+        },
+        {
+          "stationname": "海之梦广场站",
+          "monitordevice": "春达线103柜",
+          "ambrtemp": "35.3",
+          "cabcttmp_a": "25.6",
+          "cabcttmp_b": "25.4",
+          "cabcttmp_c": "25.3",
+          "amp_pch": "61",
+          "freq_pch": "0",
+          "energy_pch": "0",
+          "cabctalarm_a": "0"
+        }
+      ]
+    }
   ]
 }

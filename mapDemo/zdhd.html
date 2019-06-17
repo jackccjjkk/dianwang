@@ -71,7 +71,8 @@
                     </div>
                     <div style="text-align: center">线路</div>
                 </div>
-                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
+                <div id="menu_zhansuo"
+                     style="flex: 1;display: flex;flex-direction: column;align-items: center;cursor: pointer">
                     <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
                         <img src="img/zs.png">
                     </div>
@@ -214,6 +215,119 @@
             </div>
         </div>
         <div class="content-bottom">
+            <div id="kaiguanzhanArea" class="flex" style="font-size: 16px">
+                <div class="table" style="margin-left: 80px">
+                    <div class="table-row kaiguanzhan-row">
+                        <div class="table-cell lable">变电站名称</div>
+                        <div id="kaiguanzhan_bdzmc" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row kaiguanzhan-row">
+                        <div class="table-cell lable">设备名称</div>
+                        <div id="kaiguanzhan_sbmc" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row kaiguanzhan-row">
+                        <div class="table-cell lable">所属地市</div>
+                        <div id="kaiguanzhan_ssds" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row kaiguanzhan-row">
+                        <div class="table-cell lable">运维单位</div>
+                        <div id="kaiguanzhan_ywdw" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row kaiguanzhan-row">
+                        <div class="table-cell lable">维护班组</div>
+                        <div id="kaiguanzhan_whbz" class="table-cell value"></div>
+                    </div>
+                </div>
+                <div class="table">
+                    <div class="table-row kaiguanzhan-row">
+                        <div class="table-cell lable">资产性质</div>
+                        <div id="kaiguanzhan_zcxz" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row kaiguanzhan-row">
+                        <div class="table-cell lable">资产单位</div>
+                        <div id="kaiguanzhan_zcdw" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row kaiguanzhan-row">
+                        <div class="table-cell lable">电压等级</div>
+                        <div id="kaiguanzhan_dydj" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row kaiguanzhan-row">
+                        <div class="table-cell lable">设备状态</div>
+                        <div id="kaiguanzhan_sbzt" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row kaiguanzhan-row">
+                        <div class="table-cell lable">投运日期</div>
+                        <div id="kaiguanzhan_tyrq" class="table-cell value"></div>
+                    </div>
+                </div>
+                <div class="table">
+                    <div class="table-row kaiguanzhan-row">
+                        <div class="table-cell lable">电站类型</div>
+                        <div id="kaiguanzhan_dzlx" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row kaiguanzhan-row">
+                        <div class="table-cell lable">供电区域</div>
+                        <div id="kaiguanzhan_gdqy" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row kaiguanzhan-row">
+                        <div class="table-cell lable">是否智能变电站</div>
+                        <div id="kaiguanzhan_sfznbdz" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row kaiguanzhan-row">
+                        <div class="table-cell lable">是否枢纽站</div>
+                        <div id="kaiguanzhan_sfsnz" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row kaiguanzhan-row">
+                        <div class="table-cell lable">是否代维</div>
+                        <div id="kaiguanzhan_sfdw" class="table-cell value"></div>
+                    </div>
+                </div>
+                <div class="content-bottom-line"></div>
+                <div>
+                    <div class="table" style="margin-left:80px;width: 1184px;white-space: nowrap;">
+                        <div class="table-header-group">
+                            <div class="table-row monitor-data-row">
+                                <div class="table-cell lable">变电站名称</div>
+                                <div class="table-cell lable">被监测设备编码</div>
+                                <div class="table-cell lable">环境温度</div>
+                                <div class="table-cell lable">局放幅值</div>
+                                <div class="table-cell lable">局放频次</div>
+                                <div class="table-cell lable">局放能量</div>
+                                <div class="table-cell lable">A相电缆连接点温度</div>
+                                <div class="table-cell lable">A相电缆连接点温度报警</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="height: 150px;overflow-y: scroll;width: 100%">
+                        <div class="table" style="margin-left:80px;width: 1184px;white-space: nowrap;">
+                            <div class="table-header-group" style="visibility: collapse;">
+                                <div class="table-row monitor-data-row">
+                                    <div class="table-cell lable">变电站名称</div>
+                                    <div class="table-cell lable">被监测设备编码</div>
+                                    <div class="table-cell lable">环境温度</div>
+                                    <div class="table-cell lable">局放幅值</div>
+                                    <div class="table-cell lable">局放频次</div>
+                                    <div class="table-cell lable">局放能量</div>
+                                    <div class="table-cell lable">A相电缆连接点温度</div>
+                                    <div class="table-cell lable">A相电缆连接点温度报警</div>
+                                </div>
+                            </div>
+                            <div class="table-row-group hide-scrollbar" id="monitorDataList">
+                                <div class="template table-row monitor-data-row monitor-data-item">
+                                    <div class="table-cell value monitor-data-item-stationname"></div>
+                                    <div class="table-cell value monitor-data-item-monitordevice"></div>
+                                    <div class="table-cell value monitor-data-item-ambrtemp"></div>
+                                    <div class="table-cell value monitor-data-item-amp_pch">26.7</div>
+                                    <div class="table-cell value monitor-data-item-freq_pch"></div>
+                                    <div class="table-cell value monitor-data-item-energy_pch"></div>
+                                    <div class="table-cell value monitor-data-item-cabcttmp_a"></div>
+                                    <div class="table-cell value monitor-data-item-cabctalarm_a">0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
