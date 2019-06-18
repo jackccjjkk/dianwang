@@ -1,9 +1,13 @@
 $(document).ready(function () {
-
-    initMap();
+    var map = new BMap.Map("map", {mapType: BMAP_HYBRID_MAP})
+    var point = new BMap.Point(121.679122, 38.935683);  // 创建点坐标
+    map.centerAndZoom(point, 11);                 // 初始化地图，设置中心点坐标和地图级别
+    map.setCurrentCity("大连");          // 设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
     setLinstener();
     getData();
-
+    getpolyline(map)
+    getDataChartLine();
     var num = 222;
     setInterval(function () {
         num += parseInt(Math.random() * 100);
@@ -13,32 +17,24 @@ $(document).ready(function () {
     }, 1500);
 });
 
+
+
 function setLinstener() {
 
 }
-
-
-function initMap() {
-    var map = new BMap.Map("map", {mapType: BMAP_HYBRID_MAP})
-//  var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
-//  var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
-//  var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); //右上角，仅包含平移和缩放按钮
-
-    var point = new BMap.Point(121.679122, 38.935683);  // 创建点坐标
-    map.centerAndZoom(point, 11);                 // 初始化地图，设置中心点坐标和地图级别
-    // map.addControl(top_left_navigation);
-    //添加地图类型控件
-//  map.addControl(new BMap.MapTypeControl({
-//      mapTypes:[
-//          BMAP_HYBRID_MAP,
-//          BMAP_NORMAL_MAP
-//
-//      ]}));
-    map.setCurrentCity("大连");          // 设置地图显示的城市 此项是必须设置的
-    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+function getpolyline(map){
+    var param = {};
+    var success = function (data) {
+        if (data.resultCode = '00') {
+            polyline(map,data.pointArr,"#ad0e21");
+        } else {
+        }
+    };
+    var error = function () {
+    };
+    ajaxPost("qwts.json", param, success, error, false);
 }
-
-function getData() {
+function getData(map) {
     var param = {};
     var success = function (data) {
         if (data.resultCode = '00') {
@@ -51,9 +47,35 @@ function getData() {
 
             // 重要事件列表
             initEventInfoList(data.eventInfoList);
+            // // 实时负荷监控
+            // initChartLine(data.chartLineData);
+            // setInterval(function () {
+            //     // 实时负荷监控
+            //     initChartLine(data.chartLineData);
+            // }, 1000);
+            // console.log(data.pointArr);
+        } else {
 
+        }
+    };
+    var error = function () {
+
+    };
+    ajaxPost("qwts.json", param, success, error, false);
+}
+
+
+function getDataChartLine() {
+    var param = {};
+    var success = function (data) {
+        if (data.resultCode = '00') {
             // 实时负荷监控
             initChartLine(data.chartLineData);
+            setInterval(function () {
+                // 实时负荷监控
+                initChartLine(data.chartLineData);
+            }, 1000);
+
         } else {
 
         }
@@ -236,6 +258,9 @@ function initChartPie(charData) {
  * @param lineData
  */
 function initChartLine(lineData) {
+    var myChart = echarts.init(document.getElementById('chartLine'));
+    //清楚画布
+    myChart.clear()
     var xData = [];
     var yData = [];
     $.each(lineData, function (index, item) {
@@ -306,8 +331,9 @@ function initChartLine(lineData) {
             }
         }]
     };
-    var myChart = echarts.init(document.getElementById('chartLine'));
+
     myChart.setOption(option);
+
 }
 
 function initFaultInfoList(faultInfoList) {
