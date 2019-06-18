@@ -44,7 +44,7 @@
   ],
   "kaiguanzhanList": [
     {
-      "id":"1",
+      "id": "1",
       "bdzmc": "海之梦广场开关站",
       "sbmc": "海之梦广场开关站",
       "ssds": "国网大连供电公司",
@@ -60,8 +60,8 @@
       "sfznbdz": "否",
       "sfsnz": "是",
       "sfdw": "否",
-      "latitude":"38.933538",
-      "longitude":"121.677664",
+      "latitude": "38.933538",
+      "longitude": "121.677664",
       "monitorDataList": [
         {
           "stationname": "海之梦广场站",
@@ -108,6 +108,150 @@
           "freq_pch": "0",
           "energy_pch": "0",
           "cabctalarm_a": "0"
+        }
+      ]
+    }
+  ],
+  "biandianzhanList": [
+    {
+      "id": "1",
+      "dzmc": "大连220kV变电站",
+      "ywdw": "运维检修部(检修公司)",
+      "dydj": "交流220kV",
+      "tyrq": "1945-12-19",
+      "dzzyjb": "三类变电站",
+      "ssds": "国网大连供电公司",
+      "whbz": "大连变电运维班",
+      "sbzt": "在运",
+      "dzlx": "变电站",
+      "wsdj": "d级",
+      "zbfs": "无人值班",
+      "sfsnz": "否",
+      "rl": "360",
+      "zyfl": "变电",
+      "xflx": "消防普通变电站",
+      "latitude": "38.996662",
+      "longitude": "121.604782",
+      "reportDataList": [
+        {
+          "sblx": "位置状态识别",
+          "dwmc": "本体刀臂",
+          "sbqy": "220KV区域",
+          "jgmc": "220KV侧",
+          "sblx": "隔离开关",
+          "hjwd": "22.9°C",
+          "hjsd": "62.1%",
+          "hjfs": "2.56m/s",
+          "gjdj": "0",
+          "cjxx": "可见光图片"
+        },
+        {
+          "sblx": "位置状态识别",
+          "dwmc": "本体刀臂",
+          "sbqy": "220KV区域",
+          "jgmc": "220KV侧",
+          "sblx": "隔离开关",
+          "hjwd": "22.9°C",
+          "hjsd": "62.1%",
+          "hjfs": "2.56m/s",
+          "gjdj": "0",
+          "cjxx": "可见光图片"
+        },
+        {
+          "sblx": "位置状态识别",
+          "dwmc": "本体刀臂",
+          "sbqy": "220KV区域",
+          "jgmc": "220KV侧",
+          "sblx": "隔离开关",
+          "hjwd": "22.9°C",
+          "hjsd": "62.1%",
+          "hjfs": "2.56m/s",
+          "gjdj": "0",
+          "cjxx": "可见光图片"
+        },
+        {
+          "sblx": "位置状态识别",
+          "dwmc": "本体刀臂",
+          "sbqy": "220KV区域",
+          "jgmc": "220KV侧",
+          "sblx": "隔离开关",
+          "hjwd": "22.9°C",
+          "hjsd": "62.1%",
+          "hjfs": "2.56m/s",
+          "gjdj": "0",
+          "cjxx": "可见光图片"
+        }
+      ]
+    }
+  ],
+  "changsuoList": [
+    {
+      "id": "1",
+      "dzmc": "大连220kV变电站",
+      "ywdw": "运维检修部(检修公司)",
+      "dydj": "交流220kV",
+      "tyrq": "1945-12-19",
+      "dzzyjb": "三类变电站",
+      "ssds": "国网大连供电公司",
+      "whbz": "大连变电运维班",
+      "sbzt": "在运",
+      "dzlx": "变电站",
+      "wsdj": "d级",
+      "zbfs": "无人值班",
+      "sfsnz": "否",
+      "rl": "360",
+      "zyfl": "变电",
+      "xflx": "消防普通变电站",
+      "latitude": "38.996662",
+      "longitude": "121.604782",
+      "reportDataList": [
+        {
+          "sblx": "位置状态识别",
+          "dwmc": "本体刀臂",
+          "sbqy": "220KV区域",
+          "jgmc": "220KV侧",
+          "sblx": "隔离开关",
+          "hjwd": "22.9°C",
+          "hjsd": "62.1%",
+          "hjfs": "2.56m/s",
+          "gjdj": "0",
+          "cjxx": "可见光图片"
+        },
+        {
+          "sblx": "位置状态识别",
+          "dwmc": "本体刀臂",
+          "sbqy": "220KV区域",
+          "jgmc": "220KV侧",
+          "sblx": "隔离开关",
+          "hjwd": "22.9°C",
+          "hjsd": "62.1%",
+          "hjfs": "2.56m/s",
+          "gjdj": "0",
+          "cjxx": "可见光图片"
+        },
+        {
+          "sblx": "位置状态识别",
+          "dwmc": "本体刀臂",
+          "sbqy": "220KV区域",
+          "jgmc": "220KV侧",
+          "sblx": "隔离开关",
+          "hjwd": "22.9°C",
+          "hjsd": "62.1%",
+          "hjfs": "2.56m/s",
+          "gjdj": "0",
+          "cjxx": "可见光图片"
+        },
+        {
+          "sblx": "位置状态识别",
+          "dwmc": "本体刀臂",
+          "sbqy": "220KV区域",
+          "jgmc": "220KV侧",
+          "sblx": "隔离开关",
+          "hjwd": "22.9°C",
+          "hjsd": "62.1%",
+          "hjfs": "2.56m/s",
+          "gjdj": "0",
+          "cjxx": "可见光图片"
         }
       ]
     }

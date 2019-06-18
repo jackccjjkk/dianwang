@@ -144,35 +144,52 @@
     border-radius: 8px;
 }
 
-.kaiguanzhan-row .table-cell {
+.left-row .table-cell {
     padding-top: 15px;
     padding-left: 5px;
     padding-right: 5px;
 }
 
-.kaiguanzhan-row .lable {
+.left-row .lable {
     text-align: right;
     color: #66ffff;
     width: 120px;
 }
 
-.kaiguanzhan-row .value {
+.left-row .value {
     color: #ffffff;
     width: 220px;
 }
 
-.monitor-data-row .table-cell {
+.right-data-row .table-cell {
     padding-top: 12px;
     padding-bottom: 12px;
 }
 
-.monitor-data-row .lable {
+.right-data-row .lable {
     text-align: center;
     color: #66ffff;
     width: 120px;
 }
 
-.monitor-data-row .value {
+.right-data-row .value {
+    text-align: center;
+    color: #ffffff;
+    border-bottom: 1px #8a9597 dashed;
+}
+
+.report-data-row .table-cell {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.report-data-row .lable {
+    text-align: center;
+    color: #66ffff;
+    width: 120px;
+}
+
+.report-data-row .value {
     text-align: center;
     color: #ffffff;
     border-bottom: 1px #8a9597 dashed;
