@@ -178,23 +178,6 @@
     border-bottom: 1px #8a9597 dashed;
 }
 
-.report-data-row .table-cell {
-    padding-top: 12px;
-    padding-bottom: 12px;
-}
-
-.report-data-row .lable {
-    text-align: center;
-    color: #66ffff;
-    width: 120px;
-}
-
-.report-data-row .value {
-    text-align: center;
-    color: #ffffff;
-    border-bottom: 1px #8a9597 dashed;
-}
-
 .content-bottom-line {
     width: 4px;
     height: 180px;

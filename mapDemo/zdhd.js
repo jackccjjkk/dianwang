@@ -130,6 +130,15 @@ function setLinstener() {
         hideBottomPopup();
         showKaiguanzhanList();
         showBiandianzhanList();
+    });
+
+    $("#menu_baodianchangsuo").click(function () {
+        // 清除地图上其他浮层，显示站所浮层
+        map.clearOverlays();
+        map.centerAndZoom(centerPoint, 13);
+        // 隐藏底部浮层
+        hideBottomPopup();
+        showChangsuoList();
     })
 }
 
@@ -169,7 +178,7 @@ function showBiandianzhanList() {
 function showChangsuoList() {
     $.each(changsuoList, function (index, item) {
         var pt = new BMap.Point(item.longitude, item.latitude);
-        var myIcon = new BMap.Icon("img/map_icon_zs.png", new BMap.Size(66, 59));
+        var myIcon = new BMap.Icon("img/map_icon_changsuo.png", new BMap.Size(66, 59));
         var marker = new BMap.Marker(pt, {icon: myIcon});  // 创建标注
         marker.addEventListener("click", function (type, target) {
             showChangsuoDetail(item.id);
@@ -273,37 +282,35 @@ function showBiandianzhanDetail(id) {
 function showChangsuoDetail(id) {
     showBottomPopup();
     $("#kaiguanzhanArea").hide();
-    $("#biandianzhanArea").show();
-    $("#changsuoArea").hide();
+    $("#biandianzhanArea").hide();
+    $("#changsuoArea").show();
     $.each(changsuoList, function (index, item) {
         if (id == item.id) {
-            $("#changsuo_bdzmc").text(item.bdzmc);
-            $("#changsuo_sbmc").text(item.sbmc);
-            $("#changsuo_ssds").text(item.ssds);
-            $("#changsuo_ywdw").text(item.ywdw);
-            $("#changsuo_whbz").text(item.whbz);
-            $("#changsuo_zcxz").text(item.zcxz);
-            $("#changsuo_zcdw").text(item.zcdw);
-            $("#changsuo_dydj").text(item.dydj);
-            $("#changsuo_sbzt").text(item.sbzt);
-            $("#changsuo_tyrq").text(item.tyrq);
-            $("#changsuo_dzlx").text(item.dzlx);
-            $("#changsuo_gdqy").text(item.gdqy);
-            $("#changsuo_sfznbdz").text(item.sfznbdz);
-            $("#changsuo_sfsnz").text(item.sfsnz);
-            $("#changsuo_sfdw").text(item.sfdw);
+            $("#changsuo_location").text(item.location);
+            $("#changsuo_address").text(item.address);
+            $("#changsuo_name_10").text(item.name10);
+            $("#changsuo_people_10").text(item.people10);
+            $("#changsuo_phone_10").text(item.phone10);
+            $("#changsuo_name_66").text(item.name66);
+            $("#changsuo_people_66").text(item.people66);
+            $("#changsuo_phone_66").text(item.phone66);
+            $("#changsuo_name_66line").text(item.name66line);
+            $("#changsuo_people_66line").text(item.people66line);
+            $("#changsuo_phone_66line").text(item.phone66line);
+            $("#changsuo_name_220").text(item.name220);
+            $("#changsuo_people_220").text(item.people220);
+            $("#changsuo_phone_220").text(item.phone220);
 
             $("#peopleDataList").html($("#peopleDataList .template.people-data-item"));
             $.each(item.peopleDataList, function (index2, peopleData) {
                 var $peopleItem = $("#peopleDataList .template.people-data-item").clone();
-                $(".people-data-item-stationname", $peopleItem).text(peopleData.stationname);
-                $(".people-data-item-peopledevice", $peopleItem).text(peopleData.peopledevice);
-                $(".people-data-item-ambrtemp", $peopleItem).text(peopleData.ambrtemp);
-                $(".people-data-item-amp_pch", $peopleItem).text(peopleData.amp_pch);
-                $(".people-data-item-freq_pch", $peopleItem).text(peopleData.freq_pch);
-                $(".people-data-item-energy_pch", $peopleItem).text(peopleData.energy_pch);
-                $(".people-data-item-cabcttmp_a", $peopleItem).text(peopleData.cabcttmp_a);
-                $(".people-data-item-cabctalarm_a", $peopleItem).text(peopleData.cabctalarm_a);
+                $(".people-data-item-dw", $peopleItem).text(peopleData.dw);
+                $(".people-data-item-bdry", $peopleItem).text(peopleData.bdry);
+                $(".people-data-item-zw", $peopleItem).text(peopleData.zw);
+                $(".people-data-item-lxfs", $peopleItem).text(peopleData.lxfs);
+                $(".people-data-item-cph", $peopleItem).text(peopleData.cph);
+                $(".people-data-item-cllx", $peopleItem).text(peopleData.cllx);
+                $(".people-data-item-wzck", $peopleItem).text(peopleData.wzck);
                 $peopleItem.removeClass("template").appendTo("#peopleDataList");
             });
         }
