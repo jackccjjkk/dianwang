@@ -1,12 +1,13 @@
 var kaiguanzhanList = null;
 var biandianzhanList = null;
 var changsuoList = null;
+var xianluList = null;
 var map = null;
 // 地图的中心，大连东港会议中心
 var centerPoint = new BMap.Point(121.685041, 38.927147);
 $(document).ready(function () {
     initMap();
-    setLinstener();
+    setListener();
     getData();
 
 });
@@ -37,8 +38,9 @@ function getData() {
         if (data.resultCode = '00') {
             initProcessList(data.processList);
             kaiguanzhanList = data.kaiguanzhanList;
-            biandianzhanList =  data.biandianzhanList;
+            biandianzhanList = data.biandianzhanList;
             changsuoList = data.changsuoList;
+            xianluList = data.xianluList;
         } else {
 
         }
@@ -65,7 +67,7 @@ function initProcessList(processList) {
     })
 }
 
-function setLinstener() {
+function setListener() {
     $("#leftMenu1").mouseover(function () {
         $("#submenu-1").show();
     });
@@ -139,6 +141,14 @@ function setLinstener() {
         // 隐藏底部浮层
         hideBottomPopup();
         showChangsuoList();
+    });
+    $("#menu_xianlu").click(function () {
+        // 清除地图上其他浮层，显示站所浮层
+        map.clearOverlays();
+        map.centerAndZoom(centerPoint, 13);
+        // 隐藏底部浮层
+        hideBottomPopup();
+        showXianluList();
     })
 }
 
@@ -173,6 +183,25 @@ function showBiandianzhanList() {
 }
 
 /**
+ * 点击线路
+ */
+function showXianluList() {
+    $.each(xianluList, function (index, item) {
+        var pt = new BMap.Point(item.pointArr[0].lng, item.pointArr[0].lat);
+        var myIcon = new BMap.Icon("img/map_icon_biandianzhan.png", new BMap.Size(66, 59));
+        var marker = new BMap.Marker(pt, {icon: myIcon});  // 创建标注
+        marker.addEventListener("click", function (type, target) {
+            showXianluDetail(item.id);
+        });
+        map.addOverlay(marker);
+        polyline(map, item.pointArr, "#ad0e21");
+    });
+    var zoom = getZoom(map, xianluList[0].pointArr);
+    var center = new BMap.Point(xianluList[0].pointArr[0].lng, xianluList[0].pointArr[0].lat);
+    map.centerAndZoom(center, zoom);
+}
+
+/**
  * 点击场所菜单的时候在地图上显示场所图标
  */
 function showChangsuoList() {
@@ -192,9 +221,8 @@ function showChangsuoList() {
  */
 function showKaiguanzhanDetail(id) {
     showBottomPopup();
+    $(".content-bottom-area").hide();
     $("#kaiguanzhanArea").show();
-    $("#biandianzhanArea").hide();
-    $("#changsuoArea").hide();
     $.each(kaiguanzhanList, function (index, item) {
         if (id == item.id) {
             $("#kaiguanzhan_bdzmc").text(item.bdzmc);
@@ -235,9 +263,8 @@ function showKaiguanzhanDetail(id) {
  */
 function showBiandianzhanDetail(id) {
     showBottomPopup();
-    $("#kaiguanzhanArea").hide();
+    $(".content-bottom-area").hide();
     $("#biandianzhanArea").show();
-    $("#changsuoArea").hide();
     $.each(biandianzhanList, function (index, item) {
         if (id == item.id) {
             $("#biandianzhan_dzmc").text(item.dzmc);
@@ -281,8 +308,7 @@ function showBiandianzhanDetail(id) {
  */
 function showChangsuoDetail(id) {
     showBottomPopup();
-    $("#kaiguanzhanArea").hide();
-    $("#biandianzhanArea").hide();
+    $(".content-bottom-area").hide();
     $("#changsuoArea").show();
     $.each(changsuoList, function (index, item) {
         if (id == item.id) {
@@ -312,6 +338,39 @@ function showChangsuoDetail(id) {
                 $(".people-data-item-cllx", $peopleItem).text(peopleData.cllx);
                 $(".people-data-item-wzck", $peopleItem).text(peopleData.wzck);
                 $peopleItem.removeClass("template").appendTo("#peopleDataList");
+            });
+        }
+    });
+}
+
+/**
+ * 线路详细
+ */
+function showXianluDetail(id) {
+    showBottomPopup();
+    $(".content-bottom-area").hide();
+    $("#xianluArea").show();
+    $.each(xianluList, function (index, item) {
+        if (id == item.id) {
+            $("#xianlu_name").text(item.name);
+            $("#xianlu_address").text(item.address);
+            $("#xianlu_length").text(item.length);
+            $("#xianlu_line").text(item.line);
+            $("#xianlu_device").text(item.device);
+
+            $("#xianluDataList").html($("#xianluDataList .template.xianlu-data-item"));
+            $.each(item.xianluDataList, function (index2, peopleData) {
+                var $xianluItem = $("#xianluDataList .template.xianlu-data-item").clone();
+                $(".xianlu-data-item-name", $xianluItem).text(xianluData.name);
+                $(".xianlu-data-item-t_status", $xianluItem).text(xianluData.t_status);
+                $(".xianlu-data-item-t_time", $xianluItem).text(xianluData.t_time);
+                $(".xianlu-data-item-h_status", $xianluItem).text(xianluData.h_status);
+                $(".xianlu-data-item-h_time", $xianluItem).text(xianluData.h_time);
+                $(".xianlu-data-item-g_status", $xianluItem).text(xianluData.g_status);
+                $(".xianlu-data-item-g_comm", $xianluItem).text(xianluData.g_comm);
+                $(".xianlu-data-item-w_status", $xianluItem).text(xianluData.w_status);
+                $(".xianlu-data-item-w_comm", $xianluItem).text(xianluData.w_comm);
+                $xianluItem.removeClass("template").appendTo("#xianluDataList");
             });
         }
     });

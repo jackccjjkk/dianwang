@@ -49,7 +49,7 @@
     height: 30px;
 }
 
-#eventInfoList {
+.eventInfoList {
     height: 266px;
     overflow-y: scroll;
 }

@@ -1,3 +1,6 @@
+var myChart = null;
+var chartLineData = [];
+var chartLineDataIndex = 0;
 $(document).ready(function () {
     var map = new BMap.Map("map", {mapType: BMAP_HYBRID_MAP})
     var point = new BMap.Point(121.679122, 38.935683);  // 创建点坐标
@@ -6,8 +9,8 @@ $(document).ready(function () {
     map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
     setLinstener();
     getData();
-    getpolyline(map)
-    getDataChartLine();
+    getpolyline(map);
+
     var num = 222;
     setInterval(function () {
         num += parseInt(Math.random() * 100);
@@ -15,18 +18,22 @@ $(document).ready(function () {
             deVal: num
         });
     }, 1500);
-});
 
+    setInterval(function () {
+        getDataChartLine();
+    }, 5000);
+});
 
 
 function setLinstener() {
 
 }
-function getpolyline(map){
+
+function getpolyline(map) {
     var param = {};
     var success = function (data) {
         if (data.resultCode = '00') {
-            polyline(map,data.pointArr,"#ad0e21");
+            polyline(map, data.pointArr, "#ad0e21");
         } else {
         }
     };
@@ -34,6 +41,7 @@ function getpolyline(map){
     };
     ajaxPost("qwts.json", param, success, error, false);
 }
+
 function getData(map) {
     var param = {};
     var success = function (data) {
@@ -48,7 +56,8 @@ function getData(map) {
             // 重要事件列表
             initEventInfoList(data.eventInfoList);
             // // 实时负荷监控
-            // initChartLine(data.chartLineData);
+            initChartLine(data.chartLineData);
+
             // setInterval(function () {
             //     // 实时负荷监控
             //     initChartLine(data.chartLineData);
@@ -64,18 +73,12 @@ function getData(map) {
     ajaxPost("qwts.json", param, success, error, false);
 }
 
-
 function getDataChartLine() {
     var param = {};
     var success = function (data) {
         if (data.resultCode = '00') {
             // 实时负荷监控
-            initChartLine(data.chartLineData);
-            setInterval(function () {
-                // 实时负荷监控
-                initChartLine(data.chartLineData);
-            }, 1000);
-
+            chartLineData =  chartLineData.concat(data.chartLineData);
         } else {
 
         }
@@ -257,17 +260,16 @@ function initChartPie(charData) {
  * 实时负荷监控线状图
  * @param lineData
  */
+
 function initChartLine(lineData) {
-    var myChart = echarts.init(document.getElementById('chartLine'));
-    //清楚画布
-    myChart.clear()
+    myChart = echarts.init(document.getElementById('chartLine'));
     var xData = [];
     var yData = [];
     $.each(lineData, function (index, item) {
         xData.push(item.xData);
         yData.push(item.yData);
-    })
-    var option = option = {
+    });
+    var option = {
         grid: {
             left: 40,
             right: 20,
@@ -333,6 +335,30 @@ function initChartLine(lineData) {
     };
 
     myChart.setOption(option);
+    chartLineData = chartLineData.concat(lineData);
+    chartLineDataIndex = chartLineData.length - 1;
+    setTimeout(function () {
+        setInterval(function () {
+            console.log(chartLineDataIndex);
+            // 获取数据项
+            var data0 = option.series[0].data;
+            // 移除旧数据并生成新数据
+            data0.shift();
+            data0.push(chartLineData[chartLineDataIndex].yData);
+            // 移除旧数据项并生成新数据项
+            var axisData = (new Date()).toLocaleTimeString().replace(/^\D*/, '');
+            var data1 = option.xAxis.data;
+            data1.shift();
+            // var xData = String(chartLineData[chartLineDataIndex].xData);
+            data1.push(axisData);
+            // 应用配置
+            setTimeout(function () {
+                myChart.setOption(option);
+                chartLineDataIndex++;
+            },500);
+
+        }, 1000);
+    },10000)
 
 }
 
@@ -350,7 +376,7 @@ function initFaultInfoList(faultInfoList) {
 
     $("#faultSwiperList").empty()
     $.each(faultSwiperList, function (index1, itemList) {
-        var $swiperItem = $("#templateArea .template.swiper-slide").clone();
+        var $swiperItem = $("#templateArea .template.fault-info-slide").clone();
         var $faultInfoList = $(".faultInfoList", $swiperItem);
         $.each(itemList, function (index2, item) {
             var $item = $("#templateArea .template.fault-info-item").clone();
@@ -361,8 +387,9 @@ function initFaultInfoList(faultInfoList) {
         });
         $swiperItem.removeClass("template").appendTo("#faultSwiperList")
     });
-    var swiper = new Swiper('.swiper-container', {
+    var swiper = new Swiper('#faultInfoSwiper', {
         loop: true,
+        direction: 'vertical',
         autoplay: {
             delay: 2500,
             disableOnInteraction: false,
@@ -374,12 +401,41 @@ function initFaultInfoList(faultInfoList) {
 }
 
 function initEventInfoList(eventInfoList) {
-    $("#eventInfoList").html($("#eventInfoList .template.event-info-item"));
-    $.each(eventInfoList, function (index, item) {
-        var $item = $("#eventInfoList .template.event-info-item").clone();
-        $(".event-info-item-date", $item).text(item.date);
-        $(".event-info-item-content", $item).text(item.content);
-        $(".event-info-item-status", $item).text(item.status);
-        $item.removeClass("template").appendTo("#eventInfoList");
-    })
+
+    // 按照每页7个分页
+    var eventSwiperList = [];
+    var pageCount = Math.ceil(eventInfoList.length / 7);
+    for (var i = 0; i < pageCount; i++) {
+        if (eventInfoList.length > 7 * (i + 1)) {
+            eventSwiperList[i] = eventInfoList.slice(7 * i, 7 * (i + 1));
+        } else {
+            eventSwiperList[i] = eventInfoList.slice(7 * i, eventInfoList.length);
+        }
+    }
+
+    $("#eventSwiperList").empty();
+    $.each(eventSwiperList, function (index1, itemList) {
+        var $swiperItem = $("#templateArea .template.event-info-slide").clone();
+        var $eventInfoList = $(".eventInfoList", $swiperItem);
+        $.each(itemList, function (index2, item) {
+            var $item = $("#templateArea .template.event-info-item").clone();
+            $(".event-info-item-date", $item).text(item.date);
+            $(".event-info-item-content", $item).text(item.content);
+            $(".event-info-item-status", $item).text(item.status);
+            $item.removeClass("template").appendTo($eventInfoList)
+        });
+        $swiperItem.removeClass("template").appendTo("#eventSwiperList")
+    });
+
+    var swiper = new Swiper('#eventInfoSwiper', {
+        loop: true,
+        direction: 'vertical',
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
 }
