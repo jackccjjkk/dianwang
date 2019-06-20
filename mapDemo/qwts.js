@@ -78,7 +78,7 @@ function getDataChartLine() {
     var success = function (data) {
         if (data.resultCode = '00') {
             // 实时负荷监控
-            chartLineData =  chartLineData.concat(data.chartLineData);
+            chartLineData = chartLineData.concat(data.chartLineData);
         } else {
 
         }
@@ -339,7 +339,6 @@ function initChartLine(lineData) {
     chartLineDataIndex = chartLineData.length - 1;
     setTimeout(function () {
         setInterval(function () {
-            console.log(chartLineDataIndex);
             // 获取数据项
             var data0 = option.series[0].data;
             // 移除旧数据并生成新数据
@@ -355,10 +354,10 @@ function initChartLine(lineData) {
             setTimeout(function () {
                 myChart.setOption(option);
                 chartLineDataIndex++;
-            },500);
+            }, 500);
 
         }, 1000);
-    },10000)
+    }, 10000)
 
 }
 
@@ -400,6 +399,7 @@ function initFaultInfoList(faultInfoList) {
     });
 }
 
+var intervalList=[];
 function initEventInfoList(eventInfoList) {
 
     // 按照每页7个分页
@@ -427,6 +427,21 @@ function initEventInfoList(eventInfoList) {
         $swiperItem.removeClass("template").appendTo("#eventSwiperList")
     });
 
+    $(".event-info-item-content").each(function (index) {
+        var me = $(this);
+        var width = me.parent()[0].scrollWidth - (me.parent()[0].clientWidth || me.parent()[0].offsetWidth);
+        if (width > 0) {
+            var interval = setInterval(function () {
+                if (me.parent()[0].scrollLeft >= width) {
+                    me.parent()[0].scrollLeft = 0;
+                } else {
+                    me.parent()[0].scrollLeft++;
+                }
+            }, 50);
+            intervalList.push(interval);
+        }
+    });
+
     var swiper = new Swiper('#eventInfoSwiper', {
         loop: true,
         direction: 'vertical',
@@ -437,5 +452,28 @@ function initEventInfoList(eventInfoList) {
         pagination: {
             el: '.swiper-pagination',
         },
+        on: {
+            slideChangeTransitionEnd: function () {
+                $.each(intervalList,function (index,item) {
+                    clearInterval(item);
+                });
+                intervalList = [];
+                $(".event-info-item-content").each(function () {
+                    var me = $(this);
+                    var width = me.parent()[0].scrollWidth - (me.parent()[0].clientWidth || me.parent()[0].offsetWidth);
+                    if (width > 0) {
+                        var interval = setInterval(function () {
+                            if (me.parent()[0].scrollLeft >= width) {
+                                me.parent()[0].scrollLeft = 0;
+                            } else {
+                                me.parent()[0].scrollLeft++;
+                            }
+                        }, 50);
+                        intervalList.push(interval);
+                    }
+                });
+
+            },
+        }
     });
 }
