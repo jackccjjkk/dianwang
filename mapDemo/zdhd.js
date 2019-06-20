@@ -195,10 +195,29 @@ function showXianluList() {
         });
         map.addOverlay(marker);
         polyline(map, item.pointArr, "#ad0e21");
+
+        // setTimeout(function () {
+        //     resetMkPoint(marker, 0);
+        // }, 100)
     });
     var zoom = getZoom(map, xianluList[0].pointArr);
     var center = new BMap.Point(xianluList[0].pointArr[0].lng, xianluList[0].pointArr[0].lat);
     map.centerAndZoom(center, zoom);
+
+    function resetMkPoint(marker, i) {
+        marker.setPosition(new BMap.Point(xianluList[0].pointArr[i].lng,xianluList[0].pointArr[i].lat));//重新设置marker的position
+        if (i < xianluList[0].pointArr.length -1) {
+            setTimeout(function () {
+                i++;
+                resetMkPoint(marker, i);
+            }, 500);
+        } else {
+            setTimeout(function () {
+                resetMkPoint(marker, 0);
+            }, 500);
+        }
+    }
+
 }
 
 /**
@@ -359,7 +378,7 @@ function showXianluDetail(id) {
             $("#xianlu_device").text(item.device);
 
             $("#xianluDataList").html($("#xianluDataList .template.xianlu-data-item"));
-            $.each(item.xianluDataList, function (index2, peopleData) {
+            $.each(item.xianluDataList, function (index2, xianluData) {
                 var $xianluItem = $("#xianluDataList .template.xianlu-data-item").clone();
                 $(".xianlu-data-item-name", $xianluItem).text(xianluData.name);
                 $(".xianlu-data-item-t_status", $xianluItem).text(xianluData.t_status);

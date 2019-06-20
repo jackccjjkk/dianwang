@@ -159,6 +159,7 @@
 .left-row .value {
     color: #ffffff;
     width: 220px;
+    white-space: nowrap;
 }
 
 .right-data-row .table-cell {
