@@ -203,6 +203,9 @@
       "phone220": "13354066633",
       "latitude": "38.927147",
       "longitude": "121.685041",
+      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightVideo1": "data/file/right_changsuo_1.mp4",
+      "rightVideo2": "data/file/right_changsuo_2.mp4",
       "peopleDataList": [
         {
           "dw": "变电检修室",

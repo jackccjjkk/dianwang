@@ -83,12 +83,11 @@
 
 .content-right {
     position: absolute;
-    top: 26px;
-    right: 26px;
-    bottom: 26px;
+    top: 24px;
+    right: 24px;
+    bottom: 24px;
     background: rgba(14, 31, 44, 0.7);
     width: 990px;
-    padding: 24px;
     display: flex;
     flex-direction: column;
 }
@@ -102,8 +101,8 @@
     width: 2556px;
     height: 200px;
     -webkit-transition: all 0.5s ease-in-out 0s;
-    -o-transition: all 0.2s ease-in-out 0s;
-    transition: all 0.2s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
 }
 
 #processList {

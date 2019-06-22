@@ -43,8 +43,8 @@
                                                       href="yjzh.html">应急指挥</a></div>
             </div>
             <!--<div class="header-menu-item">-->
-                <!--<div class="header-menu-item-text"><a style="color: white;text-decoration: none"-->
-                                                      <!--href="gdfu.html">供电服务</a></div>-->
+            <!--<div class="header-menu-item-text"><a style="color: white;text-decoration: none"-->
+            <!--href="gdfu.html">供电服务</a></div>-->
             <!--</div>-->
         </div>
     </div>
@@ -62,21 +62,21 @@
                 <div id="menu_baodianchangsuo"
                      style="flex: 1;display: flex;flex-direction: column;align-items: center;cursor: pointer">
                     <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
-                        <img src="img/cs.png">
+                        <img id="menu_changsuo_img" src="img/cs.png">
                     </div>
                     <div style="text-align: center">保电场所</div>
                 </div>
                 <div id="menu_xianlu"
                      style="flex: 1;display: flex;flex-direction: column;align-items: center;cursor: pointer">
                     <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
-                        <img src="img/xl.png">
+                        <img id="menu_xianlu_img" src="img/xl.png">
                     </div>
                     <div style="text-align: center">线路</div>
                 </div>
                 <div id="menu_zhansuo"
                      style="flex: 1;display: flex;flex-direction: column;align-items: center;cursor: pointer">
                     <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
-                        <img src="img/zs.png">
+                        <img id="menu_zhansuo_img" src="img/zs.png">
                     </div>
                     <div style="text-align: center">站所</div>
                 </div>
@@ -152,74 +152,118 @@
 
         </div>
         <div class="content-right">
-            <div style="display: flex">
-                <div style="flex: 1;min-width: 0;">
-                    <div style="display: flex;align-items: center">
-                        <img style="width: 24px;height: 24px" src="img/title_small.png">
-                        <span style="margin-left: 10px">保电流程</span>
-                    </div>
-                    <div id="processList" class="hide-scrollbar" style="margin-top: 24px;margin-left: 20px;">
-                        <div class="template process-item">
-                            <div style="display: flex;align-items: center;height: 100%;">
-                                <div class="process-item-date max-line-1" style="flex: 1;margin-left: 10px"></div>
-                                <div style="width: 10px;height: 100%;position: relative">
-                                    <div class="process-item-line-1"></div>
-                                    <div class="process-item-line-2"></div>
-                                    <div class="process-item-dot"></div>
+            <div style="padding: 20px;">
+                <div id="defaultRightArea" class="content-right-area" style="display: flex; flex-direction: column;">
+                    <div style="display: flex">
+                        <div style="flex: 1;min-width: 0;">
+                            <div style="display: flex;align-items: center">
+                                <img style="width: 24px;height: 24px" src="img/title_small.png">
+                                <span style="margin-left: 10px">保电流程</span>
+                            </div>
+                            <div id="processList" class="hide-scrollbar" style="margin-top: 24px;margin-left: 20px;">
+                                <div class="template process-item">
+                                    <div style="display: flex;align-items: center;height: 100%;">
+                                        <div class="process-item-date max-line-1"
+                                             style="flex: 1;margin-left: 10px"></div>
+                                        <div style="width: 10px;height: 100%;position: relative">
+                                            <div class="process-item-line-1"></div>
+                                            <div class="process-item-line-2"></div>
+                                            <div class="process-item-dot"></div>
+                                        </div>
+                                        <div class="process-item-desc max-line-1"
+                                             style="flex: 1;margin-left: 20px"></div>
+                                    </div>
                                 </div>
-                                <div class="process-item-desc max-line-1" style="flex: 1;margin-left: 20px"></div>
+                            </div>
+                        </div>
+                        <div style="flex: 1;min-width: 0;">
+                            <div style="display: flex;align-items: center">
+                                <img style="width: 24px;height: 24px" src="img/title_small.png">
+                                <span style="margin-left: 10px">领导班子</span>
+                            </div>
+                            <div style="display: flex;flex-direction: column;align-items: center;width: 482px;margin-top: 30px">
+                                <div class="ldbz" style="width: 284px;height: 48px;"></div>
+                                <div style="width: 1px;height: 28px;background: #00ffff"></div>
+                                <div style="width: 410px;height: 1px;background: #00ffff"></div>
+                                <div style="display: flex;width: 410px">
+                                    <div style="flex: 1;height: 28px;border-left: 1px #00ffff solid"></div>
+                                    <div style="flex: 1;height: 28px;border-left: 1px #00ffff solid"></div>
+                                    <div style="flex: 1;height: 28px;border-left: 1px #00ffff solid;border-right: 1px #00ffff solid"></div>
+                                </div>
+                                <div style="display: flex;width: 100%">
+                                    <div class="ldbz" style="width: 72px;height: 236px"></div>
+                                    <div class="ldbz" style="width: 72px;height: 236px;margin-left: 65px"></div>
+                                    <div class="ldbz" style="width: 72px;height: 236px;margin-left: 65px"></div>
+                                    <div class="ldbz" style="width: 72px;height: 236px;margin-left: 65px"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex;margin-top: 30px">
+                        <div style="flex: 1;">
+                            <div style="display: flex;align-items: center">
+                                <img style="width: 24px;height: 24px" src="img/title_small.png">
+                                <span style="margin-left: 10px">无人机视频监控</span>
+                            </div>
+                            <div style="margin-top: 30px;margin-left: 20px">
+                                <video muted width="460" height="312" autoplay loop>
+                                    <source src="https://www.runoob.com/try/demo_source/movie.mp4" type="video/mp4">
+                                    <source src="https://www.runoob.com/try/demo_source/movie.ogg" type="video/ogg">
+                                    您的浏览器不支持 HTML5 video 标签。
+                                </video>
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex;align-items: center">
+                                <img style="width: 24px;height: 24px" src="img/title_small.png">
+                                <span style="margin-left: 10px">视频监控</span>
+                            </div>
+                            <div style="margin-top: 30px;margin-left: 20px">
+                                <video muted width="460" height="312" autoplay loop>
+                                    <source src="https://www.runoob.com/try/demo_source/movie.mp4" type="video/mp4">
+                                    <source src="https://www.runoob.com/try/demo_source/movie.ogg" type="video/ogg">
+                                    您的浏览器不支持 HTML5 video 标签。
+                                </video>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div style="flex: 1;min-width: 0;">
-                    <div style="display: flex;align-items: center">
-                        <img style="width: 24px;height: 24px" src="img/title_small.png">
-                        <span style="margin-left: 10px">领导班子</span>
-                    </div>
-                    <div style="display: flex;flex-direction: column;align-items: center;width: 482px;margin-top: 30px">
-                        <div class="ldbz" style="width: 284px;height: 48px;"></div>
-                        <div style="width: 1px;height: 28px;background: #00ffff"></div>
-                        <div style="width: 410px;height: 1px;background: #00ffff"></div>
-                        <div style="display: flex;width: 410px">
-                            <div style="flex: 1;height: 28px;border-left: 1px #00ffff solid"></div>
-                            <div style="flex: 1;height: 28px;border-left: 1px #00ffff solid"></div>
-                            <div style="flex: 1;height: 28px;border-left: 1px #00ffff solid;border-right: 1px #00ffff solid"></div>
+                <div id="changsuoRightArea" class="content-right-area"
+                     style="display: flex; flex-direction: column;display: none">
+                    <div>
+                        <div style="display: flex;align-items: center">
+                            <img style="width: 24px;height: 24px" src="img/title_small.png">
+                            <span style="margin-left: 10px">监测结果</span>
                         </div>
-                        <div style="display: flex;width: 100%">
-                            <div class="ldbz" style="width: 72px;height: 236px"></div>
-                            <div class="ldbz" style="width: 72px;height: 236px;margin-left: 65px"></div>
-                            <div class="ldbz" style="width: 72px;height: 236px;margin-left: 65px"></div>
-                            <div class="ldbz" style="width: 72px;height: 236px;margin-left: 65px"></div>
+                        <div style="margin: 20px">
+                            <img id="changsuo_right_img" style="width: 100%;" src="img/zdhd_right_changsuo_1.jpg">
                         </div>
                     </div>
-                </div>
-            </div>
-            <div style="display: flex;margin-top: 30px">
-                <div style="flex: 1;">
-                    <div style="display: flex;align-items: center">
-                        <img style="width: 24px;height: 24px" src="img/title_small.png">
-                        <span style="margin-left: 10px">无人机视频监控</span>
-                    </div>
-                    <div style="margin-top: 30px;margin-left: 20px">
-                        <video muted width="460" height="312" autoplay loop>
-                            <source src="https://www.runoob.com/try/demo_source/movie.mp4"  type="video/mp4">
-                            <source src="https://www.runoob.com/try/demo_source/movie.ogg"  type="video/ogg">
-                            您的浏览器不支持 HTML5 video 标签。
-                        </video>
-                    </div>
-                </div>
-                <div style="flex: 1;">
-                    <div style="display: flex;align-items: center">
-                        <img style="width: 24px;height: 24px" src="img/title_small.png">
-                        <span style="margin-left: 10px">视频监控</span>
-                    </div>
-                    <div style="margin-top: 30px;margin-left: 20px">
-                        <video muted width="460" height="312" autoplay loop>
-                            <source src="https://www.runoob.com/try/demo_source/movie.mp4"  type="video/mp4">
-                            <source src="https://www.runoob.com/try/demo_source/movie.ogg"  type="video/ogg">
-                            您的浏览器不支持 HTML5 video 标签。
-                        </video>
+                    <div style="display: flex;">
+                        <div style="flex: 1;">
+                            <div style="display: flex;align-items: center">
+                                <img style="width: 24px;height: 24px" src="img/title_small.png">
+                                <span style="margin-left: 10px">无人机视频监控</span>
+                            </div>
+                            <div style="margin-top: 20px;">
+                                <video muted id="changsuo_right_video1" width="460" height="312" autoplay loop>
+                                    <source id="changsuo_right_video_source1" src="https://www.runoob.com/try/demo_source/movie.mp4" type="video/mp4">
+                                    您的浏览器不支持 HTML5 video 标签。
+                                </video>
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex;align-items: center">
+                                <img style="width: 24px;height: 24px" src="img/title_small.png">
+                                <span style="margin-left: 10px">视频监控</span>
+                            </div>
+                            <div style="margin-top: 20px">
+                                <video muted id="changsuo_right_video2" width="460" height="312" autoplay loop>
+                                    <source id="changsuo_right_video_source2"  src="https://www.runoob.com/try/demo_source/movie.mp4" type="video/mp4">
+                                    您的浏览器不支持 HTML5 video 标签。
+                                </video>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

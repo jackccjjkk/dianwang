@@ -44,11 +44,23 @@ function hideLoading() {
     $("body").mLoading("hide");
 }
 
+var isShow = false;
 function showBottomPopup() {
-    $('.content-bottom').css('bottom', '0');
+    if(isShow){
+        hideBottomPopup();
+        setTimeout(function () {
+            $('.content-bottom').css('bottom', '0');
+            isShow = true;
+        },500)
+    }else{
+        $('.content-bottom').css('bottom', '0');
+        isShow = true;
+    }
+
 }
 
 function hideBottomPopup() {
     $('.content-bottom').css('bottom', '-200px');
+    isShow = false;
 }
 
