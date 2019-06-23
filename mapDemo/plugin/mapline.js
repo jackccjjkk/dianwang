@@ -17,24 +17,26 @@ function polyline(map,pointArr,strokeColor){
     var offset = new BMap.Size(0, 0);
     var imageSize = new BMap.Size(200, 200);
 // 画图标
-//     for (var i = 0, j = trackPoint.length; i < j; i++) {
-//         var icon = new BMap.Icon(pointArr[i].icon, size, {
-//             imageSize: imageSize,
-//             infoWindowAnchor:new BMap.Size(0, -3)
-//         });
-//         var marker = new BMap.Marker(trackPoint[i], {
-//             icon: icon,
-//             offset: offset
-//         }); // 创建标注
-//         map.addOverlay(marker);
-//         //绑定事件
-//         // marker.addEventListener("click",function () {
-//         //     // alert(this.getPosition())
-//         //     var point=this.getPosition();
-//         //     alert("经度："+point.lng+"\n"+"纬度："+point.lat)
-//         // })
-//
-//     }
+     for (var i = 0, j = trackPoint.length; i < j; i++) {
+         if(pointArr[i].icon!=""){
+             var icon = new BMap.Icon(pointArr[i].icon, size, {
+                 imageSize: imageSize,
+                 infoWindowAnchor:new BMap.Size(0, -3)
+             });
+            var marker = new BMap.Marker(trackPoint[i], {
+                 icon: icon,
+                 offset: offset
+             }); // 创建标注
+             map.addOverlay(marker);
+         //绑定事件
+         // marker.addEventListener("click",function () {
+         //     // alert(this.getPosition())
+         //     var point=this.getPosition();
+         //     alert("经度："+point.lng+"\n"+"纬度："+point.lat)
+         // })
+
+     }
+     }
 }
 
 

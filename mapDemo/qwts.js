@@ -2,14 +2,14 @@ var myChart = null;
 var chartLineData = [];
 var chartLineDataIndex = 0;
 $(document).ready(function () {
-    var map = new BMap.Map("map", {mapType: BMAP_HYBRID_MAP})
-    var point = new BMap.Point(121.679122, 38.935683);  // 创建点坐标
-    map.centerAndZoom(point, 11);                 // 初始化地图，设置中心点坐标和地图级别
-    map.setCurrentCity("大连");          // 设置地图显示的城市 此项是必须设置的
-    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    // var map = new BMap.Map("map", {mapType: BMAP_HYBRID_MAP})
+    // var point = new BMap.Point(121.679122, 38.935683);  // 创建点坐标
+    // map.centerAndZoom(point, 12);                 // 初始化地图，设置中心点坐标和地图级别
+    // map.setCurrentCity("大连");          // 设置地图显示的城市 此项是必须设置的
+    // map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
     setLinstener();
     getData();
-    getpolyline(map);
+    getpolyline();
 
     var num = 222;
     setInterval(function () {
@@ -29,17 +29,241 @@ function setLinstener() {
 
 }
 
-function getpolyline(map) {
+function getpolyline() {
     var param = {};
     var success = function (data) {
         if (data.resultCode = '00') {
-            polyline(map, data.pointArr, "#ad0e21");
+            var arr =data.pointArr;
+            var maplist = {},
+                dest = [];
+            for(var i = 0; i < arr.length; i++){
+                var ai = arr[i];
+                if(!maplist[ai.id]){
+                    dest.push({
+                        id: ai.id,
+                        data: [ai]
+                    });
+                    maplist[ai.id] = ai;
+                }else{
+                    for(var j = 0; j < dest.length; j++){
+                        var dj = dest[j];
+                        if(dj.id == ai.id){
+                            dj.data.push(ai);
+                            break;
+                        }
+                    }
+                }
+            }
+            console.log(dest);
+            processLines(dest);
+            // for (var i=0;dest.length;i++){
+            //     // var rand="";
+            //     // while(rand.length!=6){
+            //     //     rand = Math.floor(Math.random( ) * 0xFFFFFF).toString(16);
+            //     // }
+            //     if(dest[i].data[0].VL=="交流220kV"){
+            //         polyline(map,dest[i].data,"#ad0907");
+            //     }
+            //     if(dest[i].data[0].VL=="交流66kV"){
+            //         polyline(map,dest[i].data,"#38b1ff");
+            //     }
+            // }
         } else {
         }
     };
     var error = function () {
     };
     ajaxPost("qwts.json", param, success, error, false);
+}
+
+function processLines(dest) {
+
+    var myChart = echarts.init(document.getElementById('map'));
+    var hStep = 10;
+    var busLines = [].concat.apply([], dest.map(function (busLine, idx) {
+        var points = [];
+        for (var i = 0; i < busLine.data.length; i++) {
+            var pt = [
+                parseFloat(busLine.data[i].lng),
+                parseFloat(busLine.data[i].lat)
+            ];
+            points.push(pt);
+        }
+
+        return {
+            coords: points,
+            lineStyle: {
+                normal: {
+                    color: echarts.color.modifyHSL('#5A94DF', Math.round(hStep * idx))
+                }
+            }
+        };
+    }));
+    myChart.setOption(option = {
+        bmap: {
+            center: [121.679122, 38.935683],
+            zoom: 13,
+            roam: true,
+            mapType: "BMAP_HYBRID_MAP",
+            mapStyle: {
+                'styleJson': [
+                    {
+                        'featureType': 'water',
+                        'elementType': 'all',
+                        'stylers': {
+                            'color': '#184f7d'
+                        }
+                    },
+                    {
+                        'featureType': 'land',
+                        'elementType': 'geometry',
+                        'stylers': {
+                            'color': '#000102'
+                        }
+                    },
+                    {
+                        'featureType': 'highway',
+                        'elementType': 'all',
+                        'stylers': {
+                            'visibility': 'off'
+                        }
+                    },
+                    {
+                        'featureType': 'arterial',
+                        'elementType': 'geometry.fill',
+                        'stylers': {
+                            'color': '#000000'
+                        }
+                    },
+                    {
+                        'featureType': 'arterial',
+                        'elementType': 'geometry.stroke',
+                        'stylers': {
+                            'color': '#0b3d51'
+                        }
+                    },
+                    {
+                        'featureType': 'local',
+                        'elementType': 'geometry',
+                        'stylers': {
+                            'color': '#000000'
+                        }
+                    },
+                    {
+                        'featureType': 'railway',
+                        'elementType': 'geometry.fill',
+                        'stylers': {
+                            'color': '#000000'
+                        }
+                    },
+                    {
+                        'featureType': 'railway',
+                        'elementType': 'geometry.stroke',
+                        'stylers': {
+                            'color': '#08304b'
+                        }
+                    },
+                    {
+                        'featureType': 'subway',
+                        'elementType': 'geometry',
+                        'stylers': {
+                            'lightness': -70
+                        }
+                    },
+                    {
+                        'featureType': 'building',
+                        'elementType': 'geometry.fill',
+                        'stylers': {
+                            'color': '#000000'
+                        }
+                    },
+                    {
+                        'featureType': 'all',
+                        'elementType': 'labels.text.fill',
+                        'stylers': {
+                            'color': '#857f7f'
+                        }
+                    },
+                    {
+                        'featureType': 'all',
+                        'elementType': 'labels.text.stroke',
+                        'stylers': {
+                            'color': '#000000'
+                        }
+                    },
+                    {
+                        'featureType': 'building',
+                        'elementType': 'geometry',
+                        'stylers': {
+                            'color': '#022338'
+                        }
+                    },
+                    {
+                        'featureType': 'green',
+                        'elementType': 'geometry',
+                        'stylers': {
+                            'color': '#062032'
+                        }
+                    },
+                    {
+                        'featureType': 'boundary',
+                        'elementType': 'all',
+                        'stylers': {
+                            'color': '#465b6c'
+                        }
+                    },
+                    {
+                        'featureType': 'manmade',
+                        'elementType': 'all',
+                        'stylers': {
+                            'color': '#022338'
+                        }
+                    },
+                    {
+                        'featureType': 'label',
+                        'elementType': 'all',
+                        'stylers': {
+                            'visibility': 'off'
+                        }
+                    }
+                ]
+            }
+        },
+        series: [{
+            type: 'lines',
+            coordinateSystem: 'bmap',
+            polyline: true,
+            data: busLines,
+            silent: true,
+            lineStyle: {
+                normal: {
+                    // color: '#c23531',
+                    // color: 'rgb(200, 35, 45)',
+                    opacity: 0.2,
+                    width: 4
+                }
+            },
+            progressiveThreshold: 500,
+            progressive: 200
+        }, {
+            type: 'lines',
+            coordinateSystem: 'bmap',
+            polyline: true,
+            data: busLines,
+            lineStyle: {
+                normal: {
+                    width: 0
+                }
+            },
+            effect: {
+                constantSpeed: 60,
+                show: true,
+                trailLength: 0.4,
+                symbolSize: 5
+            },
+            zlevel: 1
+        }]
+    });
 }
 
 function getData(map) {
@@ -51,7 +275,7 @@ function getData(map) {
             // 故障信息列表
             initFaultInfoList(data.faultInfoList);
             // 故障信息饼状图
-            initChartPie(data.chartPieData);
+            // initChartPie(data.chartPieData);
 
             // 重要事件列表
             initEventInfoList(data.eventInfoList);
@@ -78,7 +302,7 @@ function getDataChartLine() {
     var success = function (data) {
         if (data.resultCode = '00') {
             // 实时负荷监控
-            chartLineData = chartLineData.concat(data.chartLineData);
+            chartLineData =  chartLineData.concat(data.chartLineData);
         } else {
 
         }
@@ -354,10 +578,10 @@ function initChartLine(lineData) {
             setTimeout(function () {
                 myChart.setOption(option);
                 chartLineDataIndex++;
-            }, 500);
+            },500);
 
         }, 1000);
-    }, 10000)
+    },10000)
 
 }
 
@@ -437,7 +661,7 @@ function initEventInfoList(eventInfoList) {
                 } else {
                     me.parent()[0].scrollLeft++;
                 }
-            }, 50);
+            }, 20);
             intervalList.push(interval);
         }
     });
@@ -446,7 +670,7 @@ function initEventInfoList(eventInfoList) {
         loop: true,
         direction: 'vertical',
         autoplay: {
-            delay: 2500,
+            delay: 5000,
             disableOnInteraction: false,
         },
         pagination: {
@@ -468,7 +692,7 @@ function initEventInfoList(eventInfoList) {
                             } else {
                                 me.parent()[0].scrollLeft++;
                             }
-                        }, 50);
+                        }, 20);
                         intervalList.push(interval);
                     }
                 });

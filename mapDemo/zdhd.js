@@ -70,60 +70,67 @@ function initProcessList(processList) {
 var selectedMenu = null;
 
 function setListener() {
-    $("#leftMenu1").mouseover(function () {
-        $("#submenu-1").show();
-    });
-    $("#leftMenu1").mouseout(function () {
-        $("#submenu-1").hide();
-    });
-
-    $("#submenu-1").mouseover(function () {
-        $("#submenu-1").show();
-    });
-    $("#submenu-1").mouseout(function () {
-        $("#submenu-1").hide();
-    });
-
-    $("#leftMenu2").mouseover(function () {
-        $("#submenu-2").show();
-    });
-    $("#leftMenu2").mouseout(function () {
-        $("#submenu-2").hide();
-    });
-
-    $("#submenu-2").mouseover(function () {
-        $("#submenu-2").show();
-    });
-    $("#submenu-2").mouseout(function () {
-        $("#submenu-2").hide();
-    });
-
-    $("#leftMenu3").mouseover(function () {
-        $("#submenu-3").show();
-    });
-    $("#leftMenu3").mouseout(function () {
-        $("#submenu-3").hide();
-    });
-
-    $("#submenu-3").mouseover(function () {
-        $("#submenu-3").show();
-    });
-    $("#submenu-3").mouseout(function () {
-        $("#submenu-3").hide();
-    });
-
-    $("#leftMenu4").mouseover(function () {
-        $("#submenu-4").show();
-    });
-    $("#leftMenu4").mouseout(function () {
-        $("#submenu-4").hide();
-    });
-
-    $("#submenu-4").mouseover(function () {
-        $("#submenu-4").show();
-    });
-    $("#submenu-4").mouseout(function () {
-        $("#submenu-4").hide();
+    // $("#leftMenu1").mouseover(function () {
+    //     $("#submenu-1").show();
+    // });
+    // $("#leftMenu1").mouseout(function () {
+    //     $("#submenu-1").hide();
+    // });
+    //
+    // $("#submenu-1").mouseover(function () {
+    //     $("#submenu-1").show();
+    // });
+    // $("#submenu-1").mouseout(function () {
+    //     $("#submenu-1").hide();
+    // });
+    //
+    // $("#leftMenu2").mouseover(function () {
+    //     $("#submenu-2").show();
+    // });
+    // $("#leftMenu2").mouseout(function () {
+    //     $("#submenu-2").hide();
+    // });
+    //
+    // $("#submenu-2").mouseover(function () {
+    //     $("#submenu-2").show();
+    // });
+    // $("#submenu-2").mouseout(function () {
+    //     $("#submenu-2").hide();
+    // });
+    //
+    // $("#leftMenu3").mouseover(function () {
+    //     $("#submenu-3").show();
+    // });
+    // $("#leftMenu3").mouseout(function () {
+    //     $("#submenu-3").hide();
+    // });
+    //
+    // $("#submenu-3").mouseover(function () {
+    //     $("#submenu-3").show();
+    // });
+    // $("#submenu-3").mouseout(function () {
+    //     $("#submenu-3").hide();
+    // });
+    //
+    // $("#leftMenu4").mouseover(function () {
+    //     $("#submenu-4").show();
+    // });
+    // $("#leftMenu4").mouseout(function () {
+    //     $("#submenu-4").hide();
+    // });
+    //
+    // $("#submenu-4").mouseover(function () {
+    //     $("#submenu-4").show();
+    // });
+    // $("#submenu-4").mouseout(function () {
+    //     $("#submenu-4").hide();
+    // });
+    $("#backToChangsuoList").click(function () {
+        hideBottomPopup();
+        selectedChangsuoMaker.setIcon(new BMap.Icon("img/map_icon_changsuo.png", new BMap.Size(66, 59)));
+        selectedChangsuoMaker = null;
+        $(".content-right-area").hide();
+        $("#changsuoListRightArea").show();
     });
 
     $("#menu_zhansuo").click(function () {
@@ -238,6 +245,9 @@ function showBiandianzhanList() {
  * 点击线路
  */
 function showXianluList() {
+    $(".content-right-area").hide();
+    $("#xianluListRightArea").show();
+    $("#xianluListRight").html($("#xianluListRight .template.xianlu-item"));
     $.each(xianluList, function (index, item) {
         var pt = new BMap.Point(item.pointArr[0].lng, item.pointArr[0].lat);
         var myIcon = new BMap.Icon("img/map_icon_biandianzhan.png", new BMap.Size(66, 59));
@@ -248,9 +258,17 @@ function showXianluList() {
         map.addOverlay(marker);
         polyline(map, item.pointArr, "#ad0e21");
 
-        setTimeout(function () {
-            resetMkPoint(marker, 0);
-        }, 100)
+        // setTimeout(function () {
+        //     resetMkPoint(marker, 0);
+        // }, 100)
+
+        var $item = $("#xianluListRight .template.xianlu-item").clone();
+        $(".xianlu-item-name",$item).text(item.name);
+        $(".xianlu-item-address",$item).text(item.address);
+        $item.click(function () {
+        });
+        $item.removeClass("template").appendTo("#xianluListRight")
+
     });
     var zoom = getZoom(map, xianluList[0].pointArr);
     var center = new BMap.Point(xianluList[0].pointArr[0].lng, xianluList[0].pointArr[0].lat);
@@ -277,12 +295,43 @@ function showXianluList() {
  */
 var selectedChangsuoMaker;
 function showChangsuoList() {
+    $(".content-right-area").hide();
+    $("#changsuoListRightArea").show();
+    $("#changsuoListRight").html($("#changsuoListRight .template.changsuo-item"));
     $.each(changsuoList, function (index, item) {
         var pt = new BMap.Point(item.longitude, item.latitude);
         var myIcon = new BMap.Icon("img/map_icon_changsuo.png", new BMap.Size(66, 59));
         var marker = new BMap.Marker(pt, {icon: myIcon});  // 创建标注
         marker.setTitle(item.location);
         marker.addEventListener("click", function (type, target) {
+            if(selectedChangsuoMaker == null){
+                // 未选中任何点
+                showChangsuoDetail(item);
+                marker.setIcon(new BMap.Icon("img/map_icon_changsuo_selected.png", new BMap.Size(66, 59)));
+                selectedChangsuoMaker = marker;
+            }else if(selectedChangsuoMaker.getTitle() == item.location){
+                // 选中当前点，则点击时隐藏
+                hideBottomPopup();
+                $(".content-right-area").hide();
+                $("#changsuoListRightArea").show();
+                marker.setIcon(new BMap.Icon("img/map_icon_changsuo.png", new BMap.Size(66, 59)));
+                selectedChangsuoMaker = null;
+            }else if(selectedChangsuoMaker.getTitle()!= item.location){
+                // 先取消选中状态
+                selectedChangsuoMaker.setIcon(new BMap.Icon("img/map_icon_changsuo.png", new BMap.Size(66, 59)));
+                showChangsuoDetail(item);
+                marker.setIcon(new BMap.Icon("img/map_icon_changsuo_selected.png", new BMap.Size(66, 59)));
+                selectedChangsuoMaker = marker;
+            }
+
+        });
+        map.addOverlay(marker);
+
+        var $item = $("#changsuoListRight .template.changsuo-item").clone();
+        $(".changsuo-item-name",$item).text(item.location);
+        $(".changsuo-item-address",$item).text(item.address);
+        $item.click(function () {
+            map.panTo(marker.getPosition(), 13);
             if(selectedChangsuoMaker == null){
                 // 未选中任何点
                 showChangsuoDetail(item);
@@ -302,7 +351,7 @@ function showChangsuoList() {
             }
 
         });
-        map.addOverlay(marker);
+        $item.removeClass("template").appendTo("#changsuoListRight")
     });
 }
 
@@ -431,12 +480,13 @@ function showChangsuoDetail(item) {
 
     // 右侧区域
     $(".content-right-area").hide();
+    $("#changsuoRightArea").show();
     $("#changsuo_right_img").attr("src",item.rightImage);
     $("#changsuo_right_video_source1").attr("src",item.rightVideo1);
     $("#changsuo_right_video1").load();
     $("#changsuo_right_video_source2").attr("src",item.rightVideo2);
     $("#changsuo_right_video2").load();
-    $("#changsuoRightArea").show();
+
 }
 
 /**
