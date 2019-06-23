@@ -53,10 +53,13 @@ function showBottomPopup() {
         setTimeout(function () {
             $('.content-bottom').css('bottom', '0');
             isShow = true;
-        },500)
+        },1500)
     }else{
-        $('.content-bottom').css('bottom', '0');
-        isShow = true;
+        setTimeout(function () {
+            $('.content-bottom').css('bottom', '0');
+            isShow = true;
+        },1000)
+
     }
 
 }

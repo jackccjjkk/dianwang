@@ -83,33 +83,51 @@
                 </div>
                 <div id="menu_duiwu" class="content-menu">
                     <div class="content-menu-img-container">
-                        <img src="img/dw.png">
+                        <img id="menu_duiwu_img" src="img/dw.png">
                     </div>
                     <div style="text-align: center">队伍</div>
                 </div>
-                <div id="menu_renyuan" class="content-menu">
-                    <div class="content-menu-img-container">
-                        <img src="img/ry.png">
-                    </div>
-                    <div style="text-align: center">人员</div>
-                </div>
+                <!--<div id="menu_renyuan" class="content-menu">-->
+                    <!--<div class="content-menu-img-container">-->
+                        <!--<img id="menu_renyuan_img" src="img/ry.png">-->
+                    <!--</div>-->
+                    <!--<div style="text-align: center">人员</div>-->
+                <!--</div>-->
                 <div id="menu_cheliang" class="content-menu">
                     <div class="content-menu-img-container">
-                        <img src="img/cl.png">
+                        <img id="menu_cheliang_img" src="img/cl.png">
                     </div>
                     <div style="text-align: center">车辆</div>
                 </div>
                 <div id="menu_wuzi" class="content-menu">
                     <div class="content-menu-img-container">
-                        <img src="img/wz.png">
+                        <img id="menu_wuzi_img" src="img/wz.png">
                     </div>
                     <div style="text-align: center">物资</div>
                 </div>
-                <div id="menu_shebei" class="content-menu">
+                <!--<div id="menu_shebei" class="content-menu">-->
+                    <!--<div class="content-menu-img-container">-->
+                        <!--<img id="menu_shebei_img" src="img/sb.png">-->
+                    <!--</div>-->
+                    <!--<div style="text-align: center">设备</div>-->
+                <!--</div>-->
+                <div id="menu_fangan" class="content-menu">
                     <div class="content-menu-img-container">
-                        <img src="img/sb.png">
+                        <img id="menu_fangan_img" src="img/fa.png">
                     </div>
-                    <div style="text-align: center">设备</div>
+                    <div style="text-align: center">方案</div>
+                </div>
+                <div id="menu_zhizeka" class="content-menu">
+                    <div class="content-menu-img-container">
+                        <img id="menu_zhizeka_img" src="img/zdk.png">
+                    </div>
+                    <div style="text-align: center">指导卡</div>
+                </div>
+                <div id="menu_fengxian" class="content-menu">
+                    <div class="content-menu-img-container">
+                        <img id="menu_fengxian_img" src="img/fx.png">
+                    </div>
+                    <div style="text-align: center">风险卡</div>
                 </div>
             </div>
         </div>
@@ -151,6 +169,20 @@
                 <div class="content-left-submenu-item submenu-4-item">环境监测</div>
             </div>
 
+        </div>
+        <div class="content-center" style="display: none;">
+            <div class="content-center-inner">
+                <img class="content-center-close" src="img/center_close.png" style="cursor: pointer" />
+                <div class="content-center-inner-content" style="padding: 26px 38px 38px 38px">
+                    <div style="display: flex;">
+                        <div class="content-center-title" style="text-align: center;font-size:30px;margin-left: 150px;width: 540px;border-bottom: 2px #ffffff solid"></div>
+                        <div class="content-center-type" style="font-size:30px;margin-left: 16px"></div>
+                    </div>
+                    <div style="margin-top: 20px;height: 464px;overflow-y: scroll">
+                        <img class="content-center-img" src=""  style="width: 100%"/>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="content-right">
             <div style="padding: 20px;">
@@ -235,7 +267,7 @@
                             <img style="width: 24px;height: 24px" src="img/title_small.gif">
                             <span style="margin-left: 10px">保电场所列表</span>
                         </div>
-                        <div style="margin: 20px">
+                        <div style="margin: 20px 80px">
                             <div class="table" style="width: 100%">
                                 <div class="table-header-group">
                                     <div class="table-row right-data-row">
@@ -313,12 +345,13 @@
                             <img style="width: 24px;height: 24px" src="img/title_small.gif">
                             <span style="margin-left: 10px">线路列表</span>
                         </div>
-                        <div style="margin: 20px">
+                        <div style="margin: 20px 80px">
                             <div class="table" style="width: 100%">
                                 <div class="table-header-group">
                                     <div class="table-row right-data-row">
-                                        <div style="width: 50%" class="table-cell lable">保电名称</div>
-                                        <div style="width: 50%" class="table-cell lable">地址</div>
+                                        <div style="width: 50%" class="table-cell lable">线路名称</div>
+                                        <!--<div style="width: 10%" class="table-cell lable">电压等级</div>-->
+                                        <div style="width: 50%" class="table-cell lable">负责单位</div>
                                     </div>
                                 </div>
                             </div>
@@ -326,14 +359,16 @@
                                 <div class="table" style="width: 100%;border-bottom: 1px #cccccc dotted;">
                                     <div class="table-header-group" style="visibility: collapse;">
                                         <div class="table-row right-item-row">
-                                            <div style="width: 50%" class="table-cell lable">保电名称</div>
-                                            <div style="width: 50%" class="table-cell lable">地址</div>
+                                            <div style="width: 50%" class="table-cell lable">线路名称</div>
+                                            <!--<div style="width: 10%" class="table-cell lable">电压等级</div>-->
+                                            <div style="width: 50%" class="table-cell lable">负责单位</div>
                                         </div>
                                     </div>
                                     <div class="table-row-group hide-scrollbar" id="xianluListRight">
                                         <div class="template table-row right-item-row xianlu-item">
                                             <div class="table-cell value xianlu-item-name" style="text-align: center"></div>
-                                            <div class="table-cell value xianlu-item-address" style="text-align: center"></div>
+                                            <!--<div class="table-cell value xianlu-item-address" style="text-align: center"></div>-->
+                                            <div class="table-cell value xianlu-item-unit" style="text-align: center"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -351,7 +386,12 @@
                             <div id="backToXianluList" style="cursor: pointer">返回列表-></div>
                         </div>
                         <div style="margin: 20px">
-                            <img id="xianlu_right_img" style="width: 100%;" src="img/zdhd_right_changsuo_1.jpg">
+                            <video muted style="background: black" id="xianlu_right_video3" width="900" height="392" autoplay loop>
+                                <source id="xianlu_right_video_source3"
+                                        src="" type="video/mp4">
+                                您的浏览器不支持 HTML5 video 标签。
+                            </video>
+                            <!--<img id="xianlu_right_img" style="width: 100%;" src="img/zdhd_right_changsuo_1.jpg">-->
                         </div>
                     </div>
                     <div style="display: flex;">
@@ -382,6 +422,390 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div id="zhansuoListRightArea" class="content-right-area"
+                     style="display: flex; flex-direction: column;display: none">
+                    <div>
+                        <div style="display: flex;align-items: center">
+                            <img style="width: 24px;height: 24px" src="img/title_small.gif">
+                            <span style="margin-left: 10px">站所列表</span>
+                        </div>
+                        <div style="margin: 20px 80px">
+                            <div class="table" style="width: 100%">
+                                <div class="table-header-group">
+                                    <div class="table-row right-data-row">
+                                        <div style="width: 50%" class="table-cell lable">站所名称</div>
+                                        <!--<div style="width: 10%" class="table-cell lable">电压等级</div>-->
+                                        <div style="width: 50%" class="table-cell lable">负责单位</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="height: 700px;overflow-y: scroll;width: 100%">
+                                <div class="table" style="width: 100%;border-bottom: 1px #cccccc dotted;">
+                                    <div class="table-header-group" style="visibility: collapse;">
+                                        <div class="table-row right-item-row">
+                                            <div style="width: 50%" class="table-cell lable">站所名称</div>
+                                            <!--<div style="width: 10%" class="table-cell lable">电压等级</div>-->
+                                            <div style="width: 50%" class="table-cell lable">负责单位</div>
+                                        </div>
+                                    </div>
+                                    <div class="table-row-group hide-scrollbar" id="zhansuoListRight">
+                                        <div class="template table-row right-item-row zhansuo-item">
+                                            <div class="table-cell value zhansuo-item-name" style="text-align: center"></div>
+                                            <!--<div class="table-cell value zhansuo-item-address" style="text-align: center"></div>-->
+                                            <div class="table-cell value zhansuo-item-unit" style="text-align: center"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="zhansuoRightArea" class="content-right-area"
+                     style="display: flex; flex-direction: column;display: none">
+                    <div>
+                        <div style="display: flex;align-items: center">
+                            <img style="width: 24px;height: 24px" src="img/title_small.gif">
+                            <span style="flex: 1;margin-left: 10px">监测结果</span>
+                            <div id="backToZhansuoList" style="cursor: pointer">返回列表-></div>
+                        </div>
+                        <div style="margin: 20px">
+                            <video muted style="background: black" id="zhansuo_right_video3" width="900" height="392" autoplay loop>
+                                <source id="zhansuo_right_video_source3"
+                                        src="" type="video/mp4">
+                                您的浏览器不支持 HTML5 video 标签。
+                            </video>
+                            <!--<img id="xianlu_right_img" style="width: 100%;" src="img/zdhd_right_changsuo_1.jpg">-->
+                        </div>
+                    </div>
+                    <div style="display: flex;">
+                        <div style="flex: 1;">
+                            <div style="display: flex;align-items: center">
+                                <img style="width: 24px;height: 24px" src="img/title_small.gif">
+                                <span style="margin-left: 10px">视频监控</span>
+                            </div>
+                            <div style="margin-top: 20px;">
+                                <video muted id="zhansuo_right_video1" width="460" height="312" autoplay loop>
+                                    <source id="zhansuo_right_video_source1"
+                                            src="" type="video/mp4">
+                                    您的浏览器不支持 HTML5 video 标签。
+                                </video>
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex;align-items: center">
+                                <img style="width: 24px;height: 24px" src="img/title_small.gif">
+                                <span style="margin-left: 10px">视频监控</span>
+                            </div>
+                            <div style="margin-top: 20px">
+                                <video muted id="zhansuo_right_video2" width="460" height="312" autoplay loop>
+                                    <source id="zhansuo_right_video_source2"
+                                            src="" type="video/mp4">
+                                    您的浏览器不支持 HTML5 video 标签。
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="duiwuListRightArea" class="content-right-area"
+                     style="display: flex; flex-direction: column;display: none">
+                    <div>
+                        <div style="display: flex;align-items: center">
+                            <img style="width: 24px;height: 24px" src="img/title_small.gif">
+                            <span style="margin-left: 10px">队伍列表</span>
+                        </div>
+                        <div style="margin: 20px 80px">
+                            <div class="table" style="width: 100%">
+                                <div class="table-header-group">
+                                    <div class="table-row right-data-row">
+                                        <div style="width: 50%" class="table-cell lable">队伍名称</div>
+                                        <div style="width: 50%" class="table-cell lable">保电区域</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="height: 700px;overflow-y: scroll;width: 100%">
+                                <div class="table" style="width: 100%;border-bottom: 1px #cccccc dotted;">
+                                    <div class="table-header-group" style="visibility: collapse;">
+                                        <div class="table-row right-item-row">
+                                            <div style="width: 50%" class="table-cell lable">队伍名称</div>
+                                            <div style="width: 50%" class="table-cell lable">保电区域</div>
+                                        </div>
+                                    </div>
+                                    <div class="table-row-group hide-scrollbar" id="duiwuListRight">
+                                        <div class="template table-row right-item-row duiwu-item">
+                                            <div class="table-cell value duiwu-item-name" style="text-align: center"></div>
+                                            <div class="table-cell value duiwu-item-unit" style="text-align: center"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="renyuanListRightArea" class="content-right-area"
+                     style="display: flex; flex-direction: column;display: none">
+                    <div>
+                        <div style="display: flex;align-items: center">
+                            <img style="width: 24px;height: 24px" src="img/title_small.gif">
+                            <span style="margin-left: 10px">站所列表</span>
+                        </div>
+                        <div style="margin: 20px 80px">
+                            <div class="table" style="width: 100%">
+                                <div class="table-header-group">
+                                    <div class="table-row right-data-row">
+                                        <div style="width: 50%" class="table-cell lable">站所名称</div>
+                                        <!--<div style="width: 10%" class="table-cell lable">电压等级</div>-->
+                                        <div style="width: 50%" class="table-cell lable">负责单位</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="height: 700px;overflow-y: scroll;width: 100%">
+                                <div class="table" style="width: 100%;border-bottom: 1px #cccccc dotted;">
+                                    <div class="table-header-group" style="visibility: collapse;">
+                                        <div class="table-row right-item-row">
+                                            <div style="width: 50%" class="table-cell lable">站所名称</div>
+                                            <!--<div style="width: 10%" class="table-cell lable">电压等级</div>-->
+                                            <div style="width: 50%" class="table-cell lable">负责单位</div>
+                                        </div>
+                                    </div>
+                                    <div class="table-row-group hide-scrollbar" id="renyuanListRight">
+                                        <div class="template table-row right-item-row renyuan-item">
+                                            <div class="table-cell value renyuan-item-name" style="text-align: center"></div>
+                                            <!--<div class="table-cell value zhansuo-item-address" style="text-align: center"></div>-->
+                                            <div class="table-cell value renyuan-item-unit" style="text-align: center"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="wuziListRightArea" class="content-right-area"
+                     style="display: flex; flex-direction: column;display: none">
+                    <div>
+                        <div style="display: flex;align-items: center">
+                            <img style="width: 24px;height: 24px" src="img/title_small.gif">
+                            <span style="margin-left: 10px">物资列表</span>
+                        </div>
+                        <div style="margin: 20px 80px">
+                            <div class="table" style="width: 100%">
+                                <div class="table-header-group">
+                                    <div class="table-row right-data-row">
+                                        <div style="width: 50%" class="table-cell lable">物资仓库名称</div>
+                                        <!--<div style="width: 10%" class="table-cell lable">电压等级</div>-->
+                                        <!--<div style="width: 50%" class="table-cell lable">负责单位</div>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="height: 700px;overflow-y: scroll;width: 100%">
+                                <div class="table" style="width: 100%;border-bottom: 1px #cccccc dotted;">
+                                    <div class="table-header-group" style="visibility: collapse;">
+                                        <div class="table-row right-item-row">
+                                            <div style="width: 100%" class="table-cell lable">物资名称</div>
+                                            <!--<div style="width: 10%" class="table-cell lable">电压等级</div>-->
+                                            <!--<div style="width: 50%" class="table-cell lable">负责单位</div>-->
+                                        </div>
+                                    </div>
+                                    <div class="table-row-group hide-scrollbar" id="wuziListRight">
+                                        <div class="template table-row right-item-row wuzi-item">
+                                            <div class="table-cell value wuzi-item-name" style="text-align: center"></div>
+                                            <!--<div class="table-cell value wuzi-item-address" style="text-align: center"></div>-->
+                                            <div class="table-cell value wuzi-item-unit" style="text-align: center"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="cheliangListRightArea" class="content-right-area"
+                     style="display: flex; flex-direction: column;display: none">
+                    <div>
+                        <div style="display: flex;align-items: center">
+                            <img style="width: 24px;height: 24px" src="img/title_small.gif">
+                            <span style="margin-left: 10px">车辆列表</span>
+                        </div>
+                        <div style="margin: 20px 80px">
+                            <div class="table" style="width: 100%">
+                                <div class="table-header-group">
+                                    <div class="table-row right-data-row">
+                                        <div style="width: 50%" class="table-cell lable">负责单位</div>
+                                        <div style="width: 50%" class="table-cell lable">车牌号</div>
+                                        <!--<div style="width: 10%" class="table-cell lable">电压等级</div>-->
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="height: 700px;overflow-y: scroll;width: 100%">
+                                <div class="table" style="width: 100%;border-bottom: 1px #cccccc dotted;">
+                                    <div class="table-header-group" style="visibility: collapse;">
+                                        <div class="table-row right-item-row">
+                                            <div style="width: 50%" class="table-cell lable">负责单位</div>
+                                            <div style="width: 50%" class="table-cell lable">车牌号</div>
+                                        </div>
+                                    </div>
+                                    <div class="table-row-group hide-scrollbar" id="cheliangListRight">
+                                        <div class="template table-row right-item-row cheliang-item">
+                                            <div class="table-cell value cheliang-item-name" style="text-align: center"></div>
+                                            <!--<div class="table-cell value cheliang-item-address" style="text-align: center"></div>-->
+                                            <div class="table-cell value cheliang-item-unit" style="text-align: center"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="shebeiListRightArea" class="content-right-area"
+                     style="display: flex; flex-direction: column;display: none">
+                    <div>
+                        <div style="display: flex;align-items: center">
+                            <img style="width: 24px;height: 24px" src="img/title_small.gif">
+                            <span style="margin-left: 10px">设备列表</span>
+                        </div>
+                        <div style="margin: 20px 80px">
+                            <div class="table" style="width: 100%">
+                                <div class="table-header-group">
+                                    <div class="table-row right-data-row">
+                                        <div style="width: 50%" class="table-cell lable">设备名称</div>
+                                        <!--<div style="width: 10%" class="table-cell lable">电压等级</div>-->
+                                        <div style="width: 50%" class="table-cell lable">负责单位</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="height: 700px;overflow-y: scroll;width: 100%">
+                                <div class="table" style="width: 100%;border-bottom: 1px #cccccc dotted;">
+                                    <div class="table-header-group" style="visibility: collapse;">
+                                        <div class="table-row right-item-row">
+                                            <div style="width: 50%" class="table-cell lable">设备名称</div>
+                                            <!--<div style="width: 10%" class="table-cell lable">电压等级</div>-->
+                                            <div style="width: 50%" class="table-cell lable">负责单位</div>
+                                        </div>
+                                    </div>
+                                    <div class="table-row-group hide-scrollbar" id="shebeiListRight">
+                                        <div class="template table-row right-item-row shebei-item">
+                                            <div class="table-cell value shebei-item-name" style="text-align: center"></div>
+                                            <!--<div class="table-cell value zhansuo-item-address" style="text-align: center"></div>-->
+                                            <div class="table-cell value shebei-item-unit" style="text-align: center"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="zhizekaListRightArea" class="content-right-area"
+                     style="display: flex; flex-direction: column;display: none">
+                    <div>
+                        <div style="display: flex;align-items: center">
+                            <img style="width: 24px;height: 24px" src="img/title_small.gif">
+                            <span style="margin-left: 10px">指导卡列表</span>
+                        </div>
+                        <div style="margin: 20px 80px">
+                            <div class="table" style="width: 100%">
+                                <div class="table-header-group">
+                                    <div class="table-row right-data-row">
+                                        <div style="width: 50%" class="table-cell lable">区域</div>
+                                        <div style="width: 50%" class="table-cell lable">单位</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="height: 700px;overflow-y: scroll;width: 100%">
+                                <div class="table" style="width: 100%;border-bottom: 1px #cccccc dotted;">
+                                    <div class="table-header-group" style="visibility: collapse;">
+                                        <div class="table-row right-item-row">
+                                            <div style="width: 50%" class="table-cell lable">区域</div>
+                                            <div style="width: 50%" class="table-cell lable">单位</div>
+                                        </div>
+                                    </div>
+                                    <div class="table-row-group hide-scrollbar" id="zhizekaListRight">
+                                        <div class="template table-row right-item-row zhizeka-item">
+                                            <div class="table-cell value zhizeka-item-name" style="text-align: center"></div>
+                                            <div class="table-cell value zhizeka-item-unit" style="text-align: center"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="fanganListRightArea" class="content-right-area"
+                     style="display: flex; flex-direction: column;display: none">
+                    <div>
+                        <div style="display: flex;align-items: center">
+                            <img style="width: 24px;height: 24px" src="img/title_small.gif">
+                            <span style="margin-left: 10px">保电方案</span>
+                        </div>
+                        <div style="margin: 20px 80px">
+                            <div class="table" style="width: 100%">
+                                <div class="table-header-group">
+                                    <div class="table-row right-data-row">
+                                        <div style="width: 100%" class="table-cell lable">保电方案</div>
+                                        <!--<div style="width: 50%" class="table-cell lable">单位</div>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="height: 700px;overflow-y: scroll;width: 100%">
+                                <div class="table" style="width: 100%;border-bottom: 1px #cccccc dotted;">
+                                    <div class="table-header-group" style="visibility: collapse;">
+                                        <div class="table-row right-item-row">
+                                            <div style="width: 100%" class="table-cell lable">保电方案</div>
+                                            <!--<div style="width: 50%" class="table-cell lable">单位</div>-->
+                                        </div>
+                                    </div>
+                                    <div class="table-row-group hide-scrollbar" id="fanganListRight">
+                                        <div class="template table-row right-item-row fangan-item">
+                                            <div class="table-cell value fangan-item-name" style="text-align: center"></div>
+                                            <!--<div class="table-cell value fangan-item-unit" style="text-align: center"></div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="fengxianListRightArea" class="content-right-area"
+                     style="display: flex; flex-direction: column;display: none">
+                    <div>
+                        <div style="display: flex;align-items: center">
+                            <img style="width: 24px;height: 24px" src="img/title_small.gif">
+                            <span style="margin-left: 10px">指导卡列表</span>
+                        </div>
+                        <div style="margin: 20px 80px">
+                            <div class="table" style="width: 100%">
+                                <div class="table-header-group">
+                                    <div class="table-row right-data-row">
+                                        <div style="width: 100%" class="table-cell lable">保电风险</div>
+                                        <!--<div style="width: 50%" class="table-cell lable">单位</div>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="height: 700px;overflow-y: scroll;width: 100%">
+                                <div class="table" style="width: 100%;border-bottom: 1px #cccccc dotted;">
+                                    <div class="table-header-group" style="visibility: collapse;">
+                                        <div class="table-row right-item-row">
+                                            <div style="width: 100%" class="table-cell lable">保电风险</div>
+                                            <!--<div style="width: 50%" class="table-cell lable">单位</div>-->
+                                        </div>
+                                    </div>
+                                    <div class="table-row-group hide-scrollbar" id="fengxianListRight">
+                                        <div class="template table-row right-item-row fengxian-item">
+                                            <div class="table-cell value fengxian-item-name" style="text-align: center"></div>
+                                            <!--<div class="table-cell value fengxian-item-unit" style="text-align: center"></div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

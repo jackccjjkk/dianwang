@@ -198,3 +198,31 @@ body {
     justify-content: center;
     align-items: flex-end
 }
+
+.content-center{
+    position: absolute;
+    left: 1142px;
+    top: 100px;
+    height: 620px;
+    width: 1060px;
+}
+
+.content-center-inner{
+    position: relative;
+    padding: 16px;
+}
+
+
+.content-center-inner-content{
+    background: url("img/center_bg.png");
+    background-size: 100% 100%;
+}
+
+.content-center-close{
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
