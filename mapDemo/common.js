@@ -1,5 +1,7 @@
 var SERVER_PATH = "data/";
-
+var myDate = new Date();
+var dateStr = myDate.getFullYear() + "年" + (myDate.getMonth() + 1) + "月"+ myDate.getDate() + "日";
+$("#currentDate").text(dateStr);
 function ajaxPost(url, param, success, error, showProgress) {
     if (typeof (showProgress) == 'undefined' || showProgress) {
         showLoading();

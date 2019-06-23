@@ -201,8 +201,8 @@
       "name220": "青云#1、#2主变、港东",
       "people220": "唐晓杰",
       "phone220": "13354066633",
-      "latitude": "38.927147",
-      "longitude": "121.685041",
+      "latitude": "38.9357705755",
+      "longitude": "121.6790929765",
       "rightImage": "data/file/right_changsuo_1.jpg",
       "rightVideo1": "data/file/right_changsuo_1.mp4",
       "rightVideo2": "data/file/right_changsuo_2.mp4",
@@ -257,7 +257,7 @@
     {
       "id": "2",
       "location": "棒棰岛宾馆",
-      "address": "棒棰岛宾馆",
+      "address": "大连市中山区迎宾路1号",
       "name10": "棒棰岛宾馆中心开关站",
       "people10": "周卫",
       "phone10": "13204088295",
@@ -270,8 +270,8 @@
       "name220": "青云#1、#2主变、港东",
       "people220": "唐晓杰",
       "phone220": "13354066633",
-      "latitude": "38.893812",
-      "longitude": "121.711428",
+      "latitude": "38.8954579307",
+      "longitude": "121.7109989365",
       "rightImage": "data/file/right_changsuo_1.jpg",
       "rightVideo1": "data/file/right_changsuo_1.mp4",
       "rightVideo2": "data/file/right_changsuo_2.mp4",
@@ -322,6 +322,237 @@
           "wzck": "变电检修室仓库、石槽变"
         }
       ]
+    },
+    {
+      "id": "3",
+      "location": "香格里拉大酒店",
+      "address": "大连市中山区人民路66号",
+      "name10": "",
+      "people10": "",
+      "phone10": "",
+      "name66": "",
+      "people66": "",
+      "phone66": "",
+      "name66line": "",
+      "people66line": "",
+      "phone66line": "",
+      "name220": "",
+      "people220": "",
+      "phone220": "",
+      "latitude": "38.9313160728",
+      "longitude": "121.6598298231",
+      "rightImage": "",
+      "rightVideo1": "",
+      "rightVideo2": "",
+      "peopleDataList": [
+        {
+          "dw": "",
+          "bdry": "",
+          "zw": "",
+          "lxfs": "",
+          "cph": "",
+          "cllx": "",
+          "wzck": ""
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "location": "富丽华大酒店",
+      "address": "大连市中山区人民路60号",
+      "name10": "",
+      "people10": "",
+      "phone10": "",
+      "name66": "",
+      "people66": "",
+      "phone66": "",
+      "name66line": "",
+      "people66line": "",
+      "phone66line": "",
+      "name220": "",
+      "people220": "",
+      "phone220": "",
+      "latitude": "38.9310825118",
+      "longitude": "121.6585431574",
+      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightVideo1": "data/file/right_changsuo_1.mp4",
+      "rightVideo2": "data/file/right_changsuo_2.mp4",
+      "peopleDataList": [
+        {
+          "dw": "",
+          "bdry": "",
+          "zw": "",
+          "lxfs": "",
+          "cph": "",
+          "cllx": "",
+          "wzck": ""
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "location": "远洋洲际酒店",
+      "address": "大连市友好广场6号",
+      "name10": "",
+      "people10": "",
+      "phone10": "",
+      "name66": "",
+      "people66": "",
+      "phone66": "",
+      "name66line": "",
+      "people66line": "",
+      "phone66line": "",
+      "name220": "",
+      "people220": "",
+      "phone220": "",
+      "latitude": "38.9258220302",
+      "longitude": "121.6472874593",
+      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightVideo1": "data/file/right_changsuo_1.mp4",
+      "rightVideo2": "data/file/right_changsuo_2.mp4",
+      "peopleDataList": [
+        {
+          "dw": "",
+          "bdry": "",
+          "zw": "",
+          "lxfs": "",
+          "cph": "",
+          "cllx": "",
+          "wzck": ""
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "location": "凯宾斯基酒店",
+      "address": "大连市中山区解放路92号",
+      "name10": "",
+      "people10": "",
+      "phone10": "",
+      "name66": "",
+      "people66": "",
+      "phone66": "",
+      "name66line": "",
+      "people66line": "",
+      "phone66line": "",
+      "name220": "",
+      "people220": "",
+      "phone220": "",
+      "latitude": "38.9207660883",
+      "longitude": "121.6449532403",
+      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightVideo1": "data/file/right_changsuo_1.mp4",
+      "rightVideo2": "data/file/right_changsuo_2.mp4",
+      "peopleDataList": [
+        {
+          "dw": "",
+          "bdry": "",
+          "zw": "",
+          "lxfs": "",
+          "cph": "",
+          "cllx": "",
+          "wzck": ""
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "location": "新世界酒店",
+      "address": "大连市中山区人民路41号",
+      "name10": "",
+      "people10": "",
+      "phone10": "",
+      "name66": "",
+      "people66": "",
+      "phone66": "",
+      "name66line": "",
+      "people66line": "",
+      "phone66line": "",
+      "name220": "",
+      "people220": "",
+      "phone220": "",
+      "latitude": "38.9297035118",
+      "longitude": "121.6588131574",
+      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightVideo1": "data/file/right_changsuo_1.mp4",
+      "rightVideo2": "data/file/right_changsuo_2.mp4",
+      "peopleDataList": [
+        {
+          "dw": "",
+          "bdry": "",
+          "zw": "",
+          "lxfs": "",
+          "cph": "",
+          "cllx": "",
+          "wzck": ""
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "location": "良运酒店",
+      "address": "大连市中山区五五路12号",
+      "name10": "",
+      "people10": "",
+      "phone10": "",
+      "name66": "",
+      "people66": "",
+      "phone66": "",
+      "name66line": "",
+      "people66line": "",
+      "phone66line": "",
+      "name220": "",
+      "people220": "",
+      "phone220": "",
+      "latitude": "38.9288080217",
+      "longitude": "121.6654273389",
+      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightVideo1": "data/file/right_changsuo_1.mp4",
+      "rightVideo2": "data/file/right_changsuo_2.mp4",
+      "peopleDataList": [
+        {
+          "dw": "",
+          "bdry": "",
+          "zw": "",
+          "lxfs": "",
+          "cph": "",
+          "cllx": "",
+          "wzck": ""
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "location": "康莱德酒店/希尔顿酒店",
+      "address": "大连市中山区人民东路31号",
+      "name10": "",
+      "people10": "",
+      "phone10": "",
+      "name66": "",
+      "people66": "",
+      "phone66": "",
+      "name66line": "",
+      "people66line": "",
+      "phone66line": "",
+      "name220": "",
+      "people220": "",
+      "phone220": "",
+      "latitude": "38.9345115755",
+      "longitude": "121.6768659765",
+      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightVideo1": "data/file/right_changsuo_1.mp4",
+      "rightVideo2": "data/file/right_changsuo_2.mp4",
+      "peopleDataList": [
+        {
+          "dw": "",
+          "bdry": "",
+          "zw": "",
+          "lxfs": "",
+          "cph": "",
+          "cllx": "",
+          "wzck": ""
+        }
+      ]
     }
   ],
   "xianluList": [
@@ -332,6 +563,9 @@
       "length": "3200米",
       "line": "港主线，港春线，青港线",
       "device": "采集器8套 摄像机3台",
+      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightVideo1": "data/file/0617港华/上午/10.160.121.15_01_20190617115107658.mp4",
+      "rightVideo2": "data/file/0617港华/下午/10.160.121.15_01_20190617160017195.mp4",
       "xianluDataList": [
         {
           "name": "温湿度监测1",
@@ -416,6 +650,9 @@
       "length": "1.24公里",
       "line": "陆南甲乙线",
       "device": "采集器37套 水泵6组 风机14组 摄像机19台",
+      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightVideo1": "data/file/0614陆港/11/_ch9_Main_20190614_105837.mp4",
+      "rightVideo2": "data/file/0614陆港/14/HCVR_ch9_Main_20190614_135916.mp4",
       "xianluDataList": [
         {
           "name": "温湿度监测2",

@@ -612,6 +612,14 @@ function initFaultInfoList(faultInfoList) {
     });
     var swiper = new Swiper('#faultInfoSwiper', {
         loop: true,
+        // effect: 'cube',
+        // grabCursor: true,
+        // cubeEffect: {
+        //     shadow: true,
+        //     slideShadows: true,
+        //     shadowOffset: 20,
+        //     shadowScale: 0.94,
+        // },
         direction: 'vertical',
         autoplay: {
             delay: 2500,

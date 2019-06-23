@@ -19,7 +19,7 @@ function initMap() {
 //  var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); //右上角，仅包含平移和缩放按钮
 
     var point = new BMap.Point(121.679122, 38.935683);  // 创建点坐标
-    map.centerAndZoom(point, 11);                 // 初始化地图，设置中心点坐标和地图级别
+    map.centerAndZoom(point, 13);                 // 初始化地图，设置中心点坐标和地图级别
     // map.addControl(top_left_navigation);
     //添加地图类型控件
 //  map.addControl(new BMap.MapTypeControl({
@@ -131,6 +131,14 @@ function setListener() {
         selectedChangsuoMaker = null;
         $(".content-right-area").hide();
         $("#changsuoListRightArea").show();
+    });
+
+    $("#backToXianluList").click(function () {
+        hideBottomPopup();
+        // selectedChangsuoMaker.setIcon(new BMap.Icon("img/map_icon_changsuo.png", new BMap.Size(66, 59)));
+        // selectedChangsuoMaker = null;
+        $(".content-right-area").hide();
+        $("#xianluListRightArea").show();
     });
 
     $("#menu_zhansuo").click(function () {
@@ -253,7 +261,7 @@ function showXianluList() {
         var myIcon = new BMap.Icon("img/map_icon_biandianzhan.png", new BMap.Size(66, 59));
         var marker = new BMap.Marker(pt, {icon: myIcon});  // 创建标注
         marker.addEventListener("click", function (type, target) {
-            showXianluDetail(item.id);
+            showXianluDetail(item);
         });
         map.addOverlay(marker);
         polyline(map, item.pointArr, "#ad0e21");
@@ -303,6 +311,9 @@ function showChangsuoList() {
         var myIcon = new BMap.Icon("img/map_icon_changsuo.png", new BMap.Size(66, 59));
         var marker = new BMap.Marker(pt, {icon: myIcon});  // 创建标注
         marker.setTitle(item.location);
+        if(item.id == 1 || item.id==2){
+            marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+        }
         marker.addEventListener("click", function (type, target) {
             if(selectedChangsuoMaker == null){
                 // 未选中任何点
@@ -481,7 +492,8 @@ function showChangsuoDetail(item) {
     // 右侧区域
     $(".content-right-area").hide();
     $("#changsuoRightArea").show();
-    $("#changsuo_right_img").attr("src",item.rightImage);
+    $("#changsuo_right_img1").attr("src",item.rightImage);
+    $("#changsuo_right_img2").attr("src",item.rightImage);
     $("#changsuo_right_video_source1").attr("src",item.rightVideo1);
     $("#changsuo_right_video1").load();
     $("#changsuo_right_video_source2").attr("src",item.rightVideo2);
@@ -492,32 +504,37 @@ function showChangsuoDetail(item) {
 /**
  * 线路详细
  */
-function showXianluDetail(id) {
+function showXianluDetail(item) {
     showBottomPopup();
     $(".content-bottom-area").hide();
     $("#xianluArea").show();
-    $.each(xianluList, function (index, item) {
-        if (id == item.id) {
-            $("#xianlu_name").text(item.name);
-            $("#xianlu_address").text(item.address);
-            $("#xianlu_length").text(item.length);
-            $("#xianlu_line").text(item.line);
-            $("#xianlu_device").text(item.device);
+    $("#xianlu_name").text(item.name);
+    $("#xianlu_address").text(item.address);
+    $("#xianlu_length").text(item.length);
+    $("#xianlu_line").text(item.line);
+    $("#xianlu_device").text(item.device);
 
-            $("#xianluDataList").html($("#xianluDataList .template.xianlu-data-item"));
-            $.each(item.xianluDataList, function (index2, xianluData) {
-                var $xianluItem = $("#xianluDataList .template.xianlu-data-item").clone();
-                $(".xianlu-data-item-name", $xianluItem).text(xianluData.name);
-                $(".xianlu-data-item-t_status", $xianluItem).text(xianluData.t_status);
-                $(".xianlu-data-item-t_time", $xianluItem).text(xianluData.t_time);
-                $(".xianlu-data-item-h_status", $xianluItem).text(xianluData.h_status);
-                $(".xianlu-data-item-h_time", $xianluItem).text(xianluData.h_time);
-                $(".xianlu-data-item-g_status", $xianluItem).text(xianluData.g_status);
-                $(".xianlu-data-item-g_comm", $xianluItem).text(xianluData.g_comm);
-                $(".xianlu-data-item-w_status", $xianluItem).text(xianluData.w_status);
-                $(".xianlu-data-item-w_comm", $xianluItem).text(xianluData.w_comm);
-                $xianluItem.removeClass("template").appendTo("#xianluDataList");
-            });
-        }
+    $("#xianluDataList").html($("#xianluDataList .template.xianlu-data-item"));
+    $.each(item.xianluDataList, function (index2, xianluData) {
+        var $xianluItem = $("#xianluDataList .template.xianlu-data-item").clone();
+        $(".xianlu-data-item-name", $xianluItem).text(xianluData.name);
+        $(".xianlu-data-item-t_status", $xianluItem).text(xianluData.t_status);
+        $(".xianlu-data-item-t_time", $xianluItem).text(xianluData.t_time);
+        $(".xianlu-data-item-h_status", $xianluItem).text(xianluData.h_status);
+        $(".xianlu-data-item-h_time", $xianluItem).text(xianluData.h_time);
+        $(".xianlu-data-item-g_status", $xianluItem).text(xianluData.g_status);
+        $(".xianlu-data-item-g_comm", $xianluItem).text(xianluData.g_comm);
+        $(".xianlu-data-item-w_status", $xianluItem).text(xianluData.w_status);
+        $(".xianlu-data-item-w_comm", $xianluItem).text(xianluData.w_comm);
+        $xianluItem.removeClass("template").appendTo("#xianluDataList");
     });
+
+    // 右侧区域
+    $(".content-right-area").hide();
+    $("#xianluRightArea").show();
+    $("#xianlu_right_img").attr("src",item.rightImage);
+    $("#xianlu_right_video_source1").attr("src",item.rightVideo1);
+    $("#xianlu_right_video1").load();
+    $("#xianlu_right_video_source2").attr("src",item.rightVideo2);
+    $("#xianlu_right_video2").load();
 }
