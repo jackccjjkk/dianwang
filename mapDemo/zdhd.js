@@ -370,6 +370,7 @@ function setListener() {
         map.clearOverlays();
         map.centerAndZoom(centerPoint, 13);
         hideBottomPopup();
+        $(".content-center").hide();
         if (selectedMenu == "zhizeka") {
             selectedMenu = null;
             // 显示默认布局
