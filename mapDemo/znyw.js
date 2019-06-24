@@ -1,3 +1,6 @@
+var shudian;
+var dianlan;
+var biandian;
 $(document).ready(function () {
     initMap();
     setLinstener();
@@ -37,6 +40,10 @@ function getData() {
             initdianlan(data.dianlan.dataList);
             initbiandian1(data.biandian.dataList1);
             initbiandian2(data.biandian.dataList2);
+
+            shudian = data.shudian;
+            dianlan = data.dianlan;
+            biandian = data.biandian;
         } else {
 
         }
@@ -190,16 +197,37 @@ function setLinstener() {
     $("#leftMenu1").click(function () {
         $(".content-center").hide();
         $(".content-center1").show();
+
+        $("#video_source1").attr("src", shudian.video1);
+        $("#video1").load();
+        $("#video_source2").attr("src", shudian.video2);
+        $("#video2").load();
+        $("#video_source3").attr("src", shudian.video3);
+        $("#video3").load();
     });
 
     $("#leftMenu2").click(function () {
         $(".content-center").hide();
         $(".content-center2").show();
+
+        $("#video_source1").attr("src", biandian.video1);
+        $("#video1").load();
+        $("#video_source2").attr("src", biandian.video2);
+        $("#video2").load();
+        $("#video_source3").attr("src", biandian.video3);
+        $("#video3").load();
     });
 
     $("#leftMenu3").click(function () {
         $(".content-center").hide();
         $(".content-center3").show();
+
+        $("#video_source1").attr("src", dianlan.video1);
+        $("#video1").load();
+        $("#video_source2").attr("src", dianlan.video2);
+        $("#video2").load();
+        $("#video_source3").attr("src", dianlan.video3);
+        $("#video3").load();
     });
 
     $("#leftMenu4").click(function () {
