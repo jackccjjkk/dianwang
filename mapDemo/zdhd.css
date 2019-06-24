@@ -195,3 +195,23 @@
     border-top: 1px #cccccc dotted;
     padding: 10px 0px;
 }
+
+.content-center1{
+    position: absolute;
+    left: 1142px;
+    top: 100px;
+    height: 620px;
+    width: 1060px;
+}
+
+.content-center2{
+    position: absolute;
+    left: 1042px;
+    top: 360px;
+}
+
+.content-center3{
+    position: absolute;
+    left: 1042px;
+    top: 360px;
+}

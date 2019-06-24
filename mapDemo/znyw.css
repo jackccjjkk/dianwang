@@ -99,3 +99,20 @@
 .goods-info-item {
   text-align: center;
 }
+
+
+.content-center1{
+  position: absolute;
+  left: 400px;
+  top: 50px;
+}
+
+.center-item-row .lable {
+  text-align: center;
+  color: #66ffff;
+}
+
+.center-item-row .value{
+  border-bottom: 1px #cccccc dotted;
+  padding: 8px 0px;
+}

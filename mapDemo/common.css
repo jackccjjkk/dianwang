@@ -200,13 +200,6 @@ body {
     align-items: flex-end
 }
 
-.content-center{
-    position: absolute;
-    left: 1142px;
-    top: 100px;
-    height: 620px;
-    width: 1060px;
-}
 
 .content-center-inner{
     position: relative;

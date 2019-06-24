@@ -563,8 +563,8 @@ function showCheliangList() {
 
         var $item = $("#cheliangListRight .template.cheliang-item").clone();
         $(".cheliang-item-name", $item).text(item.name);
-        $(".cheliang-item-unit", $item).text(item.unit);
-        $(".cheliang-item-phone", $item).text(item.phone);
+        // $(".cheliang-item-unit", $item).text(item.unit);
+        // $(".cheliang-item-phone", $item).text(item.phone);
         $item.click(function () {
             showCheliangDetail(item);
         });
@@ -1065,11 +1065,11 @@ function showXianluDetail(item) {
  */
 
 function showZhizekaDetail(item) {
-    $(".content-center").show();
-    $(".content-center-type").show();
-    $(".content-center-title").text(item.title);
-    $(".content-center-type").text("保电职责卡");
-    $(".content-center-img").attr("src", item.img);
+    $(".content-center1").show();
+    $(".content-center1-type").show();
+    $(".content-center1-title").text(item.title);
+    $(".content-center1-type").text("保电职责卡");
+    $(".content-center1-img").attr("src", item.img);
 }
 
 /**
@@ -1077,11 +1077,11 @@ function showZhizekaDetail(item) {
  */
 
 function showFanganDetail(item) {
-    $(".content-center").show();
-    $(".content-center-type").hide();
-    $(".content-center-title").text(item.name);
-    $(".content-center-type").text("保电方案");
-    $(".content-center-img").attr("src", item.img);
+    $(".content-center1").show();
+    $(".content-center1-type").hide();
+    $(".content-center1-title").text(item.name);
+    $(".content-center1-type").text("保电方案");
+    $(".content-center1-img").attr("src", item.img);
 }
 
 /**
@@ -1089,9 +1089,19 @@ function showFanganDetail(item) {
  */
 
 function showFengxianDetail(item) {
-    $(".content-center").show();
-    $(".content-center-type").show();
-    $(".content-center-title").text(item.title);
-    $(".content-center-type").text("保电风险卡");
-    $(".content-center-img").attr("src", item.img);
+    $(".content-center1").show();
+    $(".content-center1-type").show();
+    $(".content-center1-title").text(item.title);
+    $(".content-center1-type").text("保电风险卡");
+    $(".content-center1-img").attr("src", item.img);
+}
+
+function showDuiwuDetail(item) {
+    $(".content-center2").show();
+    $(".content-center2-img").attr("src", item.img);
+}
+
+function showCheliangDetail(item) {
+    $(".content-center3").show();
+    $(".content-center3-img").attr("src", item.img);
 }
