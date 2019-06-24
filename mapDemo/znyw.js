@@ -31,9 +31,9 @@ function getData() {
         if (data.resultCode = '00') {
             // initChart(data.chartData);
             // initGoodsInfoList(data.goodsInfoList);
-            initShudianList1(data.shudianList1);
-            initShudianList2(data.shudianList1);
-            initShudianList3(data.shudianList1);
+            initShudianList1(data.shudian.dataList1);
+            initShudianList2(data.shudian.dataList2);
+            initShudianList3(data.shudian.dataList3);
         } else {
 
         }
