@@ -43,12 +43,21 @@
     }
   ],
   "zhansuoList": [
-    {"id":"1","type":"2","name":"大连220kV变电站","unit":"输电运检室","longitude":"121.604997","latitude":"38.99485874"},
+    {"id":"1","type":"2","name":"大连220kV变电站","unit":"输电运检室","longitude":"121.604997","latitude":"38.99485874",
+      "rightVideo1": "",
+      "rightVideo2": "",
+      "rightVideo3": "data/file/大连变220.mp4"},
     {"id":"2","type":"2","name":"华昌220kV变电站","unit":"输电运检室","longitude":"121.6454967","latitude":"38.92084637"},
     {"id":"3","type":"2","name":"青云220kV变电站","unit":"输电运检室","longitude":"121.6688809","latitude":"38.91053105"},
-    {"id":"4","type":"1","name":"海之梦广场开关站","unit":"配电运检室","longitude":"121.6828887","latitude":"38.93342023"},
+    {"id":"4","type":"1","name":"海之梦广场开关站","unit":"配电运检室","longitude":"121.6828887","latitude":"38.93342023",
+      "rightVideo1": "",
+      "rightVideo2": "",
+      "rightVideo3": "data/file/海之梦开关站.mp4"},
     {"id":"5","type":"1","name":"国际会议中心开关站","unit":"配电运检室","longitude":"121.683439","latitude":"38.9366794"},
-    {"id":"6","type":"1","name":"万达公馆3#开关站","unit":"配电运检室","longitude":"121.678935","latitude":"38.93483336"},
+    {"id":"6","type":"1","name":"万达公馆3#开关站","unit":"配电运检室","longitude":"121.678935","latitude":"38.93483336",
+      "rightVideo1": "",
+      "rightVideo2": "",
+      "rightVideo3": "data/file/万达3开关站.mp4"},
     {"id":"7","type":"2","name":"春华66kV变电站","unit":"配电运检室","longitude":"121.6781186","latitude":"38.93158366"},
     {"id":"8","type":"2","name":"东海66kV变电站","unit":"配电运检室","longitude":"121.6792946","latitude":"38.92830088"},
     {"id":"9","type":"2","name":"郭家66kV变电站","unit":"配电运检室","longitude":"121.541451","latitude":"38.96033147"},
@@ -548,6 +557,9 @@
       "xflx": "消防普通变电站",
       "latitude": "38.9948587395851",
       "longitude": "121.604997005861",
+      "rightVideo1": "",
+      "rightVideo2": "",
+      "rightVideo3": "data/file/大连变220.mp4",
       "reportDataList": [
         {
           "sblx": "位置状态识别",
@@ -1634,8 +1646,9 @@
         {"id":"东海变104国会丙线","lng":"121.6806719325642","lat":"38.93652055011202","VL":"交流10KV","TYPE":"拐点"},
         {"id":"东海变104国会丙线","lng":"121.68327034552505","lat":"38.93654911112646","VL":"交流10KV","TYPE":"电缆终端头"}
       ]]},
-    {"name":"东海变10KV国会甲线","id":"民寿变405国会甲线","unit":"配电运检室",
-      "pointArr":[]},
+    {"name":"东海变10KV国会甲线","id":"东海变10KV国会甲线","unit":"配电运检室",
+      "pointArr":[
+      ]},
     {"name":"明泽变10KV油化丁线","id":"明泽变107油化甲线","unit":"配电运检室",
       "pointArr":[]},
     {"name":"石槽变10KV棒热线","id":"石槽变 棒热线","unit":"配电运检室",
