@@ -95,12 +95,20 @@ function setListener() {
     $(".content-center-close").click(function () {
        $(".content-center").hide();
     });
-    // $("#leftMenu1").mouseover(function () {
-    //     $("#submenu-1").show();
-    // });
-    // $("#leftMenu1").mouseout(function () {
-    //     $("#submenu-1").hide();
-    // });
+    $("#headerMenuBaodianjiankong").mouseover(function () {
+        $(".header-sub-menu-baodianjiankong").show();
+    });
+    $("#headerMenuBaodianjiankong").mouseout(function () {
+        $(".header-sub-menu-baodianjiankong").hide();
+    });
+
+    $(".header-sub-menu-baodianjiankong").mouseover(function () {
+        $(".header-sub-menu-baodianjiankong").show();
+    });
+    $(".header-sub-menu-baodianjiankong").mouseout(function () {
+        $(".header-sub-menu-baodianjiankong").hide();
+    });
+
     //
     // $("#submenu-1").mouseover(function () {
     //     $("#submenu-1").show();

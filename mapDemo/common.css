@@ -63,6 +63,7 @@ body {
     display: flex;
     flex-direction: column;
     color: white;
+    position: relative;
 }
 
 .header {
@@ -226,3 +227,23 @@ body {
     top: 0px;
 }
 
+.header-sub-menu-baodianjiankong{
+    padding: 0px 10px;
+    position: absolute;
+    left: 2555px;
+    top: 104px;
+    z-index: 999;
+    min-width: 200px;
+    background: rgba(29, 47, 45, 0.8);
+    display: none;
+}
+
+.header-sub-menu-item{
+    border-bottom: 1px #cccccc solid;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.header-sub-menu-item:last-child{
+    border-bottom: none;
+}

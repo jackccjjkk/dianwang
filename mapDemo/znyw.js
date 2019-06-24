@@ -94,6 +94,19 @@ function initGoodsInfoList(goodsInfoList) {
 }
 
 function setLinstener() {
+    $("#headerMenuBaodianjiankong").mouseover(function () {
+        $(".header-sub-menu-baodianjiankong").show();
+    });
+    $("#headerMenuBaodianjiankong").mouseout(function () {
+        $(".header-sub-menu-baodianjiankong").hide();
+    });
+
+    $(".header-sub-menu-baodianjiankong").mouseover(function () {
+        $(".header-sub-menu-baodianjiankong").show();
+    });
+    $(".header-sub-menu-baodianjiankong").mouseout(function () {
+        $(".header-sub-menu-baodianjiankong").hide();
+    });
   $("#leftMenu1").mouseover(function () {
     $("#submenu-1").show();
   });
