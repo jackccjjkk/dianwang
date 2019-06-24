@@ -898,8 +898,10 @@ function showKaiguanzhanDetail(selectedItem) {
     // 右侧区域
     $(".content-right-area").hide();
     $("#zhansuoRightArea").show();
-    $("#zhansuo_right_img1").attr("src", selectedItem.rightImage);
-    $("#zhansuo_right_img2").attr("src", selectedItem.rightImage);
+    // $("#zhansuo_right_img1").attr("src", selectedItem.rightImage);
+    // $("#zhansuo_right_img2").attr("src", selectedItem.rightImage);
+    $("#zhansuo_right_video_source3").attr("src", selectedItem.rightVideo3);
+    $("#zhansuo_right_video3").load();
     $("#zhansuo_right_video_source1").attr("src", selectedItem.rightVideo1);
     $("#zhansuo_right_video1").load();
     $("#zhansuo_right_video_source2").attr("src", selectedItem.rightVideo2);
@@ -953,8 +955,14 @@ function showBiandianzhanDetail(selectedItem) {
     // 右侧区域
     $(".content-right-area").hide();
     $("#zhansuoRightArea").show();
-    $("#zhansuo_right_img1").attr("src", selectedItem.rightImage);
-    $("#zhansuo_right_img2").attr("src", selectedItem.rightImage);
+    // $("#zhansuo_right_img1").attr("src", selectedItem.rightImage);
+    // $("#zhansuo_right_img2").attr("src", selectedItem.rightImage);
+    // $("#zhansuo_right_video_source1").attr("src", selectedItem.rightVideo1);
+    // $("#zhansuo_right_video1").load();
+    // $("#zhansuo_right_video_source2").attr("src", selectedItem.rightVideo2);
+    // $("#zhansuo_right_video2").load();
+    $("#zhansuo_right_video_source3").attr("src", selectedItem.rightVideo3);
+    $("#zhansuo_right_video3").load();
     $("#zhansuo_right_video_source1").attr("src", selectedItem.rightVideo1);
     $("#zhansuo_right_video1").load();
     $("#zhansuo_right_video_source2").attr("src", selectedItem.rightVideo2);
