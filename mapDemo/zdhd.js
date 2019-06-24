@@ -757,6 +757,7 @@ function showXianluList() {
         $(".xianlu-item-name", $item).text(item.name);
         $(".xianlu-item-unit", $item).text(item.unit);
         $item.click(function () {
+            console.log(item);
             showXianluDetail(item);
         });
         $item.removeClass("template").appendTo("#xianluListRight")
@@ -1009,10 +1010,10 @@ function showChangsuoDetail(item) {
     // 右侧区域
     $(".content-right-area").hide();
     $("#changsuoRightArea").show();
-    $("#changsuo_right_img1").attr("src", item.rightImage);
-    $("#changsuo_right_img2").attr("src", item.rightImage);
-    $("#changsuo_right_video_source1").attr("src", item.rightVideo1);
-    $("#changsuo_right_video1").load();
+    $("#changsuo_right_img1").attr("src", item.rightImage1);
+    $("#changsuo_right_img2").attr("src", item.rightImage2);
+    // $("#changsuo_right_video_source1").attr("src", item.rightVideo1);
+    // $("#changsuo_right_video1").load();
     $("#changsuo_right_video_source2").attr("src", item.rightVideo2);
     $("#changsuo_right_video2").load();
 
