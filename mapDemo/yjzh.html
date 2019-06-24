@@ -39,7 +39,7 @@
                 <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
                                                       href="znyw.html">智能运维</a></div>
             </div>
-            <div class="header-menu-item selected" >
+            <div class="header-menu-item selected">
                 <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
                                                       href="yjzh.html">应急指挥</a></div>
             </div>
@@ -52,81 +52,78 @@
     </div>
     <div class="header-sub-menu-baodianjiankong">
         <div class="header-sub-menu-item">
-            <a style="color: white;text-decoration: none" href="openIE:http://localhost:8080/mapDemo/sp/bkq1.html">布控球1</a>
+            <a style="color: white;text-decoration: none"
+               href="openIE:http://localhost:8080/mapDemo/sp/bkq1.html">布控球1</a>
         </div>
         <div class="header-sub-menu-item">
-            <a style="color: white;text-decoration: none" href="openIE:http://localhost:8080/mapDemo/sp/bkq2.html">布控球2</a>
+            <a style="color: white;text-decoration: none"
+               href="openIE:http://localhost:8080/mapDemo/sp/bkq2.html">布控球2</a>
         </div>
         <div class="header-sub-menu-item">
-            <a style="color: white;text-decoration: none" href="openIE:http://localhost:8080/mapDemo/sp/bkq3.html">布控球3</a>
+            <a style="color: white;text-decoration: none"
+               href="openIE:http://localhost:8080/mapDemo/sp/bkq3.html">布控球3</a>
         </div>
         <div class="header-sub-menu-item">
-            <a style="color: white;text-decoration: none" href="openIE:http://localhost:8080/mapDemo/sp/bkq4.html">布控球4</a>
+            <a style="color: white;text-decoration: none"
+               href="openIE:http://localhost:8080/mapDemo/sp/bkq4.html">布控球4</a>
         </div>
         <div class="header-sub-menu-item">
-            <a style="color: white;text-decoration: none" href="openIE:http://localhost:8080/mapDemo/sp/bkq5.html">布控球5</a>
+            <a style="color: white;text-decoration: none"
+               href="openIE:http://localhost:8080/mapDemo/sp/bkq5.html">布控球5</a>
         </div>
         <div class="header-sub-menu-item">
-            <a style="color: white;text-decoration: none" href="openIE:http://localhost:8080/mapDemo/sp/bkq6.html">布控球6</a>
+            <a style="color: white;text-decoration: none"
+               href="openIE:http://localhost:8080/mapDemo/sp/bkq6.html">布控球6</a>
         </div>
     </div>
     <div class="content">
         <div class="map" id="map"></div>
         <div class="content-left">
             <div style="display: flex;padding: 0px 40px;">
-                <div style="flex: 1;">
-                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
-                        <img src="img/hd.png">
-                    </div>
-                    <div style="text-align: center">活动</div>
-                </div>
-                <div style="flex: 1;">
-                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
-                        <img src="img/cs.png">
+                <!--<div style="flex: 1;">-->
+                <!--<div class="content-menu-img-container">-->
+                <!--<img src="img/hd.png">-->
+                <!--</div>-->
+                <!--<div style="text-align: center">活动</div>-->
+                <!--</div>-->
+                <div id="menu_baodianchangsuo"
+                     class="content-menu">
+                    <div class="content-menu-img-container">
+                        <img id="menu_changsuo_img" src="img/cs.png">
                     </div>
                     <div style="text-align: center">保电场所</div>
                 </div>
-                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
-                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
-                        <img src="img/xl.png">
+                <div id="menu_xianlu"
+                     class="content-menu">
+                    <div class="content-menu-img-container">
+                        <img id="menu_xianlu_img" src="img/xl.png">
                     </div>
                     <div style="text-align: center">线路</div>
                 </div>
-                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
-                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
-                        <img src="img/zs.png">
-                    </div>
-                    <div style="text-align: center">站所</div>
-                </div>
-                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
-                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
-                        <img src="img/dw.png">
+
+                <div id="menu_duiwu" class="content-menu">
+                    <div class="content-menu-img-container">
+                        <img id="menu_duiwu_img" src="img/dw.png">
                     </div>
                     <div style="text-align: center">队伍</div>
                 </div>
-                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
-                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
-                        <img src="img/ry.png">
-                    </div>
-                    <div style="text-align: center">人员</div>
-                </div>
-                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
-                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
-                        <img src="img/cl.png">
+                <!--<div id="menu_renyuan" class="content-menu">-->
+                <!--<div class="content-menu-img-container">-->
+                <!--<img id="menu_renyuan_img" src="img/ry.png">-->
+                <!--</div>-->
+                <!--<div style="text-align: center">人员</div>-->
+                <!--</div>-->
+                <div id="menu_cheliang" class="content-menu">
+                    <div class="content-menu-img-container">
+                        <img id="menu_cheliang_img" src="img/cl.png">
                     </div>
                     <div style="text-align: center">车辆</div>
                 </div>
-                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
-                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
-                        <img src="img/wz.png">
+                <div id="menu_wuzi" class="content-menu">
+                    <div class="content-menu-img-container">
+                        <img id="menu_wuzi_img" src="img/wz.png">
                     </div>
                     <div style="text-align: center">物资</div>
-                </div>
-                <div style="flex: 1;display: flex;flex-direction: column;align-items: center">
-                    <div style="height: 80px;display: flex;justify-content: center;align-items: flex-end;">
-                        <img src="img/sb.png">
-                    </div>
-                    <div style="text-align: center">设备</div>
                 </div>
             </div>
         </div>
@@ -138,7 +135,7 @@
                         <span style="margin-left: 10px">重要事件</span>
                     </div>
                     <div id="eventInfoList" class="hide-scrollbar" style="margin-top: 30px;margin-left: 20px;">
-                        <div class="template event-info-item list-item">
+                        <div class="template event-info-item list-item" style="cursor: pointer">
                             <div style="display: flex;align-items: center;height: 100%;">
                                 <img src="img/dot.png" style="width: 18px;height: 18px;margin-left: 10px"/>
                                 <div class="event-info-item-date max-line-1" style="flex: 1;margin-left: 24px"></div>
@@ -165,33 +162,36 @@
                 <div style="flex: 1;">
                     <div style="display: flex;align-items: center">
                         <img style="width: 24px;height: 24px" src="img/title_small.gif">
-                        <span style="margin-left: 10px">无人机视频监控</span>
+                        <span style="margin-left: 10px">视频监控</span>
                     </div>
-                    <div style="margin-top: 30px;margin-left: 20px">
-                        <img src="img/video.jpg"/>
+                    <div style="margin-top: 20px;margin-left: 10px">
+                        <video muted style="background: black" id="video1" width="460" height="312"
+                               autoplay loop>
+                            <source id="video_source1"
+                                    src="" type="video/mp4">
+                            您的浏览器不支持 HTML5 video 标签。
+                        </video>
                     </div>
                 </div>
                 <div style="flex: 1;">
                     <div style="display: flex;align-items: center">
                         <img style="width: 24px;height: 24px" src="img/title_small.gif">
-                        <span style="margin-left: 10px">现场动态</span>
+                        <span style="margin-left: 10px">视频监控</span>
                     </div>
-                    <div style="margin-left: 20px;margin-top: 30px;font-size: 20px">
-                        <div style="margin-top: 15px"><span>现场地址：</span><span>大连市西岗区会议中心</span></div>
-                        <div style="margin-top: 15px"><span>保电人员：</span><span>10人</span></div>
-                        <div style="margin-top: 15px"><span>保电等级：</span><span>三级</span></div>
-                        <div style="margin-top: 15px"><span>保电风险：</span><span>三级</span></div>
-                        <div style="margin-top: 15px"><span>保电车辆：</span><span>2辆</span></div>
-                        <div style="margin-top: 15px"><span>保电面积：</span><span>100平方米</span></div>
-                        <div style="margin-top: 15px"><span>保电详情：</span><span>还是范德萨发的说法回到家撒可恢复到地方还是感觉好多第三方的发货……</span>
-                        </div>
+                    <div style="margin-top: 20px;margin-left: 10px">
+                        <video muted style="background: black" id="video2" width="460" height="312"
+                               autoplay loop>
+                            <source id="video_source2"
+                                    src="" type="video/mp4">
+                            您的浏览器不支持 HTML5 video 标签。
+                        </video>
                     </div>
                 </div>
             </div>
 
         </div>
-        <div class="content-bottom">
-        </div>
+        <!--<div class="content-bottom">-->
+        <!--</div>-->
     </div>
 </div>
 

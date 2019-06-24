@@ -192,6 +192,21 @@ function setLinstener() {
         $(".content-center1").show();
     });
 
+    $("#leftMenu2").click(function () {
+        $(".content-center").hide();
+        $(".content-center2").show();
+    });
+
+    $("#leftMenu3").click(function () {
+        $(".content-center").hide();
+        $(".content-center3").show();
+    });
+
+    $("#leftMenu4").click(function () {
+        $(".content-center").hide();
+    });
+
+
     $(".content-center-close").click(function () {
         $(".content-center").hide();
     });
