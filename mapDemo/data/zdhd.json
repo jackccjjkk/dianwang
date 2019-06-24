@@ -44,19 +44,19 @@
   ],
   "zhansuoList": [
     {"id":"1","type":"2","name":"大连220kV变电站","unit":"输电运检室","longitude":"121.604997","latitude":"38.99485874",
-      "rightVideo1": "",
-      "rightVideo2": "",
+      "rightVideo1": "data/file/0614华昌/14/10.161.39.5_02_20190614140004977.mp4",
+      "rightVideo2": "data/file/0614华昌/14/10.161.39.5_06_20190614140008485.mp4",
       "rightVideo3": "data/file/大连变220.mp4"},
     {"id":"2","type":"2","name":"华昌220kV变电站","unit":"输电运检室","longitude":"121.6454967","latitude":"38.92084637"},
     {"id":"3","type":"2","name":"青云220kV变电站","unit":"输电运检室","longitude":"121.6688809","latitude":"38.91053105"},
     {"id":"4","type":"1","name":"海之梦广场开关站","unit":"配电运检室","longitude":"121.6828887","latitude":"38.93342023",
-      "rightVideo1": "",
-      "rightVideo2": "",
+      "rightVideo1": "data/file/0614陆港/下午/10.160.121.15_01_20190617160017195.mp4",
+      "rightVideo2": "data/file/0614陆港/下午/10.160.121.15_02_20190617160017706.mp4",
       "rightVideo3": "data/file/海之梦开关站.mp4"},
     {"id":"5","type":"1","name":"国际会议中心开关站","unit":"配电运检室","longitude":"121.683439","latitude":"38.9366794"},
     {"id":"6","type":"1","name":"万达公馆3#开关站","unit":"配电运检室","longitude":"121.678935","latitude":"38.93483336",
-      "rightVideo1": "",
-      "rightVideo2": "",
+      "rightVideo1": "data/file/0617晶圆/0617晶圆1/下午/10.161.60.80_01_20190617144603397.mp4",
+      "rightVideo2": "data/file/0617晶圆/0617晶圆1/下午/10.161.60.80_03_20190617144605795.mp4",
       "rightVideo3": "data/file/万达3开关站.mp4"},
     {"id":"7","type":"2","name":"春华66kV变电站","unit":"配电运检室","longitude":"121.6781186","latitude":"38.93158366"},
     {"id":"8","type":"2","name":"东海66kV变电站","unit":"配电运检室","longitude":"121.6792946","latitude":"38.92830088"},
@@ -1175,7 +1175,8 @@
       "phone220": "13354066633",
       "latitude": "38.9357705755",
       "longitude": "121.6790929765",
-      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightImage1": "data/file/1561363533058.jpg",
+      "rightImage2":"data/file/1561363614116.jpg",
       "rightVideo1": "data/file/right_changsuo_1.mp4",
       "rightVideo2": "data/file/right_changsuo_2.mp4",
       "peopleDataList": [
@@ -1244,7 +1245,8 @@
       "phone220": "13354066633",
       "latitude": "38.8954579307",
       "longitude": "121.7109989365",
-      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightImage1": "data/file/1561363533058.jpg",
+      "rightImage2":"data/file/1561363614116.jpg",
       "rightVideo1": "data/file/right_changsuo_1.mp4",
       "rightVideo2": "data/file/right_changsuo_2.mp4",
       "peopleDataList": [
@@ -1313,7 +1315,8 @@
       "phone220": "",
       "latitude": "38.9313160728",
       "longitude": "121.6598298231",
-      "rightImage": "",
+      "rightImage1": "data/file/1561363533058.jpg",
+      "rightImage2":"data/file/1561363614116.jpg",
       "rightVideo1": "",
       "rightVideo2": "",
       "peopleDataList": [
@@ -1346,7 +1349,8 @@
       "phone220": "",
       "latitude": "38.9310825118",
       "longitude": "121.6585431574",
-      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightImage1": "data/file/1561363533058.jpg",
+      "rightImage2":"data/file/1561363614116.jpg",
       "rightVideo1": "data/file/right_changsuo_1.mp4",
       "rightVideo2": "data/file/right_changsuo_2.mp4",
       "peopleDataList": [
@@ -1379,7 +1383,8 @@
       "phone220": "",
       "latitude": "38.9258220302",
       "longitude": "121.6472874593",
-      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightImage1": "data/file/1561363533058.jpg",
+      "rightImage2":"data/file/1561363614116.jpg",
       "rightVideo1": "data/file/right_changsuo_1.mp4",
       "rightVideo2": "data/file/right_changsuo_2.mp4",
       "peopleDataList": [
@@ -1412,7 +1417,8 @@
       "phone220": "",
       "latitude": "38.9207660883",
       "longitude": "121.6449532403",
-      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightImage1": "data/file/1561363533058.jpg",
+      "rightImage2":"data/file/1561363614116.jpg",
       "rightVideo1": "data/file/right_changsuo_1.mp4",
       "rightVideo2": "data/file/right_changsuo_2.mp4",
       "peopleDataList": [
@@ -1445,7 +1451,8 @@
       "phone220": "",
       "latitude": "38.9297035118",
       "longitude": "121.6588131574",
-      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightImage1": "data/file/1561363533058.jpg",
+      "rightImage2":"data/file/1561363614116.jpg",
       "rightVideo1": "data/file/right_changsuo_1.mp4",
       "rightVideo2": "data/file/right_changsuo_2.mp4",
       "peopleDataList": [
@@ -1478,7 +1485,8 @@
       "phone220": "",
       "latitude": "38.9288080217",
       "longitude": "121.6654273389",
-      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightImage1": "data/file/1561363533058.jpg",
+      "rightImage2":"data/file/1561363614116.jpg",
       "rightVideo1": "data/file/right_changsuo_1.mp4",
       "rightVideo2": "data/file/right_changsuo_2.mp4",
       "peopleDataList": [
@@ -1511,7 +1519,8 @@
       "phone220": "",
       "latitude": "38.9345115755",
       "longitude": "121.6768659765",
-      "rightImage": "data/file/right_changsuo_1.jpg",
+      "rightImage1": "data/file/1561363533058.jpg",
+      "rightImage2":"data/file/1561363614116.jpg",
       "rightVideo1": "data/file/right_changsuo_1.mp4",
       "rightVideo2": "data/file/right_changsuo_2.mp4",
       "peopleDataList": [
@@ -1728,4 +1737,5 @@
   {"id":"4","title":"配电运检","name":"配电运检保电风险卡","img":"data/file/fengxian/4.png"},
   {"id":"5","title":"输电","name":"输电保电风险卡","img":"data/file/fengxian/5.png"}
   ]
+
 }
