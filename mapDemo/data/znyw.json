@@ -17,7 +17,79 @@
       {"xianlu":"瓦万甲线","vl":"交流220kV","type":"微气象监测","name":"瓦万线11全工况","temperature":"26","pressure":"989.1","Pi":"0","maxw":"4.33","nomw":"2.2","bigw":"2.8","avgw":"2.5","Pw":"0","state":"运行正常"},
       {"xianlu":"吴佟乙线","vl":"交流220kV","type":"微气象监测","name":"吴佟乙线11微气象","temperature":"23.9","pressure":"988.11","Pi":"0","maxw":"4.8","nomw":"2.3","bigw":"2.9","avgw":"2.4","Pw":"0","state":"运行正常"},
       {"xianlu":"岩庄线","vl":"交流220kV","type":"微气象监测","name":"岩庄线108","temperature":"24.6","pressure":"988.23","Pi":"0","maxw":"4.9","nomw":"2.5","bigw":"2.4","avgw":"2.63","Pw":"0","state":"运行正常"}
+    ],
+    "dataList2":[
+        {"xianlu":"前玉乙线","gan":"36","vl":"交流220kV","type":"覆冰监测","name":"前玉乙线36#全工况","angle":"52","deflection":"25.32","td":"13882","ice":"0","hang":"16263.2","state":"运行正常"},
+        {"xianlu":"复山左线","gan":"81","vl":"交流66kV","type":"覆冰监测","name":"复山左线81#全工况","angle":"50","deflection":"25.69","td":"13854","ice":"0","hang":"16264.3","state":"运行正常"},
+        {"xianlu":"复桥左线","gan":"32","vl":"交流66kV","type":"覆冰监测","name":"复桥左线32#全工况","angle":"50.5","deflection":"25.69","td":"13863","ice":"0","hang":"16265.1","state":"运行正常"},
+        {"xianlu":"桥长甲线","gan":"42","vl":"交流220kV","type":"覆冰监测","name":"桥长甲线#42全工况","angle":"51","deflection":"25.54","td":"13871","ice":"0","hang":"16262.4","state":"运行正常"},
+        {"xianlu":"瓦万甲线","gan":"11","vl":"交流220kV","type":"覆冰监测","name":"瓦万线11全工况","angle":"50","deflection":"25.12","td":"13852","ice":"0","hang":"16261.5","state":"运行正常"}
+    ],
+    "dataList3":[
+      {"xianlu":"复桥左线","gan":"32","vl":"交流66kV","type":"导线温度监测","name":"复桥左线32#全工况","temp":"正常","state":"运行正常"},
+      {"xianlu":"复山左线","gan":"81","vl":"交流66kV","type":"导线温度监测","name":"复山左线81#全工况","temp":"正常","state":"运行正常"},
+      {"xianlu":"前玉乙线","gan":"36","vl":"交流220kV","type":"导线温度监测","name":"前玉乙线36#全工况","temp":"正常","state":"运行正常"},
+      {"xianlu":"桥长甲线","gan":"42","vl":"交流220kV","type":"导线温度监测","name":"桥长甲线#42全工况","temp":"正常","state":"运行正常"},
+      {"xianlu":"瓦万甲线","gan":"11","vl":"交流220kV","type":"导线温度监测","name":"瓦万线11全工况","temp":"正常","state":"运行正常"}
+    ]
+  },
+  "dianlan":{
+    "video1":"",
+    "video2":"",
+    "video3":"",
+    "dataList":[
+      {"xianlu":"合连（南连）线63#-64#","shijian":"正常","wendu":"0.0CM","shidu":"14℃","CO":"0.0PPM","H2S":"0.0PPM","O2":"20.3VOL","CH4":"0.0LEL","shuiweizhi":"65.80%","dianliu":"A:2.3A,B:2.9A,C:1.9A","jdwendu":"正常","guangxian":"正常","real":"信号正常"},
+      {"xianlu":"雁昌甲乙线13#-黄昌变","shijian":"正常","wendu":"0.0CM","shidu":"18℃","CO":"0.0PPM","H2S":"0.0PPM","O2":"22.1VOL","CH4":"0.0LEL","shuiweizhi":"61.30%","dianliu":"A:2.1A,B:4A,C:1.9A","jdwendu":"正常","guangxian":"正常","real":"信号正常"},
+      {"xianlu":"陆南甲乙线1#-4#","shijian":"正常","wendu":"0.0CM","shidu":"17℃","CO":"0.0PPM","H2S":"0.0PPM","O2":"23.1VOL","CH4":"0.0LEL","shuiweizhi":"59.80%","dianliu":"A:1.6A,B:3.2A,C:2A","jdwendu":"正常","guangxian":"正常","real":"信号正常"},
+      {"xianlu":"香王左右线香海热力厂-1#","shijian":"正常","wendu":"0.0CM","shidu":"19℃","CO":"0.0PPM","H2S":"0.0PPM","O2":"23.1VOL","CH4":"0.0LEL","shuiweizhi":"59.80%","dianliu":"A:2.4A,B:3.2A,C:3.1A","jdwendu":"正常","guangxian":"正常","real":"信号正常"},
+      {"xianlu":"北山左右线4#-大孤山变","shijian":"正常","wendu":"0.0CM","shidu":"15℃","CO":"0.0PPM","H2S":"0.0PPM","O2":"22.1VOL","CH4":"0.0LEL","shuiweizhi":"60.80%","dianliu":"A:1.4A,B:2.9A,C:0.9A","jdwendu":"正常","guangxian":"正常","real":"信号正常"},
+      {"xianlu":"和湾线（朱棋路）61#-62#","shijian":"正常","wendu":"0.0CM","shidu":"14℃","CO":"0.0PPM","H2S":"0.0PPM","O2":"22.3VOL","CH4":"0.0LEL","shuiweizhi":"64.10%","dianliu":"A:2.6A,B:3.2A,C:2.9A","jdwendu":"正常","guangxian":"正常","real":"信号正常"},
+      {"xianlu":"前辛左右线（大东沟分）","shijian":"正常","wendu":"0.0CM","shidu":"19℃","CO":"0.0PPM","H2S":"0.0PPM","O2":"23.1VOL","CH4":"0.0LEL","shuiweizhi":"59.80%","dianliu":"A:2.2A,B:4.2A,C:3.4A","jdwendu":"正常","guangxian":"正常","real":"信号正常"},
+      {"xianlu":"水岛左右线21#-27#","shijian":"正常","wendu":"0.0CM","shidu":"18℃","CO":"0.0PPM","H2S":"0.0PPM","O2":"21.1VOL","CH4":"0.0LEL","shuiweizhi":"50.60%","dianliu":"A:2.1A,B:4.6A,C:1.5A","jdwendu":"正常","guangxian":"正常","real":"信号正常"},
+      {"xianlu":"安岭-北车（机车）66kv","shijian":"正常","wendu":"0.0CM","shidu":"13℃","CO":"0.0PPM","H2S":"0.0PPM","O2":"23.1VOL","CH4":"0.0LEL","shuiweizhi":"56.80%","dianliu":"A:1.4A,B:3.1A,C:3.2A","jdwendu":"正常","guangxian":"正常","real":"信号正常"},
+      {"xianlu":"东沈左右线东兴变-沈阳路变","shijian":"正常","wendu":"0.0CM","shidu":"17℃","CO":"0.0PPM","H2S":"0.0PPM","O2":"20.7VOL","CH4":"0.0LEL","shuiweizhi":"67.80%","dianliu":"A:1.8A,B:2.2A,C:2.9A","jdwendu":"正常","guangxian":"正常","real":"信号正常"},
+      {"xianlu":"高淮甲线高城山变-1#（高英）","shijian":"正常","wendu":"0.0CM","shidu":"12℃","CO":"0.0PPM","H2S":"0.0PPM","O2":"2.5.1VOL","CH4":"0.0LEL","shuiweizhi":"60.80%","dianliu":"A:2.3A,B:4.5A,C:2A","jdwendu":"正常","guangxian":"正常","real":"信号正常"},
+      {"xianlu":"中港左右线中华路变-港前变","shijian":"正常","wendu":"0.0CM","shidu":"11℃","CO":"0.0PPM","H2S":"0.0PPM","O2":"20.2VOL","CH4":"0.0LEL","shuiweizhi":"58.90%","dianliu":"A:1.5A,B:3.7A,C:2.3A","jdwendu":"正常","guangxian":"正常","real":"信号正常"},
+      {"xianlu":"高中左右线中华路变-1#","shijian":"正常","wendu":"0.0CM","shidu":"15℃","CO":"0.0PPM","H2S":"0.0PPM","O2":"22.5VOL","CH4":"0.0LEL","shuiweizhi":"62.20%","dianliu":"A:2.4A,B:2.9A,C:1.8A","jdwendu":"正常","guangxian":"正常","real":"信号正常"},
+      {"xianlu":"前辛左右线（未来城段）","shijian":"正常","wendu":"0.0CM","shidu":"17℃","CO":"0.0PPM","H2S":"0.0PPM","O2":"25.4VOL","CH4":"0.0LEL","shuiweizhi":"68.10%","dianliu":"A:1.8A,B:4.4A,C:3.3A","jdwendu":"正常","guangxian":"正常","real":"信号正常"},
+      {"xianlu":"华三左右线华昌变-三元变","shijian":"正常","wendu":"0.0CM","shidu":"16℃","CO":"0.0PPM","H2S":"0.0PPM","O2":"23.8VOL","CH4":"0.0LEL","shuiweizhi":"63.50%","dianliu":"A:2.2A,B:2.6A,C:2.9A","jdwendu":"正常","guangxian":"正常","real":"信号正常"}
+    ]
+  },
+  "biandian":{
+    "video1":"",
+    "video2":"",
+    "video3":"",
+    "dataList1":[
+      {"biandian":"大连220kV变电站","shebei":"#1主变压器","dengji":"交流220kV","type":"油中溶解气体","name":"大连1#主变油色谱","jw":"0.603","yx":"0","yq":"0","qq":"0.267","yw":"0","zj":"0.607","ert":"0","yit":"11.323","yangq":"0","qingq":"0","zt":"运行正常"},
+      {"biandian":"大连220kV变电站","shebei":"#2主变压器","dengji":"交流220kV","type":"油中溶解气体","name":"大连2#主变油色谱","jw":"0.602","yx":"0","yq":"0","qq":"0.266","yw":"0","zj":"0.606","ert":"0","yit":"11.322","yangq":"0","qingq":"0","zt":"运行正常"},
+      {"biandian":"华昌220kV变电站","shebei":"#1主变压器","dengji":"交流220kV","type":"油中溶解气体","name":"华昌#1变油色谱","jw":"0.618","yx":"0","yq":"0","qq":"0.282","yw":"0","zj":"0.622","ert":"0","yit":"11.338","yangq":"0","qingq":"0","zt":"运行正常"},
+      {"biandian":"华昌220kV变电站","shebei":"#2主变压器","dengji":"交流220kV","type":"油中溶解气体","name":"2#主变油色谱装置","jw":"0.617","yx":"0","yq":"0","qq":"0.281","yw":"0","zj":"0.621","ert":"0","yit":"11.337","yangq":"0","qingq":"0","zt":"运行正常"},
+      {"biandian":"青云220kV变电站","shebei":"#1主变压器","dengji":"交流220kV","type":"油中溶解气体","name":"青云1#变压器油色谱","jw":"0.653","yx":"0","yq":"0","qq":"0.317","yw":"0","zj":"0.657","ert":"0","yit":"11.373","yangq":"0","qingq":"0","zt":"运行正常"},
+      {"biandian":"青云220kV变电站","shebei":"#2主变压器","dengji":"交流220kV","type":"油中溶解气体","name":"青云2#变压器油色谱","jw":"0.652","yx":"0","yq":"0","qq":"0.316","yw":"0","zj":"0.656","ert":"0","yit":"11.372","yangq":"0","qingq":"0","zt":"运行正常"},
+      {"biandian":"港东220kV变电站","shebei":"#1主变压器(主变压器)","dengji":"交流220kV","type":"油中溶解气体","name":"港东1号主变油色谱","jw":"0.607","yx":"0","yq":"0","qq":"0.271","yw":"0","zj":"0.611","ert":"0","yit":"11.327","yangq":"0","qingq":"0","zt":"运行正常"},
+      {"biandian":"港东220kV变电站","shebei":"#2主变压器(主变压器)","dengji":"交流220kV","type":"油中溶解气体","name":"港东2号主变油色谱","jw":"0.608","yx":"0","yq":"0","qq":"0.272","yw":"0","zj":"0.612","ert":"0","yit":"11.328","yangq":"0","qingq":"0","zt":"运行正常"},
+      {"biandian":"陆港220kV变电站","shebei":"#1主变压器","dengji":"交流220kV","type":"油中溶解气体","name":"陆港#1主变油色谱","jw":"0.622","yx":"0","yq":"0","qq":"0.286","yw":"0","zj":"0.626","ert":"0","yit":"11.342","yangq":"0","qingq":"0","zt":"运行正常"},
+      {"biandian":"陆港220kV变电站","shebei":"#2主变压器","dengji":"交流220kV","type":"油中溶解气体","name":"陆港#2主变油色谱","jw":"0.623","yx":"0","yq":"0","qq":"0.287","yw":"0","zj":"0.627","ert":"0","yit":"11.343","yangq":"0","qingq":"0","zt":"运行正常"}
+    ],
+    "dataList2":[
+      {"biandian":"马场220kV变电站","shebei":"#1主一次2201断路器","dengji":"交流220kV","type":"局部放电","name":"马场2201断路器A相局部放电1","mc":"11","fd":"1.217","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#1主一次2201断路器","dengji":"交流220kV","type":"局部放电","name":"马场2201断路器B相局部放电1","mc":"3750","fd":"0.172","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#1主一次2201断路器","dengji":"交流220kV","type":"局部放电","name":"马场2201断路器A相局部放电2","mc":"3750","fd":"0.729","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#1主一次2201断路器","dengji":"交流220kV","type":"局部放电","name":"马场2201断路器C相局部放电2","mc":"67","fd":"1.381","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#1主一次2201断路器","dengji":"交流220kV","type":"局部放电","name":"马场2201断路器C相局部放电1","mc":"13","fd":"0.524","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#1主一次2201断路器","dengji":"交流220kV","type":"局部放电","name":"马场2201断路器B相局部放电2","mc":"3750","fd":"0.694","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#2主一次2202断路器","dengji":"交流220kV","type":"局部放电","name":"马场2202断路器A相局部放电2","mc":"11","fd":"1.217","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#2主一次2202断路器","dengji":"交流220kV","type":"局部放电","name":"马场2202断路器C相局部放电2","mc":"3750","fd":"0.172","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#2主一次2202断路器","dengji":"交流220kV","type":"局部放电","name":"马场2202断路器C相局部放电1","mc":"3750","fd":"0.729","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#2主一次2202断路器","dengji":"交流220kV","type":"局部放电","name":"马场2202断路器B相局部放电1","mc":"67","fd":"1.381","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#2主一次2202断路器","dengji":"交流220kV","type":"局部放电","name":"马场2202断路器A相局部放电1","mc":"13","fd":"0.524","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#2主一次2202断路器","dengji":"交流220kV","type":"局部放电","name":"马场2202断路器B相局部放电2","mc":"3750","fd":"0.694","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#3主一次2203断路器","dengji":"交流220kV","type":"局部放电","name":"马场2203断路器A相局部放电1","mc":"11","fd":"1.217","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#3主一次2203断路器","dengji":"交流220kV","type":"局部放电","name":"马场2203断路器C相局部放电2","mc":"3750","fd":"0.172","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#3主一次2203断路器","dengji":"交流220kV","type":"局部放电","name":"马场2203断路器B相局部放电1","mc":"3750","fd":"0.729","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#3主一次2203断路器","dengji":"交流220kV","type":"局部放电","name":"马场2203断路器C相局部放电1","mc":"67","fd":"1.381","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#3主一次2203断路器","dengji":"交流220kV","type":"局部放电","name":"马场2203断路器B相局部放电2","mc":"13","fd":"0.524","zt":"运行正常"},
+      {"biandian":"马场220kV变电站","shebei":"#3主一次2203断路器","dengji":"交流220kV","type":"局部放电","name":"马场2203断路器A相局部放电2","mc":"3750","fd":"0.694","zt":"运行正常"}
     ]
   }
-
 }
