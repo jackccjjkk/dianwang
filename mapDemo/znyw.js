@@ -34,6 +34,9 @@ function getData() {
             initShudianList1(data.shudian.dataList1);
             initShudianList2(data.shudian.dataList2);
             initShudianList3(data.shudian.dataList3);
+            initdianlan(data.dianlan.dataList);
+            initbiandian1(data.biandian.dataList1);
+            initbiandian2(data.biandian.dataList2);
         } else {
 
         }
@@ -51,62 +54,119 @@ function initShudianList1(dataList) {
         var $item = $("#shudianList1 .template.shudian-item").clone();
         $(".shudian-item-xianlu", $item).text(item.xianlu);
         $(".shudian-item-vl", $item).text(item.vl);
-        $(".shudian-item-type", $item).text(item.stockName);
-        $(".shudian-item-name", $item).text(item.stockName);
-        $(".shudian-item-temperature", $item).text(item.stockName);
-        $(".shudian-item-pressure", $item).text(item.stockName);
-        $(".shudian-item-pi", $item).text(item.stockName);
-        $(".shudian-item-maxw", $item).text(item.stockName);
-        $(".shudian-item-nomw", $item).text(item.stockName);
-        $(".shudian-item-bigw", $item).text(item.stockName);
-        $(".shudian-item-avgw", $item).text(item.stockName);
-        $(".shudian-item-pw", $item).text(item.stockName);
-        $(".shudian-item-state", $item).text(item.stockName);
+        $(".shudian-item-type", $item).text(item.type);
+        $(".shudian-item-name", $item).text(item.name);
+        $(".shudian-item-temperature", $item).text(item.temperature);
+        $(".shudian-item-pressure", $item).text(item.pressure);
+        $(".shudian-item-Pi", $item).text(item.Pi);
+        $(".shudian-item-maxw", $item).text(item.maxw);
+        $(".shudian-item-nomw", $item).text(item.nomw);
+        $(".shudian-item-bigw", $item).text(item.bigw);
+        $(".shudian-item-avgw", $item).text(item.avgw);
+        $(".shudian-item-Pw", $item).text(item.Pw);
+        $(".shudian-item-state", $item).text(item.state);
         $item.removeClass("template").appendTo("#shudianList1");
     })
 }
 
 // TODO
 function initShudianList2(dataList) {
-    $("#shudianList2").html($("#shudianList1 .template.shudian-item"));
+    $("#shudianList2").html($("#shudianList2 .template.shudian-item"));
     $.each(dataList, function (index, item) {
-        var $item = $("#shudianList1 .template.shudian-item").clone();
+        var $item = $("#shudianList2 .template.shudian-item").clone();
         $(".shudian-item-xianlu", $item).text(item.xianlu);
+        $(".shudian-item-gan", $item).text(item.gan);
         $(".shudian-item-vl", $item).text(item.vl);
-        $(".shudian-item-type", $item).text(item.stockName);
-        $(".shudian-item-name", $item).text(item.stockName);
-        $(".shudian-item-temperature", $item).text(item.stockName);
-        $(".shudian-item-pressure", $item).text(item.stockName);
-        $(".shudian-item-pi", $item).text(item.stockName);
-        $(".shudian-item-maxw", $item).text(item.stockName);
-        $(".shudian-item-nomw", $item).text(item.stockName);
-        $(".shudian-item-bigw", $item).text(item.stockName);
-        $(".shudian-item-avgw", $item).text(item.stockName);
-        $(".shudian-item-pw", $item).text(item.stockName);
-        $(".shudian-item-state", $item).text(item.stockName);
-        $item.removeClass("template").appendTo("#shudianList1");
+        $(".shudian-item-type", $item).text(item.type);
+        $(".shudian-item-name", $item).text(item.name);
+        $(".shudian-item-angle", $item).text(item.angle);
+        $(".shudian-item-deflection", $item).text(item.deflection);
+        $(".shudian-item-td", $item).text(item.td);
+        $(".shudian-item-ice", $item).text(item.ice);
+        $(".shudian-item-hang", $item).text(item.hang);
+        $(".shudian-item-state", $item).text(item.state);
+        $item.removeClass("template").appendTo("#shudianList2");
     })
 }
 
 // TODO
 function initShudianList3(dataList) {
-    $("#shudianList3").html($("#shudianList1 .template.shudian-item"));
+    $("#shudianList3").html($("#shudianList3 .template.shudian-item"));
     $.each(dataList, function (index, item) {
-        var $item = $("#shudianList1 .template.shudian-item").clone();
+        var $item = $("#shudianList3 .template.shudian-item").clone();
         $(".shudian-item-xianlu", $item).text(item.xianlu);
+        $(".shudian-item-gan", $item).text(item.gan);
         $(".shudian-item-vl", $item).text(item.vl);
-        $(".shudian-item-type", $item).text(item.stockName);
-        $(".shudian-item-name", $item).text(item.stockName);
-        $(".shudian-item-temperature", $item).text(item.stockName);
-        $(".shudian-item-pressure", $item).text(item.stockName);
-        $(".shudian-item-pi", $item).text(item.stockName);
-        $(".shudian-item-maxw", $item).text(item.stockName);
-        $(".shudian-item-nomw", $item).text(item.stockName);
-        $(".shudian-item-bigw", $item).text(item.stockName);
-        $(".shudian-item-avgw", $item).text(item.stockName);
-        $(".shudian-item-pw", $item).text(item.stockName);
-        $(".shudian-item-state", $item).text(item.stockName);
-        $item.removeClass("template").appendTo("#shudianList1");
+        $(".shudian-item-type", $item).text(item.type);
+        $(".shudian-item-name", $item).text(item.name);
+        $(".shudian-item-temp", $item).text(item.temp);
+        $(".shudian-item-state", $item).text(item.state);
+        $item.removeClass("template").appendTo("#shudianList3");
+    })
+}
+
+
+// TODO
+function initdianlan(dataList) {
+    $("#dianlan").html($("#dianlan .template.dianlan-item"));
+    $.each(dataList, function (index, item) {
+        var $item = $("#dianlan .template.dianlan-item").clone();
+        $(".dianlan-item-xianlu", $item).text(item.xianlu);
+        $(".dianlan-item-shijian", $item).text(item.shijian);
+        $(".dianlan-item-wendu", $item).text(item.wendu);
+        $(".dianlan-item-shidu", $item).text(item.shidu);
+        $(".dianlan-item-CO", $item).text(item.CO);
+        $(".dianlan-item-H2S", $item).text(item.H2S);
+        $(".dianlan-item-O2", $item).text(item.O2);
+        $(".dianlan-item-CH4", $item).text(item.CH4);
+        $(".dianlan-item-shuiweizhi", $item).text(item.shuiweizhi);
+        $(".dianlan-item-dianliu", $item).text(item.dianliu);
+        $(".dianlan-item-jdwendu", $item).text(item.jdwendu);
+        $(".dianlan-item-guangxian", $item).text(item.guangxian);
+        $(".dianlan-item-real", $item).text(item.real);
+        $item.removeClass("template").appendTo("#dianlan");
+    })
+}
+
+// TODO
+function initbiandian1(dataList) {
+    $("#biandian1").html($("#biandian1 .template.biandian-item"));
+    $.each(dataList, function (index, item) {
+        var $item = $("#biandian1 .template.biandian-item").clone();
+        $(".biandian-item-biandian", $item).text(item.biandian);
+        $(".biandian-item-shebei", $item).text(item.shebei);
+        $(".biandian-item-dengji", $item).text(item.dengji);
+        $(".biandian-item-type", $item).text(item.type);
+        $(".biandian-item-name", $item).text(item.name);
+        $(".biandian-item-jw", $item).text(item.jw);
+        $(".biandian-item-yx", $item).text(item.yx);
+        $(".biandian-item-yq", $item).text(item.yq);
+        $(".biandian-item-qq", $item).text(item.qq);
+        $(".biandian-item-yw", $item).text(item.yw);
+        $(".biandian-item-zj", $item).text(item.zj);
+        $(".biandian-item-ert", $item).text(item.ert);
+        $(".biandian-item-yit", $item).text(item.yit);
+        $(".biandian-item-yangq", $item).text(item.yangq);
+        $(".biandian-item-qingq", $item).text(item.qingq);
+        $(".biandian-item-zt", $item).text(item.zt);
+        $item.removeClass("template").appendTo("#biandian1");
+    })
+}
+
+// TODO
+function initbiandian2(dataList) {
+    $("#biandian2").html($("#biandian2 .template.shudian-item"));
+    $.each(dataList, function (index, item) {
+        var $item = $("#biandian2 .template.shudian-item").clone();
+        $(".biandian-item-biandian", $item).text(item.biandian);
+        $(".biandian-item-shebei", $item).text(item.shebei);
+        $(".biandian-item-dengji", $item).text(item.dengji);
+        $(".biandian-item-type", $item).text(item.type);
+        $(".biandian-item-name", $item).text(item.name);
+        $(".biandian-item-mc", $item).text(item.mc);
+        $(".biandian-item-fd", $item).text(item.fd);
+        $(".biandian-item-zt", $item).text(item.zt);
+        $item.removeClass("template").appendTo("#biandian2");
     })
 }
 
