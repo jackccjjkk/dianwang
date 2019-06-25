@@ -125,7 +125,8 @@
             </div>
         </div>
         <div class="content-center content-center1" style="display: none">
-            <div class="content-center-inner" style="padding: 0px">
+            <div class="content-center-inner" style="padding: 16px">
+                <img class="content-center1-close content-center-close" src="img/center_close.png" style="cursor: pointer"/>
                 <div class="content-center-inner-content" style="border-radius: 10px;">
                     <div style="width: 1000px;height: 450px;">
                         <div style="padding: 20px">
@@ -148,7 +149,8 @@
             </div>
         </div>
         <div class="content-center content-center2" style="display: none">
-            <div class="content-center-inner" style="padding: 0px">
+            <div class="content-center-inner" style="padding: 16px">
+                <img class="content-center2-close content-center-close" src="img/center_close.png" style="cursor: pointer"/>
                 <div class="content-center-inner-content" style="border-radius: 10px;">
                     <div style="width: 1000px;height: 450px;">
                         <div style="padding: 20px">
@@ -185,9 +187,11 @@
                         <div class="template event-info-item list-item" style="cursor: pointer">
                             <div style="display: flex;align-items: center;height: 100%;">
                                 <img src="img/dot.png" style="width: 18px;height: 18px;margin-left: 10px"/>
-                                <div class="event-info-item-date max-line-1" style="flex: 1;margin-left: 24px"></div>
-                                <div class="event-info-item-content max-line-1" style="flex: 2;"></div>
-                                <div class="event-info-item-status max-line-1" style="flex: 1;color: #00ff66"></div>
+                                <!--<div class="event-info-item-date max-line-1" style="flex: 1;margin-left: 24px"></div>-->
+                                <div class=" max-line-1 hide-scrollbar" style="flex: 2;;overflow-x: scroll">
+                                    <div class="event-info-item-content"></div>
+                                </div>
+                                <!--<div class="event-info-item-status max-line-1" style="flex: 1;color: #00ff66"></div>-->
                             </div>
                         </div>
                     </div>

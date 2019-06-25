@@ -34,6 +34,9 @@ function setLinstener() {
         $(".header-sub-menu-baodianjiankong").hide();
     });
 
+    $(".content-center-close").click(function () {
+       $(".content-center").hide();
+    });
     $("#zhihuizhongxin").click(function () {
         if(selectedMarker){
             showFujinList1();
@@ -184,7 +187,21 @@ function initEventInfoList(eventInfoList) {
             selectedMarker = marker;
         });
         $item.removeClass("template").appendTo("#eventInfoList");
-    })
+    });
+
+    $(".event-info-item-content").each(function (index) {
+        var me = $(this);
+        var width = me.parent()[0].scrollWidth - (me.parent()[0].clientWidth || me.parent()[0].offsetWidth);
+        if (width > 0) {
+            var interval = setInterval(function () {
+                if (me.parent()[0].scrollLeft >= width) {
+                    me.parent()[0].scrollLeft = 0;
+                } else {
+                    me.parent()[0].scrollLeft++;
+                }
+            }, 50);
+        }
+    });
 }
 
 function refreshMarker() {
