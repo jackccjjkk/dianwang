@@ -162,9 +162,9 @@ function initbiandian1(dataList) {
 
 // TODO
 function initbiandian2(dataList) {
-    $("#biandian2").html($("#biandian2 .template.shudian-item"));
+    $("#biandian2").html($("#biandian2 .template.biandian-item"));
     $.each(dataList, function (index, item) {
-        var $item = $("#biandian2 .template.shudian-item").clone();
+        var $item = $("#biandian2 .template.biandian-item").clone();
         $(".biandian-item-biandian", $item).text(item.biandian);
         $(".biandian-item-shebei", $item).text(item.shebei);
         $(".biandian-item-dengji", $item).text(item.dengji);
