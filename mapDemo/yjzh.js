@@ -3,6 +3,7 @@ var xianluList;
 var duiwuList;
 var cheliangList;
 var wuziList;
+var fujinList;
 var map;
 $(document).ready(function () {
 
@@ -31,6 +32,18 @@ function setLinstener() {
     });
     $(".header-sub-menu-baodianjiankong").mouseout(function () {
         $(".header-sub-menu-baodianjiankong").hide();
+    });
+
+    $("#zhihuizhongxin").click(function () {
+        if(selectedMarker){
+            showFujinList1();
+        }
+    });
+
+    $("#yijiandiaodu").click(function () {
+        if(selectedMarker){
+            showFujinList2();
+        }
     });
 
     $("#menu_baodianchangsuo").click(function () {
@@ -121,6 +134,7 @@ function getData() {
             duiwuList = data.duiwuList;
             cheliangList = data.cheliangList;
             wuziList = data.wuziList;
+            fujinList = data.fujinList;
         } else {
 
         }
@@ -133,6 +147,7 @@ function getData() {
 
 var selectedMarker = null;
 var selectedCircle = null;
+
 function initEventInfoList(eventInfoList) {
     $("#eventInfoList").html($("#eventInfoList .template.event-info-item"));
     $.each(eventInfoList, function (index, item) {
@@ -145,7 +160,7 @@ function initEventInfoList(eventInfoList) {
             $("#video1").load();
             $("#video_source2").attr("src", item.video2);
             $("#video2").load();
-            if(selectedMarker){
+            if (selectedMarker) {
                 map.removeOverlay(selectedMarker);
                 map.removeOverlay(selectedCircle);
             }
@@ -153,7 +168,7 @@ function initEventInfoList(eventInfoList) {
             var myIcon = new BMap.Icon("img/map_icon_yingjidian.png", new BMap.Size(66, 59));
             var marker = new BMap.Marker(pt, {icon: myIcon});  // 创建标注
             map.addOverlay(marker);
-            map.centerAndZoom(pt,16);
+            map.centerAndZoom(pt, 16);
 
             //创建圆对象
             var circle = new BMap.Circle(pt, 500, {
@@ -171,22 +186,6 @@ function initEventInfoList(eventInfoList) {
         $item.removeClass("template").appendTo("#eventInfoList");
     })
 }
-
-function add_oval(centre,x,y)
-{
-    var assemble=new Array();
-    var angle;
-    var dot;
-    var tangent=x/y;
-    for(i=0;i<36;i++)
-    {
-        angle = (2* Math.PI / 36) * i;
-        dot = new BMap.Point(centre.lng+Math.sin(angle)*y*tangent, centre.lat+Math.cos(angle)*y);
-        assemble.push(dot);
-    }
-    return assemble;
-}
-
 
 function refreshMarker() {
     map.clearOverlays();
@@ -237,5 +236,25 @@ function showWuziList() {
         var marker = new BMap.Marker(pt, {icon: myIcon});  // 创建标注
         marker.setTitle(item.id);
         map.addOverlay(marker);
+    });
+}
+
+function showFujinList1() {
+    $(".content-center").hide();
+    $(".content-center1").show();
+    $.each(fujinList, function (index, item) {
+        var $item = $("#fujinList1 .template.fujin-item").clone();
+        $(".fujin-item-name", $item).text(item.name);
+        $item.removeClass("template").appendTo("#fujinList1");
+    });
+}
+
+function showFujinList2() {
+    $(".content-center").hide();
+    $(".content-center2").show();
+    $.each(fujinList, function (index, item) {
+        var $item = $("#fujinList2 .template.fujin-item").clone();
+        $(".fujin-item-name", $item).text(item.name);
+        $item.removeClass("template").appendTo("#fujinList2");
     });
 }

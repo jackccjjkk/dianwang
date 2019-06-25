@@ -229,7 +229,6 @@ function setLinstener() {
         $(".scroll-content").each(function (index) {
             var me = $(this);
             var height = me.parent()[0].scrollHeight - (me.parent()[0].clientHeight || me.parent()[0].offsetHeight);
-            console.log(height)
             if (height > 0) {
                 var interval = setInterval(function () {
                     if (me.parent()[0].scrollTop >= height) {

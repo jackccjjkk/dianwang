@@ -67,6 +67,15 @@
       "video2":"data/file/大连变220.mp4"
     }
   ],
+  "fujinList":[
+    {"name":"变电运检室应急六队"},
+    {"name":"配电运检室应急十一队"},
+    {"name":"甘井子供电公司应急五队"},
+    {"name":"输电运检室车辆"},
+    {"name":"甘井子供电公司应急车辆"},
+    {"name":"大连变物资仓库"},
+    {"name":"电缆运维室应急三队"}
+  ],
   "duiwuList": [
     {"name":"万嘉应急一队","type":"220KV大连变","person":"林玉玺","phone":"13940896203","img":"data/file/duiwu/1.png"},
     {"name":"鑫亚应急一队","type":"大连国际会议中心","person":"周卫","phone":"13204088295","img":"data/file/duiwu/2.png"},

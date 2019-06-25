@@ -61,13 +61,16 @@
             <a style="color: white;text-decoration: none" href="openIE:http://localhost:8080/mapDemo/sp/bkq3.html">海之梦开关站</a>
         </div>
         <div class="header-sub-menu-item">
-            <a style="color: white;text-decoration: none" href="openIE:http://localhost:8080/mapDemo/sp/bkq4.html">棒棰岛宾馆</a>
+            <a style="color: white;text-decoration: none"
+               href="openIE:http://localhost:8080/mapDemo/sp/bkq4.html">棒棰岛宾馆</a>
         </div>
         <div class="header-sub-menu-item">
-            <a style="color: white;text-decoration: none" href="openIE:http://localhost:8080/mapDemo/sp/bkq5.html">陆港隧道</a>
+            <a style="color: white;text-decoration: none"
+               href="openIE:http://localhost:8080/mapDemo/sp/bkq5.html">陆港隧道</a>
         </div>
         <div class="header-sub-menu-item">
-            <a style="color: white;text-decoration: none" href="openIE:http://localhost:8080/mapDemo/sp/bkq6.html">港华隧道</a>
+            <a style="color: white;text-decoration: none"
+               href="openIE:http://localhost:8080/mapDemo/sp/bkq6.html">港华隧道</a>
         </div>
     </div>
     <div class="content">
@@ -121,6 +124,56 @@
                 </div>
             </div>
         </div>
+        <div class="content-center content-center1" style="display: none">
+            <div class="content-center-inner" style="padding: 0px">
+                <div class="content-center-inner-content" style="border-radius: 10px;">
+                    <div style="width: 1000px;height: 450px;">
+                        <div style="padding: 20px">
+                            <div style="display: flex;align-items: center">
+                                <img style="width: 24px;height: 24px" src="img/title_small.gif">
+                                <span style="margin-left: 10px">应急点附近资源</span>
+                            </div>
+                            <div style="margin: 20px;">
+                                <div style="height: 340px;overflow-y: scroll;width: 100%" class="hide-scrollbar">
+                                    <div id="fujinList1">
+                                        <div class="template fujin-item">
+                                            <div class="fujin-item-name"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-center content-center2" style="display: none">
+            <div class="content-center-inner" style="padding: 0px">
+                <div class="content-center-inner-content" style="border-radius: 10px;">
+                    <div style="width: 1000px;height: 450px;">
+                        <div style="padding: 20px">
+                            <div style="display: flex;align-items: center">
+                                <img style="width: 24px;height: 24px" src="img/title_small.gif">
+                                <span style="margin-left: 10px">应急点附近调派</span>
+                            </div>
+                            <div style="margin: 20px;">
+                                <div style="height: 340px;overflow-y: scroll;width: 100%" class="hide-scrollbar">
+                                    <div id="fujinList2">
+                                        <div class="template fujin-item">
+                                            <div style="display: flex">
+                                                <div class="fujin-item-name" style="flex: 1;"></div>
+                                                <div class="fujin-item-button"
+                                                     style="border-radius: 4px;padding: 4px;background: #5ddcda">通知终端</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="content-right">
             <div style="display: flex">
                 <div style="flex: 2;min-width: 0;">
@@ -145,9 +198,11 @@
                         <span style="margin-left: 10px">队伍</span>
                     </div>
                     <div>
-                        <div style="margin-top: 58px;margin-left: 84px"><img src="img/zhzx.png" style="width: 230px">
+                        <div id="zhihuizhongxin" style="margin-top: 58px;margin-left: 84px;cursor: pointer;"><img src="img/zhzx.png"
+                                                                                                 style="width: 230px">
                         </div>
-                        <div style="margin-top: 56px;margin-left: 84px"><img src="img/yjdd.png" style="width: 230px">
+                        <div id="yijiandiaodu" style="margin-top: 56px;margin-left: 84px;cursor: pointer;"><img src="img/yjdd.png"
+                                                                                               style="width: 230px">
                         </div>
                     </div>
                 </div>
