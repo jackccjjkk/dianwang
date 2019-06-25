@@ -28,6 +28,8 @@ function initMap() {
     map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
 }
 
+var intervalList=[];
+
 function getData() {
     var param = {};
     var success = function (data) {
@@ -40,6 +42,22 @@ function getData() {
             initdianlan(data.dianlan.dataList);
             initbiandian1(data.biandian.dataList1);
             initbiandian2(data.biandian.dataList2);
+
+            $(".scroll-content").each(function (index) {
+                var me = $(this);
+                var height = me.parent()[0].scrollHeight - (me.parent()[0].clientHeight || me.parent()[0].offsetHeight);
+                console.log(height)
+                if (height > 0) {
+                    var interval = setInterval(function () {
+                        if (me.parent()[0].scrollTop >= height) {
+                            me.parent()[0].scrollTop = 0;
+                        } else {
+                            me.parent()[0].scrollTop++;
+                        }
+                    }, 50);
+                    intervalList.push(interval);
+                }
+            });
 
             shudian = data.shudian;
             dianlan = data.dianlan;
@@ -204,6 +222,26 @@ function setLinstener() {
         $("#video2").load();
         $("#video_source3").attr("src", shudian.video3);
         $("#video3").load();
+        $.each(intervalList,function (index,item) {
+            clearInterval(item);
+        });
+        intervalList = [];
+        $(".scroll-content").each(function (index) {
+            var me = $(this);
+            var height = me.parent()[0].scrollHeight - (me.parent()[0].clientHeight || me.parent()[0].offsetHeight);
+            console.log(height)
+            if (height > 0) {
+                var interval = setInterval(function () {
+                    if (me.parent()[0].scrollTop >= height) {
+                        me.parent()[0].scrollTop = 0;
+                    } else {
+                        me.parent()[0].scrollTop++;
+                    }
+                }, 50);
+                intervalList.push(interval);
+            }
+        });
+
     });
 
     $("#leftMenu2").click(function () {
@@ -216,6 +254,26 @@ function setLinstener() {
         $("#video2").load();
         $("#video_source3").attr("src", biandian.video3);
         $("#video3").load();
+        $.each(intervalList,function (index,item) {
+            clearInterval(item);
+        });
+        intervalList = [];
+        $(".scroll-content").each(function (index) {
+            var me = $(this);
+            var height = me.parent()[0].scrollHeight - (me.parent()[0].clientHeight || me.parent()[0].offsetHeight);
+            console.log(height)
+            if (height > 0) {
+                var interval = setInterval(function () {
+                    if (me.parent()[0].scrollTop >= height) {
+                        me.parent()[0].scrollTop = 0;
+                    } else {
+                        me.parent()[0].scrollTop++;
+                    }
+                }, 50);
+                intervalList.push(interval);
+            }
+        });
+
     });
 
     $("#leftMenu3").click(function () {
@@ -228,6 +286,26 @@ function setLinstener() {
         $("#video2").load();
         $("#video_source3").attr("src", dianlan.video3);
         $("#video3").load();
+        $.each(intervalList,function (index,item) {
+            clearInterval(item);
+        });
+        intervalList = [];
+        $(".scroll-content").each(function (index) {
+            var me = $(this);
+            var height = me.parent()[0].scrollHeight - (me.parent()[0].clientHeight || me.parent()[0].offsetHeight);
+            console.log(height)
+            if (height > 0) {
+                var interval = setInterval(function () {
+                    if (me.parent()[0].scrollTop >= height) {
+                        me.parent()[0].scrollTop = 0;
+                    } else {
+                        me.parent()[0].scrollTop++;
+                    }
+                }, 50);
+                intervalList.push(interval);
+            }
+        });
+
     });
 
     $("#leftMenu4").click(function () {
