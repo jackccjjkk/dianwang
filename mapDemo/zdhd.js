@@ -592,10 +592,10 @@ function showWuziList() {
                 selectedWuziMaker = marker;
             } else if (selectedWuziMaker.getTitle() == item.id) {
                 // 选中当前点，则点击时隐藏
-                hideBottomPopup();
-                $(".content-right-area").hide();
-                $("#changsuoListRightArea").show();
-                // marker.setIcon(new BMap.Icon("img/map_icon_changsuo.png", new BMap.Size(66, 59)));
+                // hideBottomPopup();
+                // $(".content-right-area").hide();
+                // $("#changsuoListRightArea").show();
+                // // marker.setIcon(new BMap.Icon("img/map_icon_changsuo.png", new BMap.Size(66, 59)));
                 marker.setAnimation(null)
                 selectedWuziMaker = null;
             } else if (selectedWuziMaker.getTitle() != item.id) {
