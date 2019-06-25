@@ -958,7 +958,7 @@
                         </div>
                     </div>
                     <div style="height: 150px;overflow-y: scroll;width: 100%" class="hide-scrollbar">
-                        <div class="table" style="margin-left:80px;width: 1184px;white-space: nowrap;">
+                        <div class="table content-scroll" style="margin-left:80px;width: 1184px;white-space: nowrap;">
                             <div class="table-header-group" style="visibility: collapse;">
                                 <div class="table-row right-data-row">
                                     <div class="table-cell lable">变电站名称</div>
@@ -1073,7 +1073,7 @@
                         </div>
                     </div>
                     <div style="height: 150px;overflow-y: scroll;width: 100%" class="hide-scrollbar">
-                        <div class="table" style="margin-left:80px;width: 1184px;white-space: nowrap;">
+                        <div class="content-scroll table" style="margin-left:80px;width: 1184px;white-space: nowrap;">
                             <div class="table-header-group" style="visibility: collapse;">
                                 <div class="table-row right-data-row">
                                     <div class="table-cell lable">识别类型</div>
@@ -1185,7 +1185,7 @@
                         </div>
                     </div>
                     <div style="height: 150px;overflow-y: scroll;width: 100%" class="hide-scrollbar">
-                        <div class="table" style="margin-left:80px;width: 1184px;white-space: nowrap;">
+                        <div class="table content-scroll" style="margin-left:80px;width: 1184px;white-space: nowrap;">
                             <div class="table-header-group" style="visibility: collapse;">
                                 <div class="table-row right-data-row">
                                     <div style="width: 13%" class="table-cell lable">单位</div>
@@ -1253,7 +1253,7 @@
                         </div>
                     </div>
                     <div style="height: 150px;overflow-y: scroll;width: 100%" class="hide-scrollbar">
-                        <div class="table" style="margin-left:80px;width: 1834px;white-space: nowrap;">
+                        <div class="table content-scroll" style="margin-left:80px;width: 1834px;white-space: nowrap;">
                             <div class="table-header-group" style="visibility: collapse;">
                                 <div class="table-row right-data-row">
                                     <div style="width: 10%" class="table-cell lable">设备名称</div>
@@ -1278,6 +1278,59 @@
                                     <div class="table-cell value xianlu-data-item-g_comm"></div>
                                     <div class="table-cell value xianlu-data-item-w_status"></div>
                                     <div class="table-cell value xianlu-data-item-w_comm"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="wuziArea" class="flex content-bottom-area" style="font-size: 16px;display: none">
+                <div class="table" style="margin-left: 50px">
+                    <div class="table-row left-row">
+                        <div class="table-cell lable">负责人</div>
+                        <div id="wuzi_person" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row left-row">
+                        <div class="table-cell lable">负责人电话</div>
+                        <div id="wuzi_phone" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row left-row">
+                        <div class="table-cell lable">保电区域</div>
+                        <div id="wuzi_area" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row left-row">
+                        <div class="table-cell lable">队伍人员</div>
+                        <div id="wuzi_personList" class="table-cell value"></div>
+                    </div>
+                </div>
+                <div class="content-bottom-line" style="margin-left: 20px"></div>
+                <div>
+                    <div class="table" style="margin-left:80px;width: 1834px;">
+                        <div class="table-header-group">
+                            <div class="table-row right-data-row">
+                                <div style="width: 10%" class="table-cell lable">单位</div>
+                                <div style="width: 20%" class="table-cell lable">物资仓库名称</div>
+                                <div style="width: 20%" class="table-cell lable">设备类型</div>
+                                <div style="width: 50%" class="table-cell lable">型号</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="height: 150px;overflow-y: scroll;width: 100%" class="hide-scrollbar">
+                        <div class="table content-scroll" style="margin-left:80px;width: 1834px;white-space: nowrap;">
+                            <div class="table-header-group" style="visibility: collapse;">
+                                <div class="table-row right-data-row">
+                                    <div style="width: 10%" class="table-cell lable">单位</div>
+                                    <div style="width: 20%" class="table-cell lable">物资仓库名称</div>
+                                    <div style="width: 20%" class="table-cell lable">设备类型</div>
+                                    <div style="width: 50%" class="table-cell lable">型号</div>
+                                </div>
+                            </div>
+                            <div class="table-row-group hide-scrollbar" id="wuziDataList">
+                                <div class="template table-row right-data-row wuzi-data-item">
+                                    <div class="table-cell value wuzi-data-item-ORG"></div>
+                                    <div class="table-cell value wuzi-data-item-WZCKMC"></div>
+                                    <div class="table-cell value wuzi-data-item-SBLX"></div>
+                                    <div class="table-cell value wuzi-data-item-XH"></div>
                                 </div>
                             </div>
                         </div>

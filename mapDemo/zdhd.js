@@ -16,6 +16,8 @@ var fengxianList = null;
 var zhizekaList = null;
 
 var map = null;
+
+var intervalList = [];
 // 地图的中心，大连东港会议中心
 var centerPoint = new BMap.Point(121.685041, 38.927147);
 $(document).ready(function () {
@@ -587,12 +589,13 @@ function showWuziList() {
         marker.addEventListener("click", function (type, target) {
             if (selectedWuziMaker == null) {
                 // 未选中任何点
+                showWuziDetail(item);
                 // marker.setIcon(new BMap.Icon("img/map_icon_changsuo_selected.png", new BMap.Size(66, 59)));
-                marker.setAnimation(BMAP_ANIMATION_BOUNCE)
+                marker.setAnimation(BMAP_ANIMATION_BOUNCE);
                 selectedWuziMaker = marker;
             } else if (selectedWuziMaker.getTitle() == item.id) {
                 // 选中当前点，则点击时隐藏
-                // hideBottomPopup();
+                hideBottomPopup();
                 // $(".content-right-area").hide();
                 // $("#changsuoListRightArea").show();
                 // // marker.setIcon(new BMap.Icon("img/map_icon_changsuo.png", new BMap.Size(66, 59)));
@@ -600,6 +603,7 @@ function showWuziList() {
                 selectedWuziMaker = null;
             } else if (selectedWuziMaker.getTitle() != item.id) {
                 // 先取消选中状态
+                showWuziDetail(item);
                 // selectedChangsuoMaker.setIcon(new BMap.Icon("img/map_icon_changsuo.png", new BMap.Size(66, 59)));
                 selectedWuziMaker.setAnimation(null)
                 // marker.setIcon(new BMap.Icon("img/map_icon_changsuo_selected.png", new BMap.Size(66, 59)));
@@ -618,10 +622,12 @@ function showWuziList() {
             map.centerAndZoom(new BMap.Point(item.longitude, item.latitude), 14);
             if (selectedWuziMaker == null) {
                 // 未选中任何点
+                showWuziDetail(item);
                 marker.setAnimation(BMAP_ANIMATION_BOUNCE);
                 selectedWuziMaker = marker;
             } else {
                 // 先取消选中状态
+                showWuziDetail(item);
                 selectedWuziMaker.setAnimation(null);
                 marker.setAnimation(BMAP_ANIMATION_BOUNCE);
                 selectedWuziMaker = marker;
@@ -854,6 +860,21 @@ function showChangsuoList() {
         });
         $item.removeClass("template").appendTo("#changsuoListRight")
     });
+
+    $(".content-scroll").each(function (index) {
+        var me = $(this);
+        var height = me.parent()[0].scrollHeight - (me.parent()[0].clientHeight || me.parent()[0].offsetHeight);
+        if (height > 0) {
+            var interval = setInterval(function () {
+                if (me.parent()[0].scrollTop >= height) {
+                    me.parent()[0].scrollTop = 0;
+                } else {
+                    me.parent()[0].scrollTop++;
+                }
+            }, 50);
+            intervalList.push(interval);
+        }
+    });
 }
 
 /**
@@ -907,6 +928,21 @@ function showKaiguanzhanDetail(selectedItem) {
     $("#zhansuo_right_video1").load();
     $("#zhansuo_right_video_source2").attr("src", selectedItem.rightVideo2);
     $("#zhansuo_right_video2").load();
+
+    $(".content-scroll").each(function (index) {
+        var me = $(this);
+        var height = me.parent()[0].scrollHeight - (me.parent()[0].clientHeight || me.parent()[0].offsetHeight);
+        if (height > 0) {
+            var interval = setInterval(function () {
+                if (me.parent()[0].scrollTop >= height) {
+                    me.parent()[0].scrollTop = 0;
+                } else {
+                    me.parent()[0].scrollTop++;
+                }
+            }, 50);
+            intervalList.push(interval);
+        }
+    });
 }
 
 /**
@@ -968,6 +1004,21 @@ function showBiandianzhanDetail(selectedItem) {
     $("#zhansuo_right_video1").load();
     $("#zhansuo_right_video_source2").attr("src", selectedItem.rightVideo2);
     $("#zhansuo_right_video2").load();
+
+    $(".content-scroll").each(function (index) {
+        var me = $(this);
+        var height = me.parent()[0].scrollHeight - (me.parent()[0].clientHeight || me.parent()[0].offsetHeight);
+        if (height > 0) {
+            var interval = setInterval(function () {
+                if (me.parent()[0].scrollTop >= height) {
+                    me.parent()[0].scrollTop = 0;
+                } else {
+                    me.parent()[0].scrollTop++;
+                }
+            }, 50);
+            intervalList.push(interval);
+        }
+    });
 }
 
 /**
@@ -1017,6 +1068,20 @@ function showChangsuoDetail(item) {
     $("#changsuo_right_video_source2").attr("src", item.rightVideo2);
     $("#changsuo_right_video2").load();
 
+    $(".content-scroll").each(function (index) {
+        var me = $(this);
+        var height = me.parent()[0].scrollHeight - (me.parent()[0].clientHeight || me.parent()[0].offsetHeight);
+        if (height > 0) {
+            var interval = setInterval(function () {
+                if (me.parent()[0].scrollTop >= height) {
+                    me.parent()[0].scrollTop = 0;
+                } else {
+                    me.parent()[0].scrollTop++;
+                }
+            }, 50);
+            intervalList.push(interval);
+        }
+    });
 }
 
 /**
@@ -1057,6 +1122,58 @@ function showXianluDetail(item) {
     $("#xianlu_right_video2").load();
     $("#xianlu_right_video_source3").attr("src", item.rightVideo3);
     $("#xianlu_right_video3").load();
+
+    $(".content-scroll").each(function (index) {
+        var me = $(this);
+        var height = me.parent()[0].scrollHeight - (me.parent()[0].clientHeight || me.parent()[0].offsetHeight);
+        if (height > 0) {
+            var interval = setInterval(function () {
+                if (me.parent()[0].scrollTop >= height) {
+                    me.parent()[0].scrollTop = 0;
+                } else {
+                    me.parent()[0].scrollTop++;
+                }
+            }, 50);
+            intervalList.push(interval);
+        }
+    });
+}
+
+/**
+ * 线路详细
+ */
+function showWuziDetail(item) {
+    showBottomPopup();
+    $(".content-bottom-area").hide();
+    $("#wuziArea").show();
+    $("#wuzi_person").text(item.person);
+    $("#wuzi_phone").text(item.phone);
+    $("#wuzi_area").text(item.area);
+    $("#wuzi_personList").text(item.personList);
+
+    $("#wuziDataList").html($("#wuziDataList .template.wuzi-data-item"));
+    $.each(item.detailList, function (index2, wuziData) {
+        var $wuziItem = $("#wuziDataList .template.wuzi-data-item").clone();
+        $(".wuzi-data-item-ORG", $wuziItem).text(wuziData.ORG);
+        $(".wuzi-data-item-WZCKMC", $wuziItem).text(wuziData.WZCKMC);
+        $(".wuzi-data-item-SBLX", $wuziItem).text(wuziData.SBLX);
+        $(".wuzi-data-item-XH", $wuziItem).text(wuziData.XH);
+        $wuziItem.removeClass("template").appendTo("#wuziDataList");
+    });
+    $(".content-scroll").each(function (index) {
+        var me = $(this);
+        var height = me.parent()[0].scrollHeight - (me.parent()[0].clientHeight || me.parent()[0].offsetHeight);
+        if (height > 0) {
+            var interval = setInterval(function () {
+                if (me.parent()[0].scrollTop >= height) {
+                    me.parent()[0].scrollTop = 0;
+                } else {
+                    me.parent()[0].scrollTop++;
+                }
+            }, 50);
+            intervalList.push(interval);
+        }
+    });
 }
 
 

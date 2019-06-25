@@ -115,139 +115,137 @@ function processLines(dest) {
         bmap: {
             center: [121.679122, 38.935683],
             zoom: 13,
-            minZoom:12,
-            maxZoom:14,
             roam: true,
-            mapType: "BMAP_HYBRID_MAP"
-            // mapStyle: {
-            //     'styleJson': [
-            //         {
-            //             'featureType': 'water',
-            //             'elementType': 'all',
-            //             'stylers': {
-            //                 'color': '#184f7d'
-            //             }
-            //         },
-            //         {
-            //             'featureType': 'land',
-            //             'elementType': 'geometry',
-            //             'stylers': {
-            //                 'color': '#000102'
-            //             }
-            //         },
-            //         {
-            //             'featureType': 'highway',
-            //             'elementType': 'all',
-            //             'stylers': {
-            //                 'visibility': 'off'
-            //             }
-            //         },
-            //         {
-            //             'featureType': 'arterial',
-            //             'elementType': 'geometry.fill',
-            //             'stylers': {
-            //                 'color': '#000000'
-            //             }
-            //         },
-            //         {
-            //             'featureType': 'arterial',
-            //             'elementType': 'geometry.stroke',
-            //             'stylers': {
-            //                 'color': '#0b3d51'
-            //             }
-            //         },
-            //         {
-            //             'featureType': 'local',
-            //             'elementType': 'geometry',
-            //             'stylers': {
-            //                 'color': '#000000'
-            //             }
-            //         },
-            //         {
-            //             'featureType': 'railway',
-            //             'elementType': 'geometry.fill',
-            //             'stylers': {
-            //                 'color': '#000000'
-            //             }
-            //         },
-            //         {
-            //             'featureType': 'railway',
-            //             'elementType': 'geometry.stroke',
-            //             'stylers': {
-            //                 'color': '#08304b'
-            //             }
-            //         },
-            //         {
-            //             'featureType': 'subway',
-            //             'elementType': 'geometry',
-            //             'stylers': {
-            //                 'lightness': -70
-            //             }
-            //         },
-            //         {
-            //             'featureType': 'building',
-            //             'elementType': 'geometry.fill',
-            //             'stylers': {
-            //                 'color': '#000000'
-            //             }
-            //         },
-            //         {
-            //             'featureType': 'all',
-            //             'elementType': 'labels.text.fill',
-            //             'stylers': {
-            //                 'color': '#857f7f'
-            //             }
-            //         },
-            //         {
-            //             'featureType': 'all',
-            //             'elementType': 'labels.text.stroke',
-            //             'stylers': {
-            //                 'color': '#000000'
-            //             }
-            //         },
-            //         {
-            //             'featureType': 'building',
-            //             'elementType': 'geometry',
-            //             'stylers': {
-            //                 'color': '#022338'
-            //             }
-            //         },
-            //         {
-            //             'featureType': 'green',
-            //             'elementType': 'geometry',
-            //             'stylers': {
-            //                 'color': '#062032'
-            //             }
-            //         },
-            //         {
-            //             'featureType': 'boundary',
-            //             'elementType': 'all',
-            //             'stylers': {
-            //                 'color': '#465b6c'
-            //             }
-            //         },
-            //         {
-            //             'featureType': 'manmade',
-            //             'elementType': 'all',
-            //             'stylers': {
-            //                 'color': '#022338'
-            //             }
-            //         },
-            //         {
-            //             'featureType': 'label',
-            //             'elementType': 'all',
-            //             'stylers': {
-            //                 'visibility': 'off'
-            //             }
-            //         }
-            //     ]
-            // }
+            mapType: "BMAP_HYBRID_MAP",
+            mapStyle: {
+                'styleJson': [
+                    {
+                        'featureType': 'water',
+                        'elementType': 'all',
+                        'stylers': {
+                            'color': '#184f7d'
+                        }
+                    },
+                    {
+                        'featureType': 'land',
+                        'elementType': 'geometry',
+                        'stylers': {
+                            'color': '#000102'
+                        }
+                    },
+                    {
+                        'featureType': 'highway',
+                        'elementType': 'all',
+                        'stylers': {
+                            'visibility': 'off'
+                        }
+                    },
+                    {
+                        'featureType': 'arterial',
+                        'elementType': 'geometry.fill',
+                        'stylers': {
+                            'color': '#000000'
+                        }
+                    },
+                    {
+                        'featureType': 'arterial',
+                        'elementType': 'geometry.stroke',
+                        'stylers': {
+                            'color': '#0b3d51'
+                        }
+                    },
+                    {
+                        'featureType': 'local',
+                        'elementType': 'geometry',
+                        'stylers': {
+                            'color': '#000000'
+                        }
+                    },
+                    {
+                        'featureType': 'railway',
+                        'elementType': 'geometry.fill',
+                        'stylers': {
+                            'color': '#000000'
+                        }
+                    },
+                    {
+                        'featureType': 'railway',
+                        'elementType': 'geometry.stroke',
+                        'stylers': {
+                            'color': '#08304b'
+                        }
+                    },
+                    {
+                        'featureType': 'subway',
+                        'elementType': 'geometry',
+                        'stylers': {
+                            'lightness': -70
+                        }
+                    },
+                    {
+                        'featureType': 'building',
+                        'elementType': 'geometry.fill',
+                        'stylers': {
+                            'color': '#000000'
+                        }
+                    },
+                    {
+                        'featureType': 'all',
+                        'elementType': 'labels.text.fill',
+                        'stylers': {
+                            'color': '#857f7f'
+                        }
+                    },
+                    {
+                        'featureType': 'all',
+                        'elementType': 'labels.text.stroke',
+                        'stylers': {
+                            'color': '#000000'
+                        }
+                    },
+                    {
+                        'featureType': 'building',
+                        'elementType': 'geometry',
+                        'stylers': {
+                            'color': '#022338'
+                        }
+                    },
+                    {
+                        'featureType': 'green',
+                        'elementType': 'geometry',
+                        'stylers': {
+                            'color': '#062032'
+                        }
+                    },
+                    {
+                        'featureType': 'boundary',
+                        'elementType': 'all',
+                        'stylers': {
+                            'color': '#465b6c'
+                        }
+                    },
+                    {
+                        'featureType': 'manmade',
+                        'elementType': 'all',
+                        'stylers': {
+                            'color': '#022338'
+                        }
+                    },
+                    {
+                        'featureType': 'label',
+                        'elementType': 'all',
+                        'stylers': {
+                            'visibility': 'off'
+                        }
+                    }
+                ]
+            }
         },
         series: [{
             type: 'lines',
             coordinateSystem: 'bmap',
             polyline: true,
-            data: busLines,
+            data: [],
             silent: true,
             lineStyle: {
                 normal: {
@@ -259,23 +257,6 @@ function processLines(dest) {
             },
             progressiveThreshold: 500,
             progressive: 200
-        }, {
-            type: 'lines',
-            coordinateSystem: 'bmap',
-            polyline: true,
-            data: busLines,
-            lineStyle: {
-                normal: {
-                    width: 0
-                }
-            },
-            effect: {
-                constantSpeed: 60,
-                show: true,
-                trailLength: 0.4,
-                symbolSize: 5
-            },
-            zlevel: 1
         }]
     });
 
@@ -284,20 +265,48 @@ function processLines(dest) {
     ecModel.eachComponent('bmap', function (bmapModel) {
         if(bmap == null){
             bmap = bmapModel.__bmap;
-            bmap.setMaxZoom(14);
+
+            bmap.setMaxZoom(13);
             bmap.setMinZoom(13);
+            // var sw = new BMap.Point(120.440176,38.789225);  // 创建点坐标
+            // var ne = new BMap.Point(123.346949,39.832538);  // 创建点坐标
+            // var bound = new BMap.Bounds(sw,ne);  // 创建点坐标
+            // var overlay = new BMap.GroundOverlay(bound,{
+            //     opacity:1,
+            //     displayOnMinLevel:0,
+            //     displayOnMaxLevel:20
+            // });
+            // overlay.setImageURL('http://lbsyun.baidu.com/jsdemo/img/si-huan.png');
+            // bmap.addOverlay(overlay);
 
-            var sw = new BMap.Point(120.760697, 38.570119);  // 创建点坐标
-            var ne = new BMap.Point(122.19942, 39.282176);  // 创建点坐标
-            var bound = new BMap.Bounds(sw,ne);  // 创建点坐标
-            var overlay = new BMap.GroundOverlay(bound,{
-                opacity:1,
-                displayOnMinLevel:0,
-                displayOnMaxLevel:20
+
+            function showInfo(e){
+                console.log(e.point.lng + ", " + e.point.lat);
+            }
+            bmap.addEventListener("click", showInfo);
+            var trackPoint1 = [];
+
+
+            trackPoint1.push(new BMap.Point(120.946107, 38.928279))
+            trackPoint1.push(new BMap.Point(122.013725, 38.928279))
+            var polyline1 = new BMap.Polyline(trackPoint1, {
+                strokeColor: "#ffffff",
+                strokeWeight: 1,
+                setStrokeStyle:"dashed",
+                strokeOpacity: 1
             });
-            overlay.setImageURL('img/123.jpg');
-            bmap.addOverlay(overlay);
 
+            var trackPoint2 = [];
+            trackPoint2.push(new BMap.Point(121.479916, 39.123361))
+            trackPoint2.push(new BMap.Point(121.479916, 38.683099))
+            var polyline2 = new BMap.Polyline(trackPoint2, {
+                strokeColor: "#ffffff",
+                strokeWeight: 1,
+                setStrokeStyle:"dashed",
+                strokeOpacity: 1
+            });
+            bmap.addOverlay(polyline1);
+            bmap.addOverlay(polyline2);
         }
     });
 }
