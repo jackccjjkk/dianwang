@@ -11,6 +11,8 @@ var cheliangList = null;
 var wuziList = null;
 var shebeiList = null;
 
+var cheliangDetailList = null;
+
 var fanganList = null;
 var fengxianList = null;
 var zhizekaList = null;
@@ -65,6 +67,7 @@ function getData() {
             fanganList = data.fanganList;
             fengxianList = data.fengxianList;
             zhizekaList = data.zhizekaList;
+            cheliangDetailList = data.cheliangDetailList;
         } else {
 
         }
@@ -213,7 +216,7 @@ function setListener() {
     $("#menu_baodianchangsuo").click(function () {
         // 清除地图上其他浮层，显示站所浮层
         map.clearOverlays();
-        map.centerAndZoom(centerPoint, 13);
+        map.centerAndZoom(centerPoint, 16);
         hideBottomPopup();
         $(".content-center").hide();
         if (selectedMenu == "baodianchangsuo") {
@@ -233,7 +236,7 @@ function setListener() {
     $("#menu_xianlu").click(function () {
         // 清除地图上其他浮层，显示站所浮层
         map.clearOverlays();
-        map.centerAndZoom(centerPoint, 13);
+        map.centerAndZoom(centerPoint, 16);
         hideBottomPopup();
         $(".content-center").hide();
         if (selectedMenu == "xianlu") {
@@ -254,7 +257,7 @@ function setListener() {
     $("#menu_duiwu").click(function () {
         // 清除地图上其他浮层，显示站所浮层
         map.clearOverlays();
-        map.centerAndZoom(centerPoint, 13);
+        map.centerAndZoom(centerPoint, 15);
         hideBottomPopup();
         $(".content-center").hide();
         if (selectedMenu == "duiwu") {
@@ -275,7 +278,7 @@ function setListener() {
     $("#menu_renyuan").click(function () {
         // 清除地图上其他浮层，显示站所浮层
         map.clearOverlays();
-        map.centerAndZoom(centerPoint, 13);
+        map.centerAndZoom(centerPoint, 15);
         hideBottomPopup();
         $(".content-center").hide();
         if (selectedMenu == "renyuan") {
@@ -296,7 +299,7 @@ function setListener() {
     $("#menu_cheliang").click(function () {
         // 清除地图上其他浮层，显示站所浮层
         map.clearOverlays();
-        map.centerAndZoom(centerPoint, 13);
+        map.centerAndZoom(centerPoint, 15);
         hideBottomPopup();
         $(".content-center").hide();
         if (selectedMenu == "cheliang") {
@@ -317,7 +320,7 @@ function setListener() {
     $("#menu_wuzi").click(function () {
         // 清除地图上其他浮层，显示站所浮层
         map.clearOverlays();
-        map.centerAndZoom(centerPoint, 13);
+        map.centerAndZoom(centerPoint, 15);
         hideBottomPopup();
         $(".content-center").hide();
         if (selectedMenu == "wuzi") {
@@ -477,7 +480,7 @@ function showZhansuoList() {
             $(".zhansuo-item-name", $item).text(item.name);
             $(".zhansuo-item-unit", $item).text(item.unit);
             $item.click(function () {
-                map.centerAndZoom(marker.getPosition(), 14);
+                map.centerAndZoom(marker.getPosition(), 18);
                 if (item.type == 1) {
                     showKaiguanzhanDetail(item);
                 } else {
@@ -500,14 +503,14 @@ function showZhansuoList() {
     });
 }
 
+var selectedDuiwuMaker = null;
 function showDuiwuList() {
     $(".content-right-area").hide();
     $("#duiwuListRightArea").show();
     $("#duiwuListRight").html($("#duiwuListRight .template.duiwu-item"));
     $.each(duiwuList, function (index, item) {
-        var pt = new BMap.Point(item.longitude, item.latitude);
-        var myIcon = null;
-        myIcon = new BMap.Icon("img/map_icon_duiwu.png", new BMap.Size(66, 59));
+        var pt = new BMap.Point(item.lng, item.lat);
+        var myIcon = new BMap.Icon("img/map_icon_duiwu.png", new BMap.Size(66, 59));
         var marker = new BMap.Marker(pt, {icon: myIcon});  // 创建标注
         marker.addEventListener("click", function (type, target) {
             showDuiwuDetail(item);
@@ -518,7 +521,21 @@ function showDuiwuList() {
         $(".duiwu-item-name", $item).text(item.name);
         $(".duiwu-item-unit", $item).text(item.type);
         $item.click(function () {
+            if(!item.lng || !item.lat){
+                return;
+            }
+            map.centerAndZoom(marker.getPosition(), 18);
             showDuiwuDetail(item);
+            if (selectedDuiwuMaker == null) {
+                // 未选中任何点
+                marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+                selectedDuiwuMaker = marker;
+            } else {
+                // 先取消选中状态
+                selectedDuiwuMaker.setAnimation(null);
+                marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+                selectedDuiwuMaker = marker;
+            }
         });
         $item.removeClass("template").appendTo("#duiwuListRight")
     });
@@ -554,15 +571,6 @@ function showCheliangList() {
     $("#cheliangListRightArea").show();
     $("#cheliangListRight").html($("#cheliangListRight .template.cheliang-item"));
     $.each(cheliangList, function (index, item) {
-        var pt = new BMap.Point(item.longitude, item.latitude);
-        var myIcon = null;
-        myIcon = new BMap.Icon("img/map_icon_cheliang.png", new BMap.Size(66, 59));
-        var marker = new BMap.Marker(pt, {icon: myIcon});  // 创建标注
-        marker.addEventListener("click", function (type, target) {
-            showCheliangDetail(item);
-        });
-        map.addOverlay(marker);
-
         var $item = $("#cheliangListRight .template.cheliang-item").clone();
         $(".cheliang-item-name", $item).text(item.name);
         // $(".cheliang-item-unit", $item).text(item.unit);
@@ -571,6 +579,14 @@ function showCheliangList() {
             showCheliangDetail(item);
         });
         $item.removeClass("template").appendTo("#cheliangListRight")
+    });
+
+    $.each(cheliangDetailList, function (index, item) {
+        var pt = new BMap.Point(item.lng, item.lat);
+        var myIcon = null;
+        myIcon = new BMap.Icon("img/map_icon_cheliang.png", new BMap.Size(66, 59));
+        var marker = new BMap.Marker(pt, {icon: myIcon});  // 创建标注
+        map.addOverlay(marker);
     });
 }
 
@@ -585,17 +601,16 @@ function showWuziList() {
         var myIcon = null;
         myIcon = new BMap.Icon("img/map_icon_wuzi.png", new BMap.Size(66, 59));
         var marker = new BMap.Marker(pt, {icon: myIcon});  // 创建标注
-        marker.setTitle(item.id);
+        marker.setTitle(item.name);
         marker.addEventListener("click", function (type, target) {
             if (selectedWuziMaker == null) {
                 // 未选中任何点
-                showWuziDetail(item);
                 // marker.setIcon(new BMap.Icon("img/map_icon_changsuo_selected.png", new BMap.Size(66, 59)));
-                marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+                marker.setAnimation(BMAP_ANIMATION_BOUNCE)
                 selectedWuziMaker = marker;
             } else if (selectedWuziMaker.getTitle() == item.id) {
                 // 选中当前点，则点击时隐藏
-                hideBottomPopup();
+                // hideBottomPopup();
                 // $(".content-right-area").hide();
                 // $("#changsuoListRightArea").show();
                 // // marker.setIcon(new BMap.Icon("img/map_icon_changsuo.png", new BMap.Size(66, 59)));
@@ -603,7 +618,6 @@ function showWuziList() {
                 selectedWuziMaker = null;
             } else if (selectedWuziMaker.getTitle() != item.id) {
                 // 先取消选中状态
-                showWuziDetail(item);
                 // selectedChangsuoMaker.setIcon(new BMap.Icon("img/map_icon_changsuo.png", new BMap.Size(66, 59)));
                 selectedWuziMaker.setAnimation(null)
                 // marker.setIcon(new BMap.Icon("img/map_icon_changsuo_selected.png", new BMap.Size(66, 59)));
@@ -619,15 +633,13 @@ function showWuziList() {
         $(".wuzi-item-phone", $item).text(item.phone);
         $item.click(function () {
             // map.panTo(new BMap.Point(item.longitude, item.latitude));
-            map.centerAndZoom(new BMap.Point(item.longitude, item.latitude), 14);
+            map.centerAndZoom(new BMap.Point(item.longitude, item.latitude), 18);
             if (selectedWuziMaker == null) {
                 // 未选中任何点
-                showWuziDetail(item);
                 marker.setAnimation(BMAP_ANIMATION_BOUNCE);
                 selectedWuziMaker = marker;
             } else {
                 // 先取消选中状态
-                showWuziDetail(item);
                 selectedWuziMaker.setAnimation(null);
                 marker.setAnimation(BMAP_ANIMATION_BOUNCE);
                 selectedWuziMaker = marker;
@@ -785,7 +797,7 @@ function showChangsuoList() {
     $("#changsuoListRightArea").show();
     $("#changsuoListRight").html($("#changsuoListRight .template.changsuo-item"));
     $.each(changsuoList, function (index, item) {
-        var pt = new BMap.Point(item.longitude, item.latitude);
+        var pt = new BMap.Point(item.longitude, item.latitude);  
         var myIcon = new BMap.Icon("img/map_icon_changsuo.png", new BMap.Size(66, 59));
         var marker = new BMap.Marker(pt, {icon: myIcon});  // 创建标注
         marker.setTitle(item.location);
@@ -824,7 +836,7 @@ function showChangsuoList() {
         $(".changsuo-item-name", $item).text(item.location);
         $(".changsuo-item-address", $item).text(item.address);
         $item.click(function () {
-            map.centerAndZoom(marker.getPosition(), 14);
+            map.centerAndZoom(marker.getPosition(), 18);
             showChangsuoDetail(item);
             if (selectedChangsuoMaker == null) {
                 // 未选中任何点
@@ -884,6 +896,13 @@ function showKaiguanzhanDetail(selectedItem) {
     showBottomPopup();
     $(".content-bottom-area").hide();
     $("#kaiguanzhanArea").show();
+    if(selectedItem.bkqUrl){
+        $("#zhansuoRightBtnBkq").attr("href",selectedItem.bkqUrl);
+        $("#zhansuoRightBtnBkq").show();
+    }else{
+        $("#zhansuoRightBtnBkq").attr("href","javascript:void(0)");
+        $("#zhansuoRightBtnBkq").hide();
+    }
     $.each(kaiguanzhanList, function (index, item) {
         if (selectedItem.id == item.id) {
             $("#kaiguanzhan_bdzmc").text(item.bdzmc);
@@ -952,6 +971,14 @@ function showBiandianzhanDetail(selectedItem) {
     showBottomPopup();
     $(".content-bottom-area").hide();
     $("#biandianzhanArea").show();
+    if(selectedItem.bkqUrl){
+        $("#zhansuoRightBtnBkq").attr("href",selectedItem.bkqUrl);
+        $("#zhansuoRightBtnBkq").show();
+    }else{
+        $("#zhansuoRightBtnBkq").attr("href","javascript:void(0)");
+        $("#zhansuoRightBtnBkq").hide();
+    }
+
     $.each(biandianzhanList, function (index, item) {
         if (selectedItem.id == item.id) {
             $("#biandianzhan_dzmc").text(item.dzmc);
@@ -1026,6 +1053,13 @@ function showBiandianzhanDetail(selectedItem) {
  */
 function showChangsuoDetail(item) {
     // 底部区域
+    if(item.bkqUrl){
+        $("#changsuoRightBtnBkq").attr("href",item.bkqUrl);
+        $("#changsuoRightBtnBkq").show();
+    }else{
+        $("#changsuoRightBtnBkq").attr("href","javascript:void(0)");
+        $("#changsuoRightBtnBkq").hide();
+    }
 
     showBottomPopup();
     $(".content-bottom-area").hide();
@@ -1098,19 +1132,21 @@ function showXianluDetail(item) {
     $("#xianlu_device").text(item.device);
 
     $("#xianluDataList").html($("#xianluDataList .template.xianlu-data-item"));
-    $.each(item.xianluDataList, function (index2, xianluData) {
-        var $xianluItem = $("#xianluDataList .template.xianlu-data-item").clone();
-        $(".xianlu-data-item-name", $xianluItem).text(xianluData.name);
-        $(".xianlu-data-item-t_status", $xianluItem).text(xianluData.t_status);
-        $(".xianlu-data-item-t_time", $xianluItem).text(xianluData.t_time);
-        $(".xianlu-data-item-h_status", $xianluItem).text(xianluData.h_status);
-        $(".xianlu-data-item-h_time", $xianluItem).text(xianluData.h_time);
-        $(".xianlu-data-item-g_status", $xianluItem).text(xianluData.g_status);
-        $(".xianlu-data-item-g_comm", $xianluItem).text(xianluData.g_comm);
-        $(".xianlu-data-item-w_status", $xianluItem).text(xianluData.w_status);
-        $(".xianlu-data-item-w_comm", $xianluItem).text(xianluData.w_comm);
-        $xianluItem.removeClass("template").appendTo("#xianluDataList");
-    });
+    if(item.xianluDataList){
+        $.each(item.xianluDataList, function (index2, xianluData) {
+            var $xianluItem = $("#xianluDataList .template.xianlu-data-item").clone();
+            $(".xianlu-data-item-name", $xianluItem).text(xianluData.name);
+            $(".xianlu-data-item-t_status", $xianluItem).text(xianluData.t_status);
+            $(".xianlu-data-item-t_time", $xianluItem).text(xianluData.t_time);
+            $(".xianlu-data-item-h_status", $xianluItem).text(xianluData.h_status);
+            $(".xianlu-data-item-h_time", $xianluItem).text(xianluData.h_time);
+            $(".xianlu-data-item-g_status", $xianluItem).text(xianluData.g_status);
+            $(".xianlu-data-item-g_comm", $xianluItem).text(xianluData.g_comm);
+            $(".xianlu-data-item-w_status", $xianluItem).text(xianluData.w_status);
+            $(".xianlu-data-item-w_comm", $xianluItem).text(xianluData.w_comm);
+            $xianluItem.removeClass("template").appendTo("#xianluDataList");
+        });
+    }
 
     // 右侧区域
     $(".content-right-area").hide();
@@ -1123,43 +1159,6 @@ function showXianluDetail(item) {
     $("#xianlu_right_video_source3").attr("src", item.rightVideo3);
     $("#xianlu_right_video3").load();
 
-    $(".content-scroll").each(function (index) {
-        var me = $(this);
-        var height = me.parent()[0].scrollHeight - (me.parent()[0].clientHeight || me.parent()[0].offsetHeight);
-        if (height > 0) {
-            var interval = setInterval(function () {
-                if (me.parent()[0].scrollTop >= height) {
-                    me.parent()[0].scrollTop = 0;
-                } else {
-                    me.parent()[0].scrollTop++;
-                }
-            }, 50);
-            intervalList.push(interval);
-        }
-    });
-}
-
-/**
- * 线路详细
- */
-function showWuziDetail(item) {
-    showBottomPopup();
-    $(".content-bottom-area").hide();
-    $("#wuziArea").show();
-    $("#wuzi_person").text(item.person);
-    $("#wuzi_phone").text(item.phone);
-    $("#wuzi_area").text(item.area);
-    $("#wuzi_personList").text(item.personList);
-
-    $("#wuziDataList").html($("#wuziDataList .template.wuzi-data-item"));
-    $.each(item.detailList, function (index2, wuziData) {
-        var $wuziItem = $("#wuziDataList .template.wuzi-data-item").clone();
-        $(".wuzi-data-item-ORG", $wuziItem).text(wuziData.ORG);
-        $(".wuzi-data-item-WZCKMC", $wuziItem).text(wuziData.WZCKMC);
-        $(".wuzi-data-item-SBLX", $wuziItem).text(wuziData.SBLX);
-        $(".wuzi-data-item-XH", $wuziItem).text(wuziData.XH);
-        $wuziItem.removeClass("template").appendTo("#wuziDataList");
-    });
     $(".content-scroll").each(function (index) {
         var me = $(this);
         var height = me.parent()[0].scrollHeight - (me.parent()[0].clientHeight || me.parent()[0].offsetHeight);
@@ -1219,6 +1218,16 @@ function showDuiwuDetail(item) {
 }
 
 function showCheliangDetail(item) {
+    map.clearOverlays();
     $(".content-center3").show();
     $(".content-center3-img").attr("src", item.img);
+    $.each(cheliangDetailList,function (index,cheliang) {
+        if(item.item == cheliang.item){
+            var pt = new BMap.Point(cheliang.lng, cheliang.lat);
+            var myIcon = new BMap.Icon("img/map_icon_cheliang.png", new BMap.Size(66, 59));
+            var marker = new BMap.Marker(pt, {icon: myIcon});  // 创建标注
+            map.addOverlay(marker);
+        }
+
+    })
 }

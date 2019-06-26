@@ -10,10 +10,12 @@ $(document).ready(function () {
     setLinstener();
     getData();
     getpolyline();
-
-    var num = 222;
+	
+	var d=new Date().getHours();
+	var m=new Date().getMinutes();
+    var num = 55320*m+d*3319200;
     setInterval(function () {
-        num += parseInt(Math.random() * 100);
+        num += (900+parseInt(Math.random() * 200));
         $("#dataNums").rollNum({
             deVal: num
         });
@@ -113,7 +115,7 @@ function processLines(dest) {
     }));
     myChart.setOption(option = {
         bmap: {
-            center: [121.679122, 38.935683],
+            center: [121.609122, 38.935683],
             zoom: 13,
             minZoom:12,
             maxZoom:14,

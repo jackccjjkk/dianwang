@@ -6572,7 +6572,10 @@ window.BMAP_AUTHENTIC_KEY = "";
     od.getTilesUrl = function(a, b) {
         var c = a.x
           , e = a.y;
-        return (jd[Math.abs(c + e) % jd.length] + "u=x=" + c + ";y=" + e + ";z=" + b + ";v=009;type=sate&fm=46&udt=" + Sb("satellite")).replace(/-(\d+)/gi, "M$1")
+        //return (jd[Math.abs(c + e) % jd.length] + "u=x=" + c + ";y=" + e + ";z=" + b + ";v=009;type=sate&fm=46&udt=" + Sb("satellite")).replace(/-(\d+)/gi, "M$1")
+		 var tdir = bmapcfg.tiles_hybrid.length > 0 ? bmapcfg.tiles_hybrid : bmapcfg.home + "tiles_hybrid";//修改 使用本地卫星的瓦片 
+		tdir = tdir + "/" + b + "/" + c + "/" + e + bmapcfg.wximgext; //修改 使用本地卫星的瓦片 
+	    return tdir;
     }
     ;
     var Ya = new id("\u536b\u661f",od,{

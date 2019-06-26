@@ -118,6 +118,13 @@
   left: 400px;
   top: 50px;
 }
+
+.content-center4{
+  position: absolute;
+  left: 400px;
+  top: 50px;
+}
+
 .center-item-row .lable {
   text-align: center;
   color: #66ffff;

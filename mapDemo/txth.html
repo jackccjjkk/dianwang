@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="common.css"/>
+    <link rel="stylesheet" href="txth.css"/>
+    <title>地图显示</title>
+</head>
+<body>
+
+<div class="page" style="">
+    <div class="header">
+        <img style="height: 84px;margin-top: 11px;margin-left: 40px" src="img/logo.png">
+        <div style="width: 746px;height: 1px;background: rgba(0, 255, 255, 0.7);margin-top: 59px;margin-left: -40px"></div>
+        <div
+                style="background: url('img/title_big.png');width: 820px;height:70px;line-height: 70px;margin-top: 24px;text-align: center;color: #5ddcda;font-size: 36px">基于泛在物联网智能运检及电力保障平台</div>
+        <div
+                style="width: 1700px;height: 1px;background: linear-gradient(to right, rgba(0, 255, 255, 0.7), rgba(0, 255, 255, 0));margin-top: 57px"></div>
+        <div class="header-right">
+            <img style="width: 35px;height: 35px" src="img/user.png">
+            <div id="currentDate" style="margin-left: 10px"></div>
+            <img style="width: 30px;height: 30px;margin-left: 20px" src="img/cloud.png">
+            <div style="margin-left: 10px">多云</div>
+            <div style="margin-left: 10px">27℃</div>
+            <div style="margin-left: 10px">微风三级</div>
+        </div>
+        <div class="header-menus">
+            <div class="header-menu-item">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="qwts.html">全网态势</a></div>
+            </div>
+            <div class="header-menu-item">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="zdhd.html">重大活动</a></div>
+            </div>
+            <div class="header-menu-item">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="txth.html">智能运维</a></div>
+            </div>
+            <div class="header-menu-item">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="yjzh.html">应急指挥</a></div>
+            </div>
+            <div class="header-menu-item selected">
+                <div class="header-menu-item-text"><a style="color: white;text-decoration: none"
+                                                      href="txth.html">特巡特护</a></div>
+            </div>
+            <div id="headerMenuBaodianjiankong" class="header-menu-item">
+                <div class="header-menu-item-text">
+                    <a style="color: white;text-decoration: none" href="javascript:void(0)">保电监控</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-sub-menu-baodianjiankong">
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq.html">220kV大连变</a>
+        </div>
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq1.html">输电现场</a>
+        </div>
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq2.html">电缆现场</a>
+        </div>
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq3.html">希尔顿酒店</a>
+        </div>
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq4.html">民寿变电站-1</a>
+        </div>
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq5.html">信通分公司</a>
+        </div>
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq6.html">10千伏国际会议中心开关站</a>
+        </div>
+		<div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq7.html">棒棰岛宾馆变电所</a>
+        </div>
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq8.html">10kV棒热1#箱式开关站</a>
+        </div>
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq9.html">海之梦开关站</a>
+        </div>
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq10.html">大连国际会议中心</a>
+        </div>
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq11.html">调度自动化</a>
+        </div>
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq12.html">电缆运检室</a>
+        </div>
+		<div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq13.html">万达公馆#3开关站</a>
+        </div>
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq14.html">220kV青云变</a>
+        </div>
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq15.html">66kV石槽变电站</a>
+        </div>
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq16.html">66kV民主变</a>
+        </div>
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq17.html">输电运检室</a>
+        </div>
+        <div class="header-sub-menu-item">
+            <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq18.html">东港晚宴EPS应急保电车</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="map" id="map"></div>
+        <div class="content-left">
+            <div id="leftMenu1" class="content-left-menu">
+                <img class="content-left-menu-img" src="img/1.png">
+                <div>输电</div>
+            </div>
+            <div id="leftMenu2" class="content-left-menu">
+                <img class="content-left-menu-img" src="img/3.png">
+                <div>变电</div>
+            </div>
+            <div id="leftMenu3" class="content-left-menu">
+                <img class="content-left-menu-img" src="img/2.png">
+                <div>电缆</div>
+            </div>
+            <div id="leftMenu4" class="content-left-menu">
+                <img class="content-left-menu-img" src="img/4.png">
+                <div>配电</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 加载地图JSAPI脚本 -->
+<!--<script src="https://webapi.amap.com/maps?v=1.4.14&key=af2caff8cf0eaa33ca30b22d896feb3b"></script>-->
+<script src="plugin/bdmap/map_load.js"></script>
+<script src="plugin/jquery-1.8.0.min.js"></script>
+<script src="plugin/echarts.min.js"></script>
+<script src="common.js"></script>
+<script src="txth.js"></script>
+</body>
+</html>

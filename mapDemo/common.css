@@ -130,7 +130,7 @@ body {
 
 .list-item {
     height: 38px;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .list-item:nth-child(odd) {
@@ -223,7 +223,7 @@ body {
 .header-sub-menu-baodianjiankong{
     padding: 0px 10px;
     position: absolute;
-    left: 2555px;
+    left: 2685px;
     top: 104px;
     z-index: 999;
     min-width: 200px;
@@ -235,6 +235,10 @@ body {
     border-bottom: 1px #cccccc solid;
     padding: 10px 0px;
     text-align: center;
+}
+
+.header-sub-menu-item:hover{
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .header-sub-menu-item:last-child{

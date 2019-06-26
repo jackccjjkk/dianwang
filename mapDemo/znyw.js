@@ -1,9 +1,13 @@
 var shudian;
 var dianlan;
 var biandian;
+var peidian;
 $(document).ready(function () {
     initMap();
     setLinstener();
+    setInterval(function () {
+        getData();
+    }, 60000);
     getData();
 
 });
@@ -28,7 +32,7 @@ function initMap() {
     map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
 }
 
-var intervalList=[];
+var intervalList = [];
 
 function getData() {
     var param = {};
@@ -42,11 +46,12 @@ function getData() {
             initdianlan(data.dianlan.dataList);
             initbiandian1(data.biandian.dataList1);
             initbiandian2(data.biandian.dataList2);
+            initpeidian1(data.peidian.dataList1);
+            initpeidian2(data.peidian.dataList2);
 
             $(".scroll-content").each(function (index) {
                 var me = $(this);
                 var height = me.parent()[0].scrollHeight - (me.parent()[0].clientHeight || me.parent()[0].offsetHeight);
-                console.log(height)
                 if (height > 0) {
                     var interval = setInterval(function () {
                         if (me.parent()[0].scrollTop >= height) {
@@ -62,6 +67,7 @@ function getData() {
             shudian = data.shudian;
             dianlan = data.dianlan;
             biandian = data.biandian;
+            peidian = data.peidian;
         } else {
 
         }
@@ -195,6 +201,43 @@ function initbiandian2(dataList) {
     })
 }
 
+
+function initpeidian1(dataList) {
+    $("#peidian1").html($("#peidian1 .template.peidian-item"));
+    $.each(dataList, function (index, item) {
+        var $item = $("#peidian1 .template.peidian-item").clone();
+        $(".peidian-item-id", $item).text(item.id);
+        $(".peidian-item-shebei", $item).text(item.shebei);
+        $(".peidian-item-wd", $item).text(item.wd);
+        $(".peidian-item-Awd", $item).text(item.Awd);
+        $(".peidian-item-Bwd", $item).text(item.Bwd);
+        $(".peidian-item-Cwd", $item).text(item.Cwd);
+        $(".peidian-item-val", $item).text(item.val);
+        $(".peidian-item-num", $item).text(item.num);
+        $(".peidian-item-nengliang", $item).text(item.nengliang);
+        $(".peidian-item-bj", $item).text(item.bj);
+        $(".peidian-item-time", $item).text(item.time);
+        $item.removeClass("template").appendTo("#peidian1");
+    })
+}
+
+// TODO
+function initpeidian2(dataList) {
+    $("#peidian2").html($("#peidian2 .template.peidian-item"));
+    $.each(dataList, function (index, item) {
+        var $item = $("#peidian2 .template.peidian-item").clone();
+        $(".peidian-item-peidian", $item).text(item.peidian);
+        $(".peidian-item-shebei", $item).text(item.shebei);
+        $(".peidian-item-dengji", $item).text(item.dengji);
+        $(".peidian-item-type", $item).text(item.type);
+        $(".peidian-item-name", $item).text(item.name);
+        $(".peidian-item-mc", $item).text(item.mc);
+        $(".peidian-item-fd", $item).text(item.fd);
+        $(".peidian-item-zt", $item).text(item.zt);
+        $item.removeClass("template").appendTo("#peidian2");
+    })
+}
+
 function setLinstener() {
     $("#headerMenuBaodianjiankong").mouseover(function () {
         $(".header-sub-menu-baodianjiankong").show();
@@ -222,7 +265,7 @@ function setLinstener() {
         $("#video2").load();
         $("#video_source3").attr("src", shudian.video3);
         $("#video3").load();
-        $.each(intervalList,function (index,item) {
+        $.each(intervalList, function (index, item) {
             clearInterval(item);
         });
         intervalList = [];
@@ -253,7 +296,7 @@ function setLinstener() {
         $("#video2").load();
         $("#video_source3").attr("src", biandian.video3);
         $("#video3").load();
-        $.each(intervalList,function (index,item) {
+        $.each(intervalList, function (index, item) {
             clearInterval(item);
         });
         intervalList = [];
@@ -285,7 +328,7 @@ function setLinstener() {
         $("#video2").load();
         $("#video_source3").attr("src", dianlan.video3);
         $("#video3").load();
-        $.each(intervalList,function (index,item) {
+        $.each(intervalList, function (index, item) {
             clearInterval(item);
         });
         intervalList = [];
@@ -309,59 +352,85 @@ function setLinstener() {
 
     $("#leftMenu4").click(function () {
         $(".content-center").hide();
+        $(".content-center4").show();
+
+        $("#video_source1").attr("src", peidian.video1);
+        $("#video1").load();
+        $("#video_source2").attr("src", peidian.video2);
+        $("#video2").load();
+        $("#video_source3").attr("src", peidian.video3);
+        $("#video3").load();
+        $.each(intervalList, function (index, item) {
+            clearInterval(item);
+        });
+        intervalList = [];
+        $(".scroll-content").each(function (index) {
+            var me = $(this);
+            var height = me.parent()[0].scrollHeight - (me.parent()[0].clientHeight || me.parent()[0].offsetHeight);
+            if (height > 0) {
+                var interval = setInterval(function () {
+                    if (me.parent()[0].scrollTop >= height) {
+                        me.parent()[0].scrollTop = 0;
+                    } else {
+                        me.parent()[0].scrollTop++;
+                    }
+                }, 50);
+                intervalList.push(interval);
+            }
+        });
     });
 
 
     $(".content-center-close").click(function () {
         $(".content-center").hide();
     });
-
-    $("#submenu-1").mouseover(function () {
-        $("#submenu-1").show();
-    });
-    $("#submenu-1").mouseout(function () {
-        $("#submenu-1").hide();
-    });
-
-    $("#leftMenu2").mouseover(function () {
-        $("#submenu-2").show();
-    });
-    $("#leftMenu2").mouseout(function () {
-        $("#submenu-2").hide();
-    });
-
-    $("#submenu-2").mouseover(function () {
-        $("#submenu-2").show();
-    });
-    $("#submenu-2").mouseout(function () {
-        $("#submenu-2").hide();
-    });
-
-    $("#leftMenu3").mouseover(function () {
-        $("#submenu-3").show();
-    });
-    $("#leftMenu3").mouseout(function () {
-        $("#submenu-3").hide();
-    });
-
-    $("#submenu-3").mouseover(function () {
-        $("#submenu-3").show();
-    });
-    $("#submenu-3").mouseout(function () {
-        $("#submenu-3").hide();
-    });
-
-    $("#leftMenu4").mouseover(function () {
-        $("#submenu-4").show();
-    });
-    $("#leftMenu4").mouseout(function () {
-        $("#submenu-4").hide();
-    });
-
-    $("#submenu-4").mouseover(function () {
-        $("#submenu-4").show();
-    });
-    $("#submenu-4").mouseout(function () {
-        $("#submenu-4").hide();
-    });
+    //
+    // $("#submenu-1").mouseover(function () {
+    //     $("#submenu-1").show();
+    // });
+    // $("#submenu-1").mouseout(function () {
+    //     $("#submenu-1").hide();
+    // });
+    //
+    // $("#leftMenu2").mouseover(function () {
+    //     $("#submenu-2").show();
+    // });
+    // $("#leftMenu2").mouseout(function () {
+    //     $("#submenu-2").hide();
+    // });
+    //
+    // $("#submenu-2").mouseover(function () {
+    //     $("#submenu-2").show();
+    // });
+    // $("#submenu-2").mouseout(function () {
+    //     $("#submenu-2").hide();
+    // });
+    //
+    // $("#leftMenu3").mouseover(function () {
+    //     $("#submenu-3").show();
+    // });
+    // $("#leftMenu3").mouseout(function () {
+    //     $("#submenu-3").hide();
+    // });
+    //
+    // $("#submenu-3").mouseover(function () {
+    //     $("#submenu-3").show();
+    // });
+    // $("#submenu-3").mouseout(function () {
+    //     $("#submenu-3").hide();
+    // });
+    //
+    // $("#leftMenu4").mouseover(function () {
+    //     $("#submenu-4").show();
+    // });
+    // $("#leftMenu4").mouseout(function () {
+    //     $("#submenu-4").hide();
+    // });
+    //
+    // $("#submenu-4").mouseover(function () {
+    //     $("#submenu-4").show();
+    // });
+    // $("#submenu-4").mouseout(function () {
+    //     $("#submenu-4").hide();
+    // });
 }

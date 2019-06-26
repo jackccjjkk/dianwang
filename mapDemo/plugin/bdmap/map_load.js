@@ -1,8 +1,10 @@
 var bmapcfg = {
   'imgext'      : '.png',   //瓦片图的后缀 ------ 根据需要修改，一般是 .png .jpg
   'wximgext'      : '.jpg',   //瓦片图的后缀 ------ 根据需要修改，一般是 .png .jpg
+  // 'tiles_dir'   : 'http://10.161.32.4:18080/bdsl_maptile/maptile',       //普通瓦片图的地址，为空默认在 offlinemap/tiles/ 目录
+  // 'tiles_hybrid': 'http://10.161.32.4:18080/maptile',       //卫星瓦片图的地址，为空默认在 offlinemap/tiles_hybrid/ 目录
   'tiles_dir'   : 'http://123.206.96.122/map/tiles',       //普通瓦片图的地址，为空默认在 offlinemap/tiles/ 目录
-  'tiles_hybrid': 'http://123.206.96.122/map/tiles_hybrid',       //卫星瓦片图的地址，为空默认在 offlinemap/tiles_hybrid/ 目录
+  'tiles_hybrid': 'http://123.206.96.122/map/tiles_hybrid',
   'tiles_self'  : ''        //自定义图层的地址，为空默认在 offlinemap/tiles_self/ 目录
 };
 

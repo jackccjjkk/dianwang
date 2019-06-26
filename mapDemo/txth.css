@@ -1,0 +1,129 @@
+.content-left {
+  position: absolute;
+  top: 72px;
+  left: 72px;
+  min-width: 100px;
+  min-height: 100px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.content-left-menu {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+  background: rgba(29, 47, 45, 0.7);
+  cursor: pointer;
+}
+.content-left-submenu{
+  display: none;
+  min-width: 100px;
+  background: rgba(29, 47, 45, 0.4);
+}
+.content-left-submenu-item{
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  border-bottom: 1px #969787 solid;
+  cursor: pointer;
+  color:#ffffff;
+}
+
+.content-left-submenu-item:hover{
+  color:#cccccc;
+}
+
+.content-left-submenu-item:nth-last-child(1){
+  border-bottom: none;
+}
+#submenu-1{
+  position: absolute;
+  left: 100px;
+  top: 10px;
+}
+
+#submenu-2{
+  position: absolute;
+  left: 100px;
+  top: 120px;
+}
+
+#submenu-3{
+  position: absolute;
+  left: 100px;
+  top: 230px;
+}
+
+#submenu-4{
+  position: absolute;
+  left: 100px;
+  top: 340px;
+}
+
+.content-left-menu-img {
+  width: 56px;
+  height: 56px;
+  vertical-align: bottom;
+  margin-top: 16px;
+}
+
+.content-right {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  bottom: 26px;
+  background: rgba(14, 31, 44, 0.7);
+  width: 990px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-bottom {
+  position: absolute;
+  left: 72px;
+  bottom: 0px;
+  background: url("img/bottom_menu_bg.png");
+  background-size: 100% 100%;
+  width: 2556px;
+  height: 200px;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+#goodsInfoList{
+  height: 266px;
+  overflow-y: scroll;
+}
+.goods-info-item {
+  text-align: center;
+}
+
+
+.content-center1{
+  position: absolute;
+  left: 400px;
+  top: 50px;
+}
+
+.content-center2{
+  position: absolute;
+  left: 400px;
+  top: 50px;
+}
+
+.content-center3{
+  position: absolute;
+  left: 400px;
+  top: 50px;
+}
+.center-item-row .lable {
+  text-align: center;
+  color: #66ffff;
+}
+
+.center-item-row .value{
+  border-bottom: 1px #cccccc dotted;
+  padding: 8px 0px;
+}
