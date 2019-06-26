@@ -204,6 +204,9 @@ function initbiandian2(dataList) {
 
 function initpeidian1(dataList) {
     $("#peidian1").html($("#peidian1 .template.peidian-item"));
+    var myDate = new Date();//获取系统当前时间
+    myDate.setMinutes (myDate.getMinutes () - 3);
+    var nowStr= myDate.getFullYear() + "/"+ (myDate.getMonth()+1)+"/"+myDate.getDate()+" "+myDate.getHours() + ":"+myDate.getMinutes();
     $.each(dataList, function (index, item) {
         var $item = $("#peidian1 .template.peidian-item").clone();
         $(".peidian-item-id", $item).text(item.id);
@@ -216,7 +219,7 @@ function initpeidian1(dataList) {
         $(".peidian-item-num", $item).text(item.num);
         $(".peidian-item-nengliang", $item).text(item.nengliang);
         $(".peidian-item-bj", $item).text(item.bj);
-        $(".peidian-item-time", $item).text(item.time);
+        $(".peidian-item-time", $item).text(nowStr);
         $item.removeClass("template").appendTo("#peidian1");
     })
 }
@@ -224,16 +227,20 @@ function initpeidian1(dataList) {
 // TODO
 function initpeidian2(dataList) {
     $("#peidian2").html($("#peidian2 .template.peidian-item"));
+    var myDate = new Date();//获取系统当前时间
+    myDate.setMinutes (myDate.getMinutes () - 3);
+    var nowStr= myDate.getFullYear() + "/"+ (myDate.getMonth()+1)+"/"+myDate.getDate()+" "+myDate.getHours() + ":"+myDate.getMinutes();
     $.each(dataList, function (index, item) {
         var $item = $("#peidian2 .template.peidian-item").clone();
-        $(".peidian-item-peidian", $item).text(item.peidian);
-        $(".peidian-item-shebei", $item).text(item.shebei);
-        $(".peidian-item-dengji", $item).text(item.dengji);
+        $(".peidian-item-id", $item).text(item.id);
         $(".peidian-item-type", $item).text(item.type);
-        $(".peidian-item-name", $item).text(item.name);
-        $(".peidian-item-mc", $item).text(item.mc);
-        $(".peidian-item-fd", $item).text(item.fd);
-        $(".peidian-item-zt", $item).text(item.zt);
+        $(".peidian-item-O2", $item).text(item.O2);
+        $(".peidian-item-SF6", $item).text(item.SF6);
+        $(".peidian-item-CO", $item).text(item.CO);
+        $(".peidian-item-WN", $item).text(item.WN);
+        $(".peidian-item-TEP", $item).text(item.TEP);
+        $(".peidian-item-SD", $item).text(item.SD);
+        $(".peidian-item-time", $item).text(nowStr);
         $item.removeClass("template").appendTo("#peidian2");
     })
 }
