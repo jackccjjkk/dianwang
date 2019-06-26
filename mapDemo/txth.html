@@ -76,7 +76,7 @@
         <div class="header-sub-menu-item">
             <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq6.html">10千伏国际会议中心开关站</a>
         </div>
-		<div class="header-sub-menu-item">
+        <div class="header-sub-menu-item">
             <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq7.html">棒棰岛宾馆变电所</a>
         </div>
         <div class="header-sub-menu-item">
@@ -94,7 +94,7 @@
         <div class="header-sub-menu-item">
             <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq12.html">电缆运检室</a>
         </div>
-		<div class="header-sub-menu-item">
+        <div class="header-sub-menu-item">
             <a style="color: white;text-decoration: none" href="openIE:http://10.161.55.88:8080/mapDemo/sp/bkq13.html">万达公馆#3开关站</a>
         </div>
         <div class="header-sub-menu-item">
@@ -115,25 +115,112 @@
     </div>
     <div class="content">
         <div class="map" id="map"></div>
-        <div class="content-left">
+        <div class="content-left" style="display: none;">
             <div id="leftMenu1" class="content-left-menu">
                 <img class="content-left-menu-img" src="img/1.png">
-                <div>输电</div>
+                <div>隐患排查</div>
             </div>
-            <div id="leftMenu2" class="content-left-menu">
+            <div id="leftMenu2" class="content-left-menu" style="margin-top: 60px">
                 <img class="content-left-menu-img" src="img/3.png">
-                <div>变电</div>
+                <div>故障处理</div>
             </div>
-            <div id="leftMenu3" class="content-left-menu">
-                <img class="content-left-menu-img" src="img/2.png">
-                <div>电缆</div>
+
+        </div>
+
+        <div class="content-center content-center1" style="display: none;">
+            <div class="content-center-inner">
+                <img class="content-center1-close content-center-close" src="img/center_close.png"
+                     style="cursor: pointer"/>
+                <div class="content-center-inner-content" style="padding: 26px 38px 38px 38px">
+                    <div class="content-center1-type" style="font-size:30px;margin-left: 16px;text-align: right">
+                        特巡特护任务派发至维护班组
+                    </div>
+                    <div id="fengxianName" style="margin-top: 10px;text-align: right">
+
+                    </div>
+                    <div style="margin-top: 20px;display: flex;align-items: center;justify-content: center">
+                        <div class="button ok content-center1-close">确认</div>
+                        <div class="button close content-center1-close">关闭</div>
+                    </div>
+                </div>
             </div>
-            <div id="leftMenu4" class="content-left-menu">
-                <img class="content-left-menu-img" src="img/4.png">
-                <div>配电</div>
+        </div>
+
+        <div class="content-center content-center2" style="display: none;">
+            <div class="content-center-inner">
+                <img class="content-center2-close content-center-close" src="img/center_close.png"
+                     style="cursor: pointer"/>
+                <div class="content-center-inner-content" style="padding: 26px 38px 38px 38px">
+                    <div style="display: flex;">
+                        <div style="color: #66ffff;font-size: 30px">接单时间：</div>
+                        <div id="acceptTime"></div>
+                    </div>
+                    <div style="display: flex;margin-top: 10px">
+                        <div style="color: #66ffff;font-size: 30px">巡视时间：</div>
+                        <div id="watchTime"></div>
+                    </div>
+                    <div style="display: flex;margin-top: 10px">
+                        <div style="color: #66ffff;font-size: 30px">处理结果反馈：</div>
+                        <div id="resultFeedback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="content-right">
+            <div style="padding: 20px;">
+                <div class="content-right-area"
+                     style="display: flex; flex-direction: column;">
+                    <div>
+                        <div style="display: flex;align-items: center">
+                            <img style="width: 24px;height: 24px" src="img/title_small.gif">
+                            <span style="margin-left: 10px">运行风险预警</span>
+                        </div>
+                        <div style="margin: 20px">
+                            <div class="table" style="width: 100%;text-align: center">
+                                <div class="table-header-group">
+                                    <div class="table-row right-data-row">
+                                        <div style="width: 29%" class="table-cell lable">所属电站/线路</div>
+                                        <div style="width: 37%" class="table-cell lable">缺陷主设备名称</div>
+                                        <!--                                        <div style="width: 25%" class="table-cell lable">缺陷发生地</div>-->
+                                        <div style="width: 34%" class="table-cell lable">预计发生时间</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="height: 650px;overflow-y: scroll;width: 100%" class="hide-scrollbar">
+                                <div class="table" style="width: 100%;border-bottom: 1px #cccccc dotted;">
+                                    <div class="table-header-group" style="visibility: collapse;">
+                                        <div class="table-row right-item-row">
+                                            <div style="width: 29%" class="table-cell lable">所属电站/线路</div>
+                                            <div style="width: 37%" class="table-cell lable">缺陷主设备名称</div>
+                                            <!--                                        <div style="width: 25%" class="table-cell lable">缺陷发生地</div>-->
+                                            <div style="width: 34%" class="table-cell lable">预计发生时间</div>
+                                        </div>
+                                    </div>
+                                    <div class="table-row-group hide-scrollbar" id="fengxianListRight">
+                                        <div class="template table-row right-item-row fengxian-item">
+                                            <div class="table-cell value fengxian-item-shebei"
+                                                 style="text-align: center"></div>
+                                            <div class="table-cell value fengxian-item-name"
+                                                 style="text-align: center"></div>
+                                            <!--                                            <div class="table-cell value fengxian-item-add"-->
+                                            <!--                                                 style="text-align: center"></div>-->
+                                            <div class="table-cell value fengxian-item-time"
+                                                 style="text-align: center"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
+
+
 </div>
 
 <!-- 加载地图JSAPI脚本 -->

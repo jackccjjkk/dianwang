@@ -1,6 +1,6 @@
 .content-left {
   position: absolute;
-  top: 72px;
+  top: 200px;
   left: 72px;
   min-width: 100px;
   min-height: 100px;
@@ -9,11 +9,15 @@
 }
 
 .content-left-menu {
-  width: 100px;
-  height: 100px;
+  padding: 0px 20px;
+  height: 200px;
   margin-top: 10px;
   background: rgba(29, 47, 45, 0.7);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .content-left-submenu{
   display: none;
@@ -64,7 +68,6 @@
   width: 56px;
   height: 56px;
   vertical-align: bottom;
-  margin-top: 16px;
 }
 
 .content-right {
@@ -104,13 +107,13 @@
 .content-center1{
   position: absolute;
   left: 400px;
-  top: 50px;
+  top: 180px;
 }
 
 .content-center2{
   position: absolute;
   left: 400px;
-  top: 50px;
+  top: 450px;
 }
 
 .content-center3{
@@ -126,4 +129,44 @@
 .center-item-row .value{
   border-bottom: 1px #cccccc dotted;
   padding: 8px 0px;
+}
+
+
+.right-data-row .table-cell {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.right-data-row .lable {
+  text-align: center;
+  color: #66ffff;
+  width: 120px;
+}
+
+.right-data-row .value {
+  text-align: center;
+  color: #ffffff;
+  border-bottom: 1px #8a9597 dashed;
+}
+
+
+.right-item-row:hover{
+  background: rgba(255,255,255,0.3);
+  cursor: pointer;
+}
+
+.right-item-row .table-cell{
+  border-top: 1px #cccccc dotted;
+  padding: 10px 0px;
+}
+
+.button{
+  padding: 10px 20px;
+  color: #ffffff;
+  background: #00c8fe;
+  cursor: pointer;
+}
+
+.close{
+  margin-left: 20px;
 }

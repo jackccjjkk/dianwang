@@ -784,7 +784,6 @@ function showXianluList() {
     var zoom = getZoom(map, xianluList[0].pointArr[0]);
     var center = new BMap.Point(xianluList[0].pointArr[0][0].lng, xianluList[0].pointArr[0][0].lat);
     map.centerAndZoom(center, 14);
-
 }
 
 /**
