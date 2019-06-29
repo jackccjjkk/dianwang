@@ -159,6 +159,9 @@
     color: #ffffff;
     width: 220px;
     white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
 }
 
 .right-data-row .table-cell {
