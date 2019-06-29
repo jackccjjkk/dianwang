@@ -527,8 +527,13 @@ function initChartLine(lineData) {
     myChart = echarts.init(document.getElementById('chartLine'));
     var xData = [];
     var yData = [];
+	//changed by CaoYe
+	var xTime = (new Date()).getTime();
+	for (var i = 0; i < 23; i++) {
+        xData.push((new Date(xTime+5000 * i)).toLocaleTimeString().replace(/^\D*/, ''));
+    }
     $.each(lineData, function (index, item) {
-        xData.push(item.xData);
+        //xData.push(item.xData);
         yData.push(item.yData);
     });
     var option = {
@@ -618,7 +623,7 @@ function initChartLine(lineData) {
                 chartLineDataIndex++;
             },500);
 
-        }, 1000);
+        }, 5000);
     },10000)
 
 }
@@ -747,3 +752,109 @@ function initEventInfoList(eventInfoList) {
         }
     });
 }
+var qkjdlChart = function(id) {
+		var dom = document.getElementById(id);
+		var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: ''
+    },
+	tooltip:{
+        trigger: 'axis',
+		},
+    legend: {
+                textStyle: {
+                    color: '#fff',
+                },
+        data:['本月' ,'上月' ,'去年本月']
+    },
+    grid: {
+        left: '3%',
+        bottom: '10%',
+        containLabel: true
+    },
+    xAxis: {
+        type: '',
+        data: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
+		axisLine: {
+			show : false
+		},
+		axisTick: {
+			show : false
+		},
+		axisLabel:{
+            interval: 0,
+			textStyle: {
+			show:true,
+			color:'#ffffff'
+			}
+		}
+    },
+    yAxis: {
+        type: 'value',
+            min: 250,
+            max: 500,
+            interval: 50,
+		axisLine: {
+			show : false
+		},
+		axisTick: {
+			show : false
+		},
+		axisLabel:{
+			textStyle: {
+			show:true,
+			color:'#ffffff'
+			}
+		}
+    },
+    series: [
+        {
+            name:'本月',
+            type:'line',
+            stack: '',
+			symbol:"circle",
+			symbolsoze:8,
+			itemStyle:{
+				normal:{
+					color:'red'
+				}
+			},
+            data:[385,365,415,429,415,416,335,351,375,415,418,411,416,414,401,380,425,420,429,420,424]
+        },
+        {
+            name:'上月',
+            type:'line',
+            stack: '',
+			symbol:"circle",
+			symbolsoze:8,
+			itemStyle:{
+				normal:{
+					color:'blue'
+				}
+			},
+            data:[305,325,349,421,412,421,428,418,433,429,408,370,411,438,441,428,425,400,380,418,419,423,423,411,370,375,410,412,414,418,412]
+        },
+        {
+            name:'去年本月',
+            type:'line',
+            stack: '',
+			symbol:"circle",
+			symbolsoze:8,
+			itemStyle:{
+				normal:{
+					color:'green'
+				}
+			},
+            data:[399,395,365,421,415,425,413,420,402,378,417,415,411,413,415,395,388,335,404,419,435,440,409,401,422,420,452,451,450,408]
+        }
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+	}
+	qkjdlChart("qkjdlchart");

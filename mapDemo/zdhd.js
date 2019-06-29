@@ -475,7 +475,7 @@ function showZhansuoList() {
         });
 
         map.addOverlay(marker);
-        if (index < 8) {
+        if (index < 35) {
             var $item = $("#zhansuoListRight .template.zhansuo-item").clone();
             $(".zhansuo-item-name", $item).text(item.name);
             $(".zhansuo-item-unit", $item).text(item.unit);
@@ -505,6 +505,7 @@ function showZhansuoList() {
 
 var selectedDuiwuMaker = null;
 function showDuiwuList() {
+	map.centerAndZoom(centerPoint, 13);
     $(".content-right-area").hide();
     $("#duiwuListRightArea").show();
     $("#duiwuListRight").html($("#duiwuListRight .template.duiwu-item"));
@@ -542,6 +543,7 @@ function showDuiwuList() {
 }
 
 function showRenyuanList() {
+	map.centerAndZoom(centerPoint, 13);
     $(".content-right-area").hide();
     $("#renyuanListRightArea").show();
     $("#renyuanListRight").html($("#renyuanListRight .template.renyuan-item"));
@@ -567,6 +569,7 @@ function showRenyuanList() {
 }
 
 function showCheliangList() {
+	map.centerAndZoom(centerPoint, 13);
     $(".content-right-area").hide();
     $("#cheliangListRightArea").show();
     $("#cheliangListRight").html($("#cheliangListRight .template.cheliang-item"));
@@ -593,6 +596,7 @@ function showCheliangList() {
 var selectedWuziMaker = null;
 
 function showWuziList() {
+	map.centerAndZoom(centerPoint, 13);
     $(".content-right-area").hide();
     $("#wuziListRightArea").show();
     $("#wuziListRight").html($("#wuziListRight .template.wuzi-item"));
@@ -605,13 +609,12 @@ function showWuziList() {
         marker.addEventListener("click", function (type, target) {
             if (selectedWuziMaker == null) {
                 // 未选中任何点
-                showWuziDetail(item);
                 // marker.setIcon(new BMap.Icon("img/map_icon_changsuo_selected.png", new BMap.Size(66, 59)));
                 marker.setAnimation(BMAP_ANIMATION_BOUNCE)
                 selectedWuziMaker = marker;
             } else if (selectedWuziMaker.getTitle() == item.id) {
                 // 选中当前点，则点击时隐藏
-                hideBottomPopup();
+                // hideBottomPopup();
                 // $(".content-right-area").hide();
                 // $("#changsuoListRightArea").show();
                 // // marker.setIcon(new BMap.Icon("img/map_icon_changsuo.png", new BMap.Size(66, 59)));
@@ -619,7 +622,6 @@ function showWuziList() {
                 selectedWuziMaker = null;
             } else if (selectedWuziMaker.getTitle() != item.id) {
                 // 先取消选中状态
-                showWuziDetail(item);
                 // selectedChangsuoMaker.setIcon(new BMap.Icon("img/map_icon_changsuo.png", new BMap.Size(66, 59)));
                 selectedWuziMaker.setAnimation(null)
                 // marker.setIcon(new BMap.Icon("img/map_icon_changsuo_selected.png", new BMap.Size(66, 59)));
@@ -638,12 +640,10 @@ function showWuziList() {
             map.centerAndZoom(new BMap.Point(item.longitude, item.latitude), 18);
             if (selectedWuziMaker == null) {
                 // 未选中任何点
-                showWuziDetail(item);
                 marker.setAnimation(BMAP_ANIMATION_BOUNCE);
                 selectedWuziMaker = marker;
             } else {
                 // 先取消选中状态
-                showWuziDetail(item);
                 selectedWuziMaker.setAnimation(null);
                 marker.setAnimation(BMAP_ANIMATION_BOUNCE);
                 selectedWuziMaker = marker;
@@ -834,7 +834,7 @@ function showChangsuoList() {
 
         });
         map.addOverlay(marker);
-
+		
         var $item = $("#changsuoListRight .template.changsuo-item").clone();
         $(".changsuo-item-name", $item).text(item.location);
         $(".changsuo-item-address", $item).text(item.address);
@@ -929,12 +929,17 @@ function showKaiguanzhanDetail(selectedItem) {
                 var $monitorItem = $("#monitorDataList .template.monitor-data-item").clone();
                 $(".monitor-data-item-stationname", $monitorItem).text(monitorData.stationname);
                 $(".monitor-data-item-monitordevice", $monitorItem).text(monitorData.monitordevice);
-                $(".monitor-data-item-ambrtemp", $monitorItem).text(monitorData.ambrtemp);
+				$(".monitor-data-item-cabctalarm_a", $monitorItem).text(monitorData.cabctalarm_a);
+				$(".monitor-data-item-cabctalarm_b", $monitorItem).text(monitorData.cabctalarm_b);
+				$(".monitor-data-item-cabctalarm_c", $monitorItem).text(monitorData.cabctalarm_c);
+               // $(".monitor-data-item-ambrtemp", $monitorItem).text(monitorData.ambrtemp);
                 $(".monitor-data-item-amp_pch", $monitorItem).text(monitorData.amp_pch);
                 $(".monitor-data-item-freq_pch", $monitorItem).text(monitorData.freq_pch);
                 $(".monitor-data-item-energy_pch", $monitorItem).text(monitorData.energy_pch);
-                $(".monitor-data-item-cabcttmp_a", $monitorItem).text(monitorData.cabcttmp_a);
-                $(".monitor-data-item-cabctalarm_a", $monitorItem).text(monitorData.cabctalarm_a);
+                $(".monitor-data-item-cabctalarm_ydqtjc", $monitorItem).text(monitorData.cabctalarm_ydqtjc);
+				$(".monitor-data-item-energy_ygjc", $monitorItem).text(monitorData.energy_ygjc);
+				$(".monitor-data-item-cabcttmp_sjjc", $monitorItem).text(monitorData.cabcttmp_sjjc);
+				$(".monitor-data-item-cabctalarm_yxzt", $monitorItem).text(monitorData.cabctalarm_yxzt);
                 $monitorItem.removeClass("template").appendTo("#monitorDataList");
             });
         }
@@ -1092,6 +1097,7 @@ function showChangsuoDetail(item) {
         $(".people-data-item-cph", $peopleItem).text(peopleData.cph);
         $(".people-data-item-cllx", $peopleItem).text(peopleData.cllx);
         $(".people-data-item-wzck", $peopleItem).text(peopleData.wzck);
+		$(".people-data-item-bdck", $peopleItem).text(peopleData.bdck);
         $peopleItem.removeClass("template").appendTo("#peopleDataList");
     });
 
@@ -1125,7 +1131,7 @@ function showChangsuoDetail(item) {
  * 线路详细
  */
 function showXianluDetail(item) {
-    showBottomPopup();
+      showBottomPopup();
     $(".content-bottom-area").hide();
     $("#xianluArea").show();
     $("#xianlu_name").text(item.name);
@@ -1133,20 +1139,34 @@ function showXianluDetail(item) {
     $("#xianlu_length").text(item.length);
     $("#xianlu_line").text(item.line);
     $("#xianlu_device").text(item.device);
-
+	 $("#xianlu_man").text(item.man);
+	$("#xianlu_phone").text(item.phone);
+	
     $("#xianluDataList").html($("#xianluDataList .template.xianlu-data-item"));
     if(item.xianluDataList){
         $.each(item.xianluDataList, function (index2, xianluData) {
+			var nowd=new Date();
+			nowd.setMinutes(nowd.getMinutes()-Math.floor(3*Math.random(1)));
+			var y=nowd.getFullYear();
+			var m=nowd.getMonth()+1;
+			var d=nowd.getDate();
+			var h=nowd.getHours();
+			var mi=nowd.getMinutes();
+			var s=nowd.getSeconds();
+			var nowstr=y+"/"+m+"/"+d+" "+h+":"+mi+":"+s;
             var $xianluItem = $("#xianluDataList .template.xianlu-data-item").clone();
             $(".xianlu-data-item-name", $xianluItem).text(xianluData.name);
             $(".xianlu-data-item-t_status", $xianluItem).text(xianluData.t_status);
-            $(".xianlu-data-item-t_time", $xianluItem).text(xianluData.t_time);
+            $(".xianlu-data-item-t_time", $xianluItem).text(nowstr);
             $(".xianlu-data-item-h_status", $xianluItem).text(xianluData.h_status);
-            $(".xianlu-data-item-h_time", $xianluItem).text(xianluData.h_time);
+            $(".xianlu-data-item-h_time", $xianluItem).text(nowstr);
             $(".xianlu-data-item-g_status", $xianluItem).text(xianluData.g_status);
             $(".xianlu-data-item-g_comm", $xianluItem).text(xianluData.g_comm);
             $(".xianlu-data-item-w_status", $xianluItem).text(xianluData.w_status);
             $(".xianlu-data-item-w_comm", $xianluItem).text(xianluData.w_comm);
+			$(".xianlu-data-item-w_jdwd", $xianluItem).text(xianluData.w_jdwd);
+			$(".xianlu-data-item-w_gxcw", $xianluItem).text(xianluData.w_gxcw);
+			$(".xianlu-data-item-w_ssjk", $xianluItem).text(xianluData.w_ssjk);
             $xianluItem.removeClass("template").appendTo("#xianluDataList");
         });
     }

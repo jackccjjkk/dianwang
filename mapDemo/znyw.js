@@ -266,6 +266,9 @@ function setLinstener() {
         $(".content-center").hide();
         $(".content-center1").show();
 
+		$("#sp1").empty().text("隧道机器人巡检监控");
+		$("#sp2").empty().text("卡片机监拍");
+		$("#sp3").empty().text("卡片机监拍");
         $("#video_source1").attr("src", shudian.video1);
         $("#video1").load();
         $("#video_source2").attr("src", shudian.video2);
@@ -297,6 +300,9 @@ function setLinstener() {
         $(".content-center").hide();
         $(".content-center2").show();
 
+		$("#sp1").empty().text("主站监控");
+		$("#sp2").empty().text("监控");
+		$("#sp3").empty().text("监控");
         $("#video_source1").attr("src", biandian.video1);
         $("#video1").load();
         $("#video_source2").attr("src", biandian.video2);
@@ -329,6 +335,9 @@ function setLinstener() {
         $(".content-center").hide();
         $(".content-center3").show();
 
+		$("#sp1").empty().text("隧道机器人巡检监控");
+		$("#sp2").empty().text("隧道环境监控");
+		$("#sp3").empty().text("隧道环境监控");
         $("#video_source1").attr("src", dianlan.video1);
         $("#video1").load();
         $("#video_source2").attr("src", dianlan.video2);
@@ -360,7 +369,10 @@ function setLinstener() {
     $("#leftMenu4").click(function () {
         $(".content-center").hide();
         $(".content-center4").show();
-
+		
+		$("#sp1").empty().text("配变智能终端实时监测");
+		$("#sp2").empty().text("监控");
+		$("#sp3").empty().text("监控");
         $("#video_source1").attr("src", peidian.video1);
         $("#video1").load();
         $("#video_source2").attr("src", peidian.video2);

@@ -928,17 +928,17 @@
             <div id="kaiguanzhanArea" class="flex content-bottom-area" style="font-size: 16px;display: none">
                 <div class="table" style="margin-left: 80px">
                     <div class="table-row left-row">
-                        <div class="table-cell lable">变电站名称</div>
+                        <div class="table-cell lable">开关站名称</div>
                         <div id="kaiguanzhan_bdzmc" class="table-cell value"></div>
                     </div>
-                    <div class="table-row left-row">
+                <!--    <div class="table-row left-row">
                         <div class="table-cell lable">设备名称</div>
                         <div id="kaiguanzhan_sbmc" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
                         <div class="table-cell lable">所属地市</div>
                         <div id="kaiguanzhan_ssds" class="table-cell value"></div>
-                    </div>
+                    </div>-->
                     <div class="table-row left-row">
                         <div class="table-cell lable">运维单位</div>
                         <div id="kaiguanzhan_ywdw" class="table-cell value"></div>
@@ -947,16 +947,13 @@
                         <div class="table-cell lable">维护班组</div>
                         <div id="kaiguanzhan_whbz" class="table-cell value"></div>
                     </div>
+					<div class="table-row left-row">
+                        <div class="table-cell lable">投运日期</div>
+                        <div id="kaiguanzhan_tyrq" class="table-cell value"></div>
+                    </div>
                 </div>
                 <div class="table">
-                    <div class="table-row left-row">
-                        <div class="table-cell lable">资产性质</div>
-                        <div id="kaiguanzhan_zcxz" class="table-cell value"></div>
-                    </div>
-                    <div class="table-row left-row">
-                        <div class="table-cell lable">资产单位</div>
-                        <div id="kaiguanzhan_zcdw" class="table-cell value"></div>
-                    </div>
+                    
                     <div class="table-row left-row">
                         <div class="table-cell lable">电压等级</div>
                         <div id="kaiguanzhan_dydj" class="table-cell value"></div>
@@ -965,46 +962,60 @@
                         <div class="table-cell lable">设备状态</div>
                         <div id="kaiguanzhan_sbzt" class="table-cell value"></div>
                     </div>
+					<div class="table-row left-row">
+                        <div class="table-cell lable">供电区域</div>
+                        <div id="kaiguanzhan_gdqy" class="table-cell value"></div>
+                    </div>
+					<div class="table-row left-row">
+                        <div class="table-cell lable">是否枢纽站</div>
+                        <div id="kaiguanzhan_sfsnz" class="table-cell value"></div>
+                    </div>
+				<!--	<div class="table-row left-row">
+                        <div class="table-cell lable">资产性质</div>
+                        <div id="kaiguanzhan_zcxz" class="table-cell value"></div>
+                    </div>
                     <div class="table-row left-row">
+                        <div class="table-cell lable">资产单位</div>
+                        <div id="kaiguanzhan_zcdw" class="table-cell value"></div>
+                    </div>-->
+                 <!--   <div class="table-row left-row">
                         <div class="table-cell lable">投运日期</div>
                         <div id="kaiguanzhan_tyrq" class="table-cell value"></div>
-                    </div>
+                    </div>-->
                 </div>
-                <div class="table">
+            <!--    <div class="table">
                     <div class="table-row left-row">
                         <div class="table-cell lable">电站类型</div>
                         <div id="kaiguanzhan_dzlx" class="table-cell value"></div>
                     </div>
-                    <div class="table-row left-row">
-                        <div class="table-cell lable">供电区域</div>
-                        <div id="kaiguanzhan_gdqy" class="table-cell value"></div>
-                    </div>
+                    
                     <div class="table-row left-row">
                         <div class="table-cell lable">是否智能变电站</div>
                         <div id="kaiguanzhan_sfznbdz" class="table-cell value"></div>
                     </div>
-                    <div class="table-row left-row">
-                        <div class="table-cell lable">是否枢纽站</div>
-                        <div id="kaiguanzhan_sfsnz" class="table-cell value"></div>
-                    </div>
+                    
                     <div class="table-row left-row">
                         <div class="table-cell lable">是否代维</div>
                         <div id="kaiguanzhan_sfdw" class="table-cell value"></div>
                     </div>
-                </div>
+                </div>-->
                 <div class="content-bottom-line"></div>
                 <div>
                     <div class="table" style="margin-left:80px;width: 1184px;white-space: nowrap;">
                         <div class="table-header-group">
                             <div class="table-row right-data-row">
-                                <div class="table-cell lable">变电站名称</div>
-                                <div class="table-cell lable">被监测设备编码</div>
-                                <div class="table-cell lable">环境温度</div>
-                                <div class="table-cell lable">局放幅值</div>
-                                <div class="table-cell lable">局放频次</div>
-                                <div class="table-cell lable">局放能量</div>
-                                <div class="table-cell lable">A相电缆连接点温度</div>
-                                <div class="table-cell lable">A相电缆连接点温度报警</div>
+                                <div class="table-cell lable">被监测设备</div>
+								<div class="table-cell lable">环境温度</div>
+								<div style="width: 200px" class="table-cell lable">A相电缆连接点温度</div>
+								<div style="width: 200px" class="table-cell lable">B相电缆连接点温度</div>
+								<div style="width: 200px" class="table-cell lable">C相电缆连接点温度</div>
+								<div  class="table-cell lable">局放幅值</div>
+								<div  class="table-cell lable">局放频次</div>
+								<div  class="table-cell lable">局放能量</div>
+								<div class="table-cell lable">有害气体监测</div>
+								<div class="table-cell lable">烟感监测</div>
+                                <div class="table-cell lable">水浸监测</div>
+                                <div class="table-cell lable">运行状态</div>
                             </div>
                         </div>
                     </div>
@@ -1012,26 +1023,34 @@
                         <div class="table content-scroll" style="margin-left:80px;width: 1184px;white-space: nowrap;">
                             <div class="table-header-group" style="visibility: collapse;">
                                 <div class="table-row right-data-row">
-                                    <div class="table-cell lable">变电站名称</div>
-                                    <div class="table-cell lable">被监测设备编码</div>
-                                    <div class="table-cell lable">环境温度</div>
-                                    <div class="table-cell lable">局放幅值</div>
-                                    <div class="table-cell lable">局放频次</div>
-                                    <div class="table-cell lable">局放能量</div>
-                                    <div class="table-cell lable">A相电缆连接点温度</div>
-                                    <div class="table-cell lable">A相电缆连接点温度报警</div>
+                                    <div class="table-cell lable">被监测设备</div>
+                                <div class="table-cell lable">环境温度</div>
+								<div style="width: 200px" class="table-cell lable">A相电缆连接点温度</div>
+								<div style="width: 200px" class="table-cell lable">B相电缆连接点温度</div>
+								<div style="width: 200px" class="table-cell lable">C相电缆连接点温度</div>
+								<div  class="table-cell lable">局放幅值</div>
+								<div  class="table-cell lable">局放频次</div>
+								<div  class="table-cell lable">局放能量</div>
+								<div class="table-cell lable">有害气体监测</div>
+								<div class="table-cell lable">烟感监测</div>
+                                <div class="table-cell lable">水浸监测</div>
+                                <div class="table-cell lable">运行状态</div>
                                 </div>
                             </div>
-                            <div class="table-row-group hide-scrollbar" id="monitorDataList">
+                            <div style="text-align: center;" class="table-row-group hide-scrollbar" id="monitorDataList">
                                 <div class="template table-row right-data-row monitor-data-item">
                                     <div class="table-cell value monitor-data-item-stationname"></div>
-                                    <div class="table-cell value monitor-data-item-monitordevice"></div>
-                                    <div class="table-cell value monitor-data-item-ambrtemp"></div>
+									<div class="table-cell value monitor-data-item-monitordevice"></div>
+                                    <div class="table-cell value monitor-data-item-cabctalarm_a"></div>
+                                    <div class="table-cell value monitor-data-item-cabctalarm_b"></div>
+                                    <div class="table-cell value monitor-data-item-cabctalarm_c"></div>
                                     <div class="table-cell value monitor-data-item-amp_pch">26.7</div>
                                     <div class="table-cell value monitor-data-item-freq_pch"></div>
                                     <div class="table-cell value monitor-data-item-energy_pch"></div>
-                                    <div class="table-cell value monitor-data-item-cabcttmp_a"></div>
-                                    <div class="table-cell value monitor-data-item-cabctalarm_a">0</div>
+                                    <div class="table-cell value monitor-data-item-cabctalarm_ydqtjc">0</div>
+									<div class="table-cell value monitor-data-item-energy_ygjc"></div>
+                                    <div class="table-cell value monitor-data-item-cabcttmp_sjjc"></div>
+                                    <div class="table-cell value monitor-data-item-cabctalarm_yxzt">0</div>
                                 </div>
                             </div>
                         </div>
@@ -1041,55 +1060,55 @@
             <div id="biandianzhanArea" class="flex content-bottom-area" style="font-size: 16px;display: none">
                 <div class="table" style="margin-left: 80px">
                     <div class="table-row left-row">
-                        <div class="table-cell lable">! 电站名称</div>
+                        <div class="table-cell lable">电站名称</div>
                         <div id="biandianzhan_dzmc" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">! 运维单位</div>
+                        <div class="table-cell lable">运维单位</div>
                         <div id="biandianzhan_ywdw" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">! 电压等级</div>
+                        <div class="table-cell lable">电压等级</div>
                         <div id="biandianzhan_dydj" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">! 投运日期</div>
+                        <div class="table-cell lable">投运日期</div>
                         <div id="biandianzhan_tyrq" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">! 电站重要级别</div>
+                        <div class="table-cell lable">电站重要级别</div>
                         <div id="biandianzhan_dzzyjb" class="table-cell value"></div>
                     </div>
                 </div>
                 <div class="table">
                     <div class="table-row left-row">
-                        <div class="table-cell lable">! 所属地市</div>
+                        <div class="table-cell lable">所属地市</div>
                         <div id="biandianzhan_ssds" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">! 维护班组</div>
+                        <div class="table-cell lable">维护班组</div>
                         <div id="biandianzhan_whbz" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">! 设备状态</div>
+                        <div class="table-cell lable">设备状态</div>
                         <div id="biandianzhan_sbzt" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">! 电站类型</div>
+                        <div class="table-cell lable">电站类型</div>
                         <div id="biandianzhan_dzlx" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">! 污秽等级</div>
+                        <div class="table-cell lable">污秽等级</div>
                         <div id="biandianzhan_wsdj" class="table-cell value"></div>
                     </div>
                 </div>
                 <div class="table">
                     <div class="table-row left-row">
-                        <div class="table-cell lable">! 值班方式</div>
+                        <div class="table-cell lable">值班方式</div>
                         <div id="biandianzhan_zbfs" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">! 是否枢纽站</div>
+                        <div class="table-cell lable">是否枢纽站</div>
                         <div id="biandianzhan_sfsnz" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
@@ -1097,11 +1116,11 @@
                         <div id="biandianzhan_rl" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">! 专业分类</div>
+                        <div class="table-cell lable">专业分类</div>
                         <div id="biandianzhan_zyfl" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">! 消防类型</div>
+                        <div class="table-cell lable">消防类型</div>
                         <div id="biandianzhan_xflx" class="table-cell value"></div>
                     </div>
                 </div>
@@ -1158,16 +1177,16 @@
                 </div>
             </div>
             <div id="changsuoArea" class="flex content-bottom-area" style="font-size: 16px;display: none">
-                <div class="table" style="margin-left: 50px;white-space: nowrap">
+                <div class="table" style="margin-left: 50px;white-space: nowrap;margin-top:50px">
                     <div class="table-row left-row">
                         <div class="table-cell lable">保电地点</div>
                         <div id="changsuo_location" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">地址</div>
+                        <div class="table-cell lable">场所地址</div>
                         <div id="changsuo_address" class="table-cell value"></div>
                     </div>
-                    <div class="table-row left-row">
+                    <!--<div class="table-row left-row">
                         <div class="table-cell lable">10kV开关站</div>
                         <div id="changsuo_name_10" class="table-cell value"></div>
                     </div>
@@ -1178,31 +1197,31 @@
                     <div class="table-row left-row">
                         <div class="table-cell lable">电话</div>
                         <div id="changsuo_phone_10" class="table-cell value"></div>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="table">
                     <div class="table-row left-row">
-                        <div class="table-cell lable">66kV变电所</div>
+                        <div class="table-cell lable">供电电源</div>
                         <div id="changsuo_name_66" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">责任人</div>
+                        <div class="table-cell lable">220V变电站</div>
                         <div id="changsuo_people_66" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">电话</div>
+                        <div class="table-cell lable">66KV变电站</div>
                         <div id="changsuo_phone_66" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">66kV线路</div>
+                        <div class="table-cell lable">10kV开关站</div>
                         <div id="changsuo_name_66line" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">责任人</div>
+                        <div class="table-cell lable">66KV供电线路</div>
                         <div id="changsuo_people_66line" class="table-cell value"></div>
                     </div>
                 </div>
-                <div class="table">
+                <!--<div class="table">
                     <div class="table-row left-row">
                         <div class="table-cell lable">电话</div>
                         <div id="changsuo_phone_66line" class="table-cell value"></div>
@@ -1219,19 +1238,20 @@
                         <div class="table-cell lable">电话</div>
                         <div id="changsuo_phone_220" class="table-cell value"></div>
                     </div>
-                </div>
+                </div>-->
                 <div class="content-bottom-line"></div>
-                <div>
+               <div>
                     <div class="table" style="margin-left:80px;width: 1184px;white-space: nowrap;">
                         <div class="table-header-group">
                             <div class="table-row right-data-row">
-                                <div style="width: 13%" class="table-cell lable">单位</div>
-                                <div style="width: 10%" class="table-cell lable">保电人员</div>
-                                <div style="width: 14%" class="table-cell lable">职务</div>
-                                <div style="width: 13%" class="table-cell lable">联系方式</div>
-                                <div style="width: 10%" class="table-cell lable">车牌号</div>
+                                <div style="width: 13%" class="table-cell lable">保电队伍</div>
+                                <div style="width: 12%" class="table-cell lable">负责区域</div>
+                                <div style="width: 12%" class="table-cell lable">责任单位</div>
+                                <div style="width: 13%" class="table-cell lable">负责人</div>
+                                <div style="width: 10%" class="table-cell lable">联系电话</div>
+                                <div style="width: 10%" class="table-cell lable">保电车牌号</div>
                                 <div style="width: 10%" class="table-cell lable">车辆类型</div>
-                                <div style="width: 30%" class="table-cell lable">物资仓库</div>
+								<div style="width: 30%" class="table-cell lable">物资仓库</div>
                             </div>
                         </div>
                     </div>
@@ -1239,24 +1259,26 @@
                         <div class="table content-scroll" style="margin-left:80px;width: 1184px;white-space: nowrap;">
                             <div class="table-header-group" style="visibility: collapse;">
                                 <div class="table-row right-data-row">
-                                    <div style="width: 13%" class="table-cell lable">单位</div>
-                                    <div style="width: 10%" class="table-cell lable">保电人员</div>
-                                    <div style="width: 14%" class="table-cell lable">职务</div>
-                                    <div style="width: 13%" class="table-cell lable">联系方式</div>
-                                    <div style="width: 10%" class="table-cell lable">车牌号</div>
+                                    <div style="width: 13%" class="table-cell lable">保电队伍</div>
+                                    <div style="width: 12%" class="table-cell lable">负责区域</div>
+                                    <div style="width: 12%" class="table-cell lable">责任单位</div>
+                                    <div style="width: 13%" class="table-cell lable">负责人</div>
+                                    <div style="width: 10%" class="table-cell lable">联系电话</div>
+                                    <div style="width: 10%" class="table-cell lable">保电车牌号</div>
                                     <div style="width: 10%" class="table-cell lable">车辆类型</div>
-                                    <div style="width: 30%" class="table-cell lable">物资仓库</div>
+									<div style="width: 30%" class="table-cell lable">物资仓库</div>
                                 </div>
                             </div>
                             <div class="table-row-group hide-scrollbar" id="peopleDataList">
                                 <div class="template table-row right-data-row people-data-item">
-                                    <div class="table-cell value people-data-item-dw"></div>
-                                    <div class="table-cell value people-data-item-bdry"></div>
-                                    <div class="table-cell value people-data-item-zw"></div>
-                                    <div class="table-cell value people-data-item-lxfs"></div>
-                                    <div class="table-cell value people-data-item-cph"></div>
-                                    <div class="table-cell value people-data-item-cllx"></div>
-                                    <div class="table-cell value people-data-item-wzck"></div>
+                                    <div style="width: 13%" class="table-cell value people-data-item-dw"></div>
+                                    <div style="width: 12%" class="table-cell value people-data-item-bdry"></div>
+                                    <div style="width: 12%" class="table-cell value people-data-item-zw"></div>
+                                    <div style="width: 13%" class="table-cell value people-data-item-lxfs"></div>
+                                    <div style="width: 10%" class="table-cell value people-data-item-cph"></div>
+                                    <div style="width: 10%" class="table-cell value people-data-item-cllx"></div>
+                                    <div style="width: 10%" class="table-cell value people-data-item-wzck"></div>
+									<div style="width: 30%" class="table-cell value people-data-item-bdck"></div>
                                 </div>
                             </div>
                         </div>
@@ -1266,24 +1288,34 @@
             <div id="xianluArea" class="flex content-bottom-area" style="font-size: 16px;display: none">
                 <div class="table" style="margin-left: 50px">
                     <div class="table-row left-row">
-                        <div class="table-cell lable">保电地点</div>
+                        <div class="table-cell lable">保电地点123</div>
                         <div id="xianlu_name" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">地址</div>
+                        <div class="table-cell lable">隧道地点</div>
                         <div id="xianlu_address" class="table-cell value"></div>
                     </div>
+                </div>
+				<div class="table">
                     <div class="table-row left-row">
-                        <div class="table-cell lable">10kV开关站</div>
+                        <div class="table-cell lable">保电人员</div>
                         <div id="xianlu_length" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">责任人</div>
+                        <div class="table-cell lable">保电队伍</div>
                         <div id="xianlu_line" class="table-cell value"></div>
                     </div>
                     <div class="table-row left-row">
-                        <div class="table-cell lable">电话</div>
+                        <div class="table-cell lable">负责单位</div>
                         <div id="xianlu_device" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row left-row">
+                        <div class="table-cell lable">负责人</div>
+                        <div id="xianlu_man" class="table-cell value"></div>
+                    </div>
+                    <div class="table-row left-row">
+                        <div class="table-cell lable">联系电话</div>
+                        <div id="xianlu_phone" class="table-cell value"></div>
                     </div>
                 </div>
                 <div class="content-bottom-line" style="margin-left: 20px"></div>

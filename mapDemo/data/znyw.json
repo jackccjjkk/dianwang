@@ -1,9 +1,9 @@
 {
   "resultCode": "00",
   "shudian":{
-    "video1":"",
-    "video2":"",
-    "video3":"",
+    "video1":"data/file/shipin/znyw-sd-shipin1.mp4",
+    "video2":"data/file/shipin/znyw-sd-shipin2.mp4",
+    "video3":"data/file/shipin/znyw-sd-shipin3.mp4",
     "dataList1":[
       {"xianlu":"兰岔线","vl":"交流220kV","type":"微气象监测","name":"兰岔线11微气象","temperature":"24.7","pressure":"987.9","Pi":"0","maxw":"5","nomw":"2.5","bigw":"2.3","avgw":"2.8","Pw":"0","state":"运行正常"},
       {"xianlu":"和吴甲线","vl":"交流220kV","type":"微气象监测","name":"和吴甲线","temperature":"25","pressure":"988.6","Pi":"0","maxw":"4.6","nomw":"2.3","bigw":"2.6","avgw":"2.6","Pw":"0","state":"运行正常"},
@@ -93,9 +93,9 @@
     ]
   },
   "peidian":{
-    "video1":"data/file/shipin/zdyw-bd-shipin1.mp4",
-    "video2":"data/file/shipin/zdyw-bd-shipin2.mp4",
-    "video3":"data/file/shipin/zdyw-bd-shipin3.mp4",
+    "video1":"data/file/shipin/zdyw-pd-shipin1.mp4",
+    "video2":"data/file/shipin/zdyw-pd-shipin2.mp4",
+    "video3":"data/file/shipin/zdyw-pd-shipin3.mp4",
     "dataList1": [
       {"id":"海之梦广场站","shebei":"东达线202柜","wd":"38","Awd":"28.8","Bwd":"29","Cwd":"29.9","val":"16","num":"0","nengliang":"0","bj":"正常","time":"2019/6/26 19:11"},
       {"id":"海之梦广场站","shebei":"东达线203柜","wd":"38","Awd":"28.7","Bwd":"28.7","Cwd":"29.2","val":"9","num":"0","nengliang":"0","bj":"正常","time":"2019/6/26 19:11"},
