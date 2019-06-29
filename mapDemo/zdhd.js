@@ -70,7 +70,13 @@ function initMap() {
 //  var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); //右上角，仅包含平移和缩放按钮
 
     var point = new BMap.Point(121.679122, 38.935683);  // 创建点坐标
-    map.centerAndZoom(point, 13);                 // 初始化地图，设置中心点坐标和地图级别
+    map.setMaxZoom(18)
+    map.centerAndZoom(point, 13);
+    function showInfo(e){
+        console.log("\"centerLng\":"+e.point.lng + ", \"centerLat\":" + e.point.lat+",");
+    }
+    map.addEventListener("click", showInfo);
+    // 初始化地图，设置中心点坐标和地图级别
     // map.addControl(top_left_navigation);
     //添加地图类型控件
 //  map.addControl(new BMap.MapTypeControl({
@@ -211,8 +217,9 @@ function setListener() {
         // selectedXianluMaker.setIcon(new BMap.Icon("img/map_icon_xianlu.png", new BMap.Size(66, 59)));
         // selectedXianluMaker.setAnimation(null);
         // selectedXianluMaker = null;
-        $(".content-right-area").hide();
-        $("#xianluListRightArea").show();
+        // $(".content-right-area").hide();
+        // $("#xianluListRightArea").show();
+        showXianluList()
     });
 
     $("#backToZhansuoList").click(function () {
@@ -813,15 +820,14 @@ function showXianluList() {
         $(".xianlu-item-name", $item).text(item.name);
         $(".xianlu-item-unit", $item).text(item.unit);
         $item.click(function () {
-            console.log(item);
-            showXianluDetail(item);
+            showXianluDetail(item,index);
         });
         $item.removeClass("template").appendTo("#xianluListRight")
 
     });
-    var zoom = getZoom(map, xianluList[0].pointArr[0]);
-    var center = new BMap.Point(xianluList[0].pointArr[0][0].lng, xianluList[0].pointArr[0][0].lat);
-    map.centerAndZoom(center, 14);
+    // var zoom = getZoom(map, xianluList[0].pointArr[0]);
+    var center = new BMap.Point(121.704974,38.92865);
+    map.centerAndZoom(center, 16);
 }
 
 /**
@@ -1164,7 +1170,7 @@ function showChangsuoDetail(item) {
 /**
  * 线路详细
  */
-function showXianluDetail(item) {
+function showXianluDetail(item,index) {
       showBottomPopup();
     $(".content-bottom-area").hide();
     $("#xianluArea").show();
@@ -1175,7 +1181,18 @@ function showXianluDetail(item) {
     $("#xianlu_device").text(item.device);
 	 $("#xianlu_man").text(item.man);
 	$("#xianlu_phone").text(item.phone);
-	
+
+	map.clearOverlays();
+
+    $.each(item.pointArr, function (index2, item2) {
+        polyline(map, item2, echarts.color.modifyHSL('#5A94DF', Math.round(20 * index)));
+    });
+
+    // var zoom = getZoom(map, item.pointArr[0]);
+    // var index = item.pointArr[0].length /2;
+    var center = new BMap.Point(item.centerLng,item.centerLat);
+    map.centerAndZoom(center,16);
+
     $("#xianluDataList").html($("#xianluDataList .template.xianlu-data-item"));
     if(item.xianluDataList){
         $.each(item.xianluDataList, function (index2, xianluData) {

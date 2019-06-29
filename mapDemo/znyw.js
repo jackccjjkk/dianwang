@@ -19,6 +19,7 @@ function initMap() {
 //  var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); //右上角，仅包含平移和缩放按钮
 
     var point = new BMap.Point(121.679122, 38.935683);  // 创建点坐标
+    map.setMaxZoom(18)
     map.centerAndZoom(point, 11);                 // 初始化地图，设置中心点坐标和地图级别
     // map.addControl(top_left_navigation);
     //添加地图类型控件
@@ -48,7 +49,9 @@ function getData() {
             initbiandian2(data.biandian.dataList2);
             initpeidian1(data.peidian.dataList1);
             initpeidian2(data.peidian.dataList2);
-
+            $.each(intervalList, function (index, item) {
+                clearInterval(item);
+            });
             $(".scroll-content").each(function (index) {
                 var me = $(this);
                 var height = me.parent()[0].scrollHeight - (me.parent()[0].clientHeight || me.parent()[0].offsetHeight);
@@ -265,7 +268,8 @@ function setLinstener() {
     $("#leftMenu1").click(function () {
         $(".content-center").hide();
         $(".content-center1").show();
-
+        $("#video1").show();
+        $("#iframe1").hide();
 		$("#sp1").empty().text("隧道机器人巡检监控");
 		$("#sp2").empty().text("卡片机监拍");
 		$("#sp3").empty().text("卡片机监拍");
@@ -299,7 +303,8 @@ function setLinstener() {
     $("#leftMenu2").click(function () {
         $(".content-center").hide();
         $(".content-center2").show();
-
+        $("#video1").show();
+        $("#iframe1").hide();
 		$("#sp1").empty().text("主站监控");
 		$("#sp2").empty().text("监控");
 		$("#sp3").empty().text("监控");
@@ -335,6 +340,9 @@ function setLinstener() {
         $(".content-center").hide();
         $(".content-center3").show();
 
+        $("#video1").show();
+        $("#iframe1").hide();
+
 		$("#sp1").empty().text("隧道机器人巡检监控");
 		$("#sp2").empty().text("隧道环境监控");
 		$("#sp3").empty().text("隧道环境监控");
@@ -369,12 +377,14 @@ function setLinstener() {
     $("#leftMenu4").click(function () {
         $(".content-center").hide();
         $(".content-center4").show();
-		
+        $("#video1").hide();
+        $("#iframe1").show();
 		$("#sp1").empty().text("配变智能终端实时监测");
 		$("#sp2").empty().text("监控");
 		$("#sp3").empty().text("监控");
-        $("#video_source1").attr("src", peidian.video1);
-        $("#video1").load();
+        // $("#video_source1").attr("src", peidian.video1);
+        // $("#video1").load();
+        $("#iframe1").attr("src","http://wap.baidu.com");
         $("#video_source2").attr("src", peidian.video2);
         $("#video2").load();
         $("#video_source3").attr("src", peidian.video3);
