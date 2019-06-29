@@ -1,3 +1,11 @@
+.show_time{
+	font-size: 16px;
+    line-height: 90px;
+    margin-left: 30px;
+    position: absolute;
+    color: #e8e7e7;
+}
+
 .content-left-top {
     position: absolute;
     left: 18px;

@@ -1,0 +1,245 @@
+﻿﻿<html>
+
+    <head>
+        <style type="text/css">
+            body {
+                background-color: #51a397;
+            }
+        </style>
+        <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+        <script type="text/javascript">
+            //ocx对象初始完成后，执行方法
+            //登陆IP地址
+            function readOcx(obj) {
+            }
+        </script>
+    </head>
+    <script src="testRegister.js'" type="text/javascript"></script>
+
+    <body style="margin: 0, 0, 0, 0; padding: 0" width="100%" height="100%" scroll="no">
+        <object id='player' classid='CLSID:D71AE918-F986-413A-9BA7-2644172CA228' scroll='no' standby='正在加载视频控件' onreadystatechange="readOcx(this)" codebase="assets/OcxPlayer/GridControl.cab#version=2,0,0,1" width="100%" height="100%">
+            <embed width="100%" height="100%" type="application/npGridControl-plugin" id="pluginId"  >
+            <!-- onreadystatechange="stateChange(this)" -->
+        </object>
+        <script type="text/javascript">
+            //if (window.attachEvent) {
+            //	window.attachEvent("onunload", ocxHtmlLoad); //页面在加载之前调用ocxHtmlLoad方法
+            //} else if (window.addEventListener) {
+            //	window.addEventListener("unload", ocxHtmlLoad, false); //页面在加载之前调用ocxHtmlLoad方法
+            //}
+            if (window.attachEvent) {
+                window.attachEvent("onresize", ocxHtmlResize); //页面改变大小时调用ocxHtmlResize方法
+            } else if (window.addEventListener) {
+                window.addEventListener("resize", ocxHtmlResize, false);
+            }
+            if (window.attachEvent) {
+                window.attachEvent("onbeforeunload", uninitOff); //页面在反加载之前调用ocxHtmlOnBeforeUnload方法
+            } else if (window.addEventListener) {
+                window.addEventListener("onbeforeunload", uninitOff, false);
+            }
+            //关闭窗口时反初始化ocx
+            if (window.closed) 
+            {
+                uninit();
+            }
+		
+            var ocxOrPlugin;
+			
+			
+            function getOCXPlugin()
+            {
+                if (!!window.ActiveXObject || "ActiveXObject" in window)  
+                {
+                    //alert("is ie");
+                    ocxOrPlugin = document.getElementById('player');
+                }
+                else  
+                {
+                    ocxOrPlugin = document.getElementById('pluginId');
+                    //alert("not ie");
+                }
+            }
+			
+			
+            //调用ocx接口方法要传递的参数变量
+            //本地IP配置
+            var localIp = '10.161.35.109';
+            //通信IP10.160.3.2
+            var httpIp = '10.160.3.216';
+            //通信端口21107 21109 21112 21115 
+            var httpPort = 21106;
+            //通信用户名
+            var userName = 'qixg_dl';
+            //通信密码 输入明文的MD5值
+            var pswd = '42d8aa7cde9c78c4757862d84620c335';
+            //var pswd = 'Qxg_1229';
+            //视频播放的设备编号
+            var scamera = '221610000003010037';
+            var scname = '棒棰岛宾馆';
+			
+			
+            var userCode = '110010000004000155';
+            var videoMainWndIndex;
+            var bExit = true;
+            var parent;
+            var strDraw;
+		
+            ocxHtmlLoad();
+			myclick();
+            function myclick()
+            { var result;
+                try
+                {
+                   result = ocxOrPlugin.ocxVideoStart(videoMainWndIndex, 2, 150.0, scamera, scname);
+                   
+                    //result = ocxOrPlugin.ocxVideoStart(videoMainWndIndex, 1, 150.0, "302110000003020001", "视频采集设11备");
+					
+                    //result = ocxOrPlugin.ocxRemoteFilePlayStart(videoMainWndIndex, 0, "rtsp://10.161.49.72:8000/h264/ch1/main/av_stream", 150.0,"视频采集设备");
+                  //  ocxOrPlugin.ocxRemoteFilePlayStart(videoMainWndIndex, 0, "rtsp://10.161.49.72:8000/220810000003510169/220810000003041275", 150, "");
+                 //   ocxOrPlugin.ocxStartDraw(videoMainWndIndex, 0);
+				
+                    //ocxOrPlugin.ocxSetTitleBarIcon(0, "D:\\111.bmp");
+                    //ocxOrPlugin.ocxSetTitleBarParam(0xFF, "1;华文行楷;255;42;80;65280;1;测试字符串。。");
+                    //ocxOrPlugin.ocxSetTitleBarWord(videoMainWndIndex, 0, "集中存储服务奔溃处理--------查看dump文件在RTP库处奔溃");
+                    //ocxOrPlugin.ocxSetTitleBarWord(videoMainWndIndex, 1, "2)图片抓拍服务自测");
+                    //ocxOrPlugin.ocxVideoSwitch(videoMainWndIndex, 0, 1);
+                    //ocxOrPlugin.ocxChangeSubWinBackground(videoMainWndIndex, 0, "D:\\APMServ5.2.6\\APMServ5.2.6\\www\\htdocs\\PlayFrame.bmp");
+                    //ocxOrPlugin.ocxKillMyself();
+				
+                    //检测设备是否在线 1在线  0不在线
+                    //alert(ocxOrPlugin.ocxDeviceStatusQuery(scamera, 1));
+                }catch (err) 
+                {
+                }
+            }	
+            function starttest()
+            {
+                ocxOrPlugin.ocxStorageManualRecord(videoMainWndIndex, 0, 1, 1000);
+
+                ocxOrPlugin.ocxStorageManualRecord(videoMainWndIndex, 0, 0, 1000);
+            }
+			
+		
+			
+            function starttest2()
+            {
+			
+                ocxOrPlugin.ocxStartDraw(videoMainWndIndex, 0);
+                ocxOrPlugin.ocxDrawObject(videoMainWndIndex, 0, "112", 2);
+            }
+			
+            function ocxHtmlLoad() 
+            {
+
+                getOCXPlugin();
+
+                try {
+                    var localIPArray = ocxOrPlugin.ocxGetLocalIPList();
+					
+                } catch (err) {
+                    //alert(err);
+                }
+                
+                if (!!window.ActiveXObject || "ActiveXObject" in window)  
+                {
+                    //alert("is ie");
+                }
+                try
+                {
+                    var result = ocxOrPlugin.ocxInitLocalAddr(localIp, 0, localIp, 0);
+                    if (0 == result)
+                    {
+                        var isResult;
+                        isResult = ocxOrPlugin.ocxOcxIsInit();
+                        if (isResult) {
+                            ocxOrPlugin.focus();
+                            //创建窗口(实时视频)
+								
+                            videoMainWndIndex = ocxOrPlugin.ocxCreateWindow(1,1, 1);
+							
+                            //alert(111);
+                            //
+							
+                            //ocxOrPlugin.ocxLogin();			
+                            //return;
+                            result = ocxOrPlugin.ocxLogin(httpIp, httpPort, userName, pswd, 1, 0);
+                            
+                            if (result)
+                            {
+                                alert("登录失败"+result);
+                            }
+                            else
+                            {
+                                // ocxHtmlPlay();
+								
+                                //starttest2();
+                            }
+                        } 
+                        else 
+                        {
+                            alert("ocx初始化未成功！");
+                        }
+                    }
+                }
+                catch (err) 
+                {
+                    alert("视频播放控件初始化错误！"+err);
+                }
+            }
+			
+            function ocxHtmlPlay()
+            {
+                var result;
+                try
+                {
+                    result = ocxOrPlugin.ocxVideoStart(videoMainWndIndex, 0, 150.0, scamera, scname);
+                    //result = ocxOrPlugin.ocxVideoStart(videoMainWndIndex, 1, 150.0, "302110000003020001", "视频采集设11备");
+					
+                    //result = ocxOrPlugin.ocxRemoteFilePlayStart(videoMainWndIndex, 0, "rtsp://10.161.49.72:8000/h264/ch1/main/av_stream", 150.0,"视频采集设备");
+                    alert("ocxRemoteFilePlayStart:"+result);
+                }
+                catch (err)
+                {
+                    alert("播放失败！");
+                }
+            }
+			
+            function ocxHtmlResize()
+            {
+                var _height = this.document.body.scrollHeight;
+                var _width = this.document.body.scrollWidth;
+            }
+			
+            //反初始化
+            function uninit() 
+            {
+                try 
+                {
+                    ocxOrPlugin.ocxUnInit();
+                } 
+                catch (err) 
+                {
+                    alert("ocx反初始化失败！");
+                }
+                //this.parent.window.location.reload();
+            }
+
+            function uninitOff() 
+            {
+                try {
+                    var r3 = document.getElementById('player').ocxLogout();
+                    var r4 = document.getElementById('player').ocxUnInit();
+                    var r5 = document.getElementById('player').ocxDestoryWindow(videoMainWndIndex);
+                    var r6 = document.getElementById('player').ocxDestoryWindow(historyMainWndIndex);
+                    this.parent.window.location.reload();
+                } 
+                catch (err) 
+                {
+                }
+            }
+        </script>
+
+
+    </body>
+
+</html>

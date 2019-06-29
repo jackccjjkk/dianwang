@@ -27,7 +27,41 @@ $(document).ready(function () {
     setListener();
     getData();
 
+	getCurrentDateTime();
 });
+
+function getCurrentDateTime(){
+	var currentDate = new Date();
+	var year = currentDate.getFullYear();
+	var month = currentDate.getMonth()+1;
+	var date = currentDate.getDate();
+	var day = currentDate.getDay();
+	var weeks = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+	var week = weeks[day];
+	var hour = currentDate.getHours();
+	var minutes = currentDate.getMinutes();
+	var seconds = currentDate.getSeconds();
+	if(month<10){
+		month = "0"+month;
+	}
+	if(date<10){
+		date = "0"+date;
+	}
+	if(hour<10){
+		hour = "0"+hour;
+	}
+	if(minutes<10){
+		minutes = "0"+minutes;
+	}
+	if(seconds<10){
+		seconds = "0"+seconds;
+	}
+	var time = month+'-'+date+'-'+year+' '+week+'  '+hour+':'+minutes+':'+seconds;
+	document.getElementById("showTime1").innerHTML = time;
+	document.getElementById("showTime2").innerHTML = time;
+	setTimeout('getCurrentDateTime()',1000);
+}
+
 
 function initMap() {
     map = new BMap.Map("map", {mapType: BMAP_HYBRID_MAP})
@@ -1154,12 +1188,13 @@ function showXianluDetail(item) {
 			var mi=nowd.getMinutes();
 			var s=nowd.getSeconds();
 			var nowstr=y+"/"+m+"/"+d+" "+h+":"+mi+":"+s;
+			
             var $xianluItem = $("#xianluDataList .template.xianlu-data-item").clone();
             $(".xianlu-data-item-name", $xianluItem).text(xianluData.name);
             $(".xianlu-data-item-t_status", $xianluItem).text(xianluData.t_status);
-            $(".xianlu-data-item-t_time", $xianluItem).text(nowstr);
+            $(".xianlu-data-item-t_timee", $xianluItem).text(xianluData.t_timee);
             $(".xianlu-data-item-h_status", $xianluItem).text(xianluData.h_status);
-            $(".xianlu-data-item-h_time", $xianluItem).text(nowstr);
+            $(".xianlu-data-item-h_timee", $xianluItem).text(xianluData.h_timee);
             $(".xianlu-data-item-g_status", $xianluItem).text(xianluData.g_status);
             $(".xianlu-data-item-g_comm", $xianluItem).text(xianluData.g_comm);
             $(".xianlu-data-item-w_status", $xianluItem).text(xianluData.w_status);
